@@ -1,0 +1,231 @@
+******************************************************************
+*    CardDemo - Main Menu Screen
+***********************************************************************
+* Copyright Amazon.com, Inc. or its affiliates.                   
+* All Rights Reserved.                                            
+*                                                                 
+* Licensed under the Apache License, Version 2.0 (the "License"). 
+* You may not use this file except in compliance with the License.
+* You may obtain a copy of the License at                         
+*                                                                 
+*    http://www.apache.org/licenses/LICENSE-2.0                   
+*                                                                 
+* Unless required by applicable law or agreed to in writing,      
+* software distributed under the License is distributed on an     
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,    
+* either express or implied. See the License for the specific     
+* language governing permissions and limitations under the License
+******************************************************************
+CORPT00 DFHMSD CTRL=(ALARM,FREEKB),                                    -
+               EXTATT=YES,                                             -
+               LANG=COBOL,                                             -
+               MODE=INOUT,                                             -
+               STORAGE=AUTO,                                           -
+               TIOAPFX=YES,                                            -
+               TYPE=&&SYSPARM
+CORPT0A DFHMDI COLUMN=1,                                               -
+               LINE=1,                                                 -
+               SIZE=(24,80)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(1,1),                                              -
+               INITIAL='Tran:'
+TRNNAME DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=BLUE,                                             -
+               LENGTH=4,                                               -
+               POS=(1,7)
+TITLE01 DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=YELLOW,                                           -
+               LENGTH=40,                                              -
+               POS=(1,21)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(1,65),                                             -
+               INITIAL='Date:'
+CURDATE DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(1,71),                                             -
+               INITIAL='mm/dd/yy'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(2,1),                                              -
+               INITIAL='Prog:'
+PGMNAME DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(2,7)
+TITLE02 DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=YELLOW,                                           -
+               LENGTH=40,                                              -
+               POS=(2,21)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(2,65),                                             -
+               INITIAL='Time:'
+CURTIME DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(2,71),                                             -
+               INITIAL='hh:mm:ss'
+        DFHMDF ATTRB=(ASKIP,BRT),                                      -
+               COLOR=NEUTRAL,                                          -
+               LENGTH=19,                                              -
+               POS=(4,30),                                             -
+               INITIAL='Transaction Reports'
+MONTHLY DFHMDF ATTRB=(FSET,IC,NORM,UNPROT),                            -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=1,                                               -
+               POS=(7,10),                                             -
+               INITIAL=' '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               LENGTH=0,                                               -
+               POS=(7,12)
+        DFHMDF ATTRB=(ASKIP,BRT),                                      -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=23,                                              -
+               POS=(7,15),                                             -
+               INITIAL='Monthly (Current Month)'
+YEARLY  DFHMDF ATTRB=(FSET,NORM,UNPROT),                               -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=1,                                               -
+               POS=(9,10),                                             -
+               INITIAL=' '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               LENGTH=0,                                               -
+               POS=(9,12)
+        DFHMDF ATTRB=(ASKIP,BRT),                                      -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=23,                                              -
+               POS=(9,15),                                             -
+               INITIAL='Yearly (Current Year)'
+CUSTOM  DFHMDF ATTRB=(FSET,NORM,UNPROT),                               -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=1,                                               -
+               POS=(11,10),                                            -
+               INITIAL=' '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               LENGTH=0,                                               -
+               POS=(11,12)
+        DFHMDF ATTRB=(ASKIP,BRT),                                      -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=23,                                              -
+               POS=(11,15),                                            -
+               INITIAL='Custom (Date Range)'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=12,                                              -
+               POS=(13,15),                                            -
+               INITIAL='Start Date :'
+SDTMM   DFHMDF ATTRB=(FSET,NORM,NUM,UNPROT),                           -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=2,                                               -
+               POS=(13,29),                                            -
+               INITIAL='  '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=1,                                               -
+               POS=(13,32),                                            -
+               INITIAL='/'
+SDTDD   DFHMDF ATTRB=(FSET,NORM,NUM,UNPROT),                           -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=2,                                               -
+               POS=(13,34),                                            -
+               INITIAL='  '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=1,                                               -
+               POS=(13,37),                                            -
+               INITIAL='/'
+SDTYYYY DFHMDF ATTRB=(FSET,NORM,NUM,UNPROT),                           -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=4,                                               -
+               POS=(13,39),                                            -
+               INITIAL='    '
+        DFHMDF LENGTH=0,                                               -
+               POS=(13,44)
+        DFHMDF COLOR=BLUE,                                             -
+               LENGTH=12,                                              -
+               POS=(13,46),                                            -
+               INITIAL='(MM/DD/YYYY)'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=12,                                              -
+               POS=(14,15),                                            -
+               INITIAL='  End Date :'
+EDTMM   DFHMDF ATTRB=(FSET,NORM,NUM,UNPROT),                           -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=2,                                               -
+               POS=(14,29),                                            -
+               INITIAL='  '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=1,                                               -
+               POS=(14,32),                                            -
+               INITIAL='/'
+EDTDD   DFHMDF ATTRB=(FSET,NORM,NUM,UNPROT),                           -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=2,                                               -
+               POS=(14,34),                                            -
+               INITIAL='  '
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=1,                                               -
+               POS=(14,37),                                            -
+               INITIAL='/'
+EDTYYYY DFHMDF ATTRB=(FSET,NORM,NUM,UNPROT),                           -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=4,                                               -
+               POS=(14,39),                                            -
+               INITIAL='    '
+        DFHMDF LENGTH=0,                                               -
+               POS=(14,44)
+        DFHMDF COLOR=BLUE,                                             -
+               LENGTH=12,                                              -
+               POS=(14,46),                                            -
+               INITIAL='(MM/DD/YYYY)'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=59,                                              -
+               POS=(19,6),                                             -
+               INITIAL='The Report will be submitted for printing. Plea-
+               se confirm: '
+CONFIRM DFHMDF ATTRB=(FSET,NORM,UNPROT),                               -
+               COLOR=GREEN,                                            -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=1,                                               -
+               POS=(19,66)
+        DFHMDF LENGTH=0,                                               -
+               POS=(19,68)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=NEUTRAL,                                          -
+               LENGTH=5,                                               -
+               POS=(19,69),                                            -
+               INITIAL='(Y/N)'
+ERRMSG  DFHMDF ATTRB=(ASKIP,BRT,FSET),                                 -
+               COLOR=RED,                                              -
+               LENGTH=78,                                              -
+               POS=(23,1)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=23,                                              -
+               POS=(24,1),                                             -
+               INITIAL='ENTER=Continue  F3=Back'
+        DFHMSD TYPE=FINAL
+        END
+*
+* Ver: CardDemo_v1.0-70-g193b394-123 Date: 2022-08-22 17:02:43 CDT
+*

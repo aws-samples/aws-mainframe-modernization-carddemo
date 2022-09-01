@@ -1,0 +1,172 @@
+******************************************************************
+*    CardDemo - Card Update Screen
+***********************************************************************
+* Copyright Amazon.com, Inc. or its affiliates.                   
+* All Rights Reserved.                                            
+*                                                                 
+* Licensed under the Apache License, Version 2.0 (the "License"). 
+* You may not use this file except in compliance with the License.
+* You may obtain a copy of the License at                         
+*                                                                 
+*    http://www.apache.org/licenses/LICENSE-2.0                   
+*                                                                 
+* Unless required by applicable law or agreed to in writing,      
+* software distributed under the License is distributed on an     
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,    
+* either express or implied. See the License for the specific     
+* language governing permissions and limitations under the License
+******************************************************************
+        TITLE 'BMS MAP FOR UPDATE CARDS  '
+COCRDUP DFHMSD LANG=COBOL,                                             -
+               MODE=INOUT,                                             -
+               STORAGE=AUTO,                                           -
+               TIOAPFX=YES,                                            -
+               TYPE=&&SYSPARM
+CCRDUPA DFHMDI CTRL=(FREEKB),                                          -
+               DSATTS=(COLOR,HILIGHT,PS,VALIDN),                       -
+               MAPATTS=(COLOR,HILIGHT,PS,VALIDN),                      -
+               SIZE=(24,80)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(1,1),                                              -
+               INITIAL='Tran:'
+TRNNAME DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=BLUE,                                             -
+               LENGTH=4,                                               -
+               POS=(1,7)
+TITLE01 DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=40,                                              -
+               POS=(1,21)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(1,65),                                             -
+               INITIAL='Date:'
+CURDATE DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(1,71),                                             -
+               INITIAL='mm/dd/yy'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(2,1),                                              -
+               INITIAL='Prog:'
+PGMNAME DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(2,7)
+TITLE02 DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=40,                                              -
+               POS=(2,21)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(2,65),                                             -
+               INITIAL='Time:'
+CURTIME DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(2,71),                                             -
+               INITIAL='hh:mm:ss'
+        DFHMDF COLOR=NEUTRAL,                                          -
+               LENGTH=26,                                              -
+               POS=(4,30),                                             -
+               INITIAL='Update Credit Card Details'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=19,                                              -
+               POS=(7,23),                                             -
+               INITIAL='Account Number    :'
+ACCTSID DFHMDF ATTRB=(FSET,IC,NORM,PROT),                              -
+               COLOR=DEFAULT,                                          -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=11,                                              -
+               POS=(7,45)
+        DFHMDF LENGTH=0,                                               -
+               POS=(7,57)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=19,                                              -
+               POS=(8,23),                                             -
+               INITIAL='Card Number       :'
+CARDSID DFHMDF ATTRB=(FSET,NORM,UNPROT),                               -
+               COLOR=DEFAULT,                                          -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=16,                                              -
+               POS=(8,45)
+        DFHMDF LENGTH=0,                                               -
+               POS=(8,62)
+        DFHMDF COLOR=TURQUOISE,                                        -
+               LENGTH=20,                                              -
+               POS=(11,4),                                             -
+               INITIAL='Name on card      :'
+CRDNAME DFHMDF ATTRB=(UNPROT),                                         -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=50,                                              -
+               POS=(11,25)
+        DFHMDF LENGTH=0,                                               -
+               POS=(11,76)
+        DFHMDF COLOR=TURQUOISE,                                        -
+               LENGTH=20,                                              -
+               POS=(13,4),                                             -
+               INITIAL='Card Active Y/N   : '
+CRDSTCD DFHMDF ATTRB=(UNPROT),                                         -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=1,                                               -
+               POS=(13,25)
+        DFHMDF LENGTH=0,                                               -
+               POS=(13,27)
+        DFHMDF COLOR=TURQUOISE,                                        -
+               LENGTH=20,                                              -
+               POS=(15,4),                                             -
+               INITIAL='Expiry Date       : '
+EXPMON  DFHMDF ATTRB=(UNPROT),                                         -
+               HILIGHT=UNDERLINE,                                      -
+               JUSTIFY=(RIGHT),                                        -
+               LENGTH=2,                                               -
+               POS=(15,25)
+        DFHMDF LENGTH=1,                                               -
+               POS=(15,28),                                            -
+               INITIAL='/'
+EXPYEAR DFHMDF ATTRB=(UNPROT),                                         -
+               HILIGHT=UNDERLINE,                                      -
+               JUSTIFY=(RIGHT),                                        -
+               LENGTH=4,                                               -
+               POS=(15,30)
+        DFHMDF LENGTH=0,                                               -
+               POS=(15,35)
+EXPDAY  DFHMDF ATTRB=(DRK,FSET,PROT),                                  -
+               HILIGHT=OFF,                                            -
+               JUSTIFY=(RIGHT),                                        -
+               LENGTH=2,                                               -
+               POS=(15,36)
+        DFHMDF LENGTH=0,                                               -
+               POS=(15,39)
+INFOMSG DFHMDF ATTRB=(PROT),                                           -
+               COLOR=NEUTRAL,                                          -
+               HILIGHT=OFF,                                            -
+               LENGTH=40,                                              -
+               POS=(20,25)
+ERRMSG  DFHMDF ATTRB=(ASKIP,BRT,FSET),                                 -
+               COLOR=RED,                                              -
+               LENGTH=80,                                              -
+               POS=(23,1)
+FKEYS   DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=21,                                              -
+               POS=(24,1),                                             -
+               INITIAL='ENTER=Process F3=Exit'
+FKEYSC  DFHMDF ATTRB=(ASKIP,DRK),                                      -
+               COLOR=YELLOW,                                           -
+               LENGTH=18,                                              -
+               POS=(24,23),                                            -
+               INITIAL='F5=Save F12=Cancel'
+        DFHMSD TYPE=FINAL
+        END
+*
+* Ver: CardDemo_v1.0-70-g193b394-123 Date: 2022-08-22 17:02:43 CDT
+*
