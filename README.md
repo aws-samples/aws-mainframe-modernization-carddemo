@@ -25,7 +25,7 @@
 ## Description
 Card Demo is a Mainframe application designed and developed to test and showcase AWS and partner technology for mainframe migration and modernization use-cases such as discovery, migration, modernization, performance test, augmentation, service enablement, service extraction, test creation, test harness, etc.
 
-Note that the intent of this application is to provide mainframe coding scenarios to excercise analysis, transformation and migration tooling. So, the coding style is not uniform across the application
+Note that the intent of this application is to provide mainframe coding scenarios to exercise analysis, transformation and migration tooling. So, the coding style is not uniform across the application
 
 <br/>
 
@@ -181,7 +181,7 @@ To install this repository on the mainframe please follow the following steps
 <br/>
 
 ## Application Details 
-The CardDemo is a Credit Card management application, built primarily using COBOL programming language. The application has various functions that allows users to manage Account, Credit card, Transaction and Bill payment. 
+The CardDemo is a Credit Card management application, built primarily using COBOL programming language. The application has various functions that allow users to manage Account, Credit card, Transaction and Bill payment. 
 
 There are 2 types of users:
 * Regular User
@@ -277,7 +277,7 @@ The following features are planned for upcoming releases
 
 1. More database types
 
-   1. Relational Database usage : Db2 
+   1. Relational database usage : Db2 
    
    2. Hierachical database calls : IMS
 
