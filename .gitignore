@@ -1,0 +1,7 @@
+**/.dirty
+**/xls/*.*
+**/.settings
+**/.settings/*.*
+**/.vscode
+.vscode
+**/.project
