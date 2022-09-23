@@ -231,10 +231,15 @@ The Regular user can perform the user functions and the Admin users can only per
 
 | Job      | Program  | Function                                   |
 | :------- | :------- | :----------------------------------------- |
-| CBTRNLDJ | CBTRNLDC | Load Transactions                          |
-| CBTRNRPJ | CBTRNRPC | Reports                                    |
+| DUSRSECJ | IEBGENER | Initial Load of User security file         |
+| DEFGDGB  | IDCAMS   | Setup GDG Bases                            | 
 | ACCTFILE | IDCAMS   | Refresh Account Master                     |
 | CARDFILE | IDCAMS   | Refresh Card Master                        |
+| CUSTFILE | IDCAMS   | Refresh Customer Master                    |
+| DISCGRP  | IDCAMS   | Load Disclosure Group File                 |
+| TRANFILE | IDCAMS   | Load Transaction Master file               |
+| TRANCATG | IDCAMS   | Load Transaction category types            |
+| TRANTYPE | IDCAMS   | Load Transaction type file                 |
 | XREFFILE | IDCAMS   | Account, Card and Customer cross reference |
 | CLOSEFIL | IEFBR14  | Close VSAM files in CICS                   |
 | TCATBALF | IDCAMS   | Refresh Transaction Category Balance       |
@@ -244,7 +249,6 @@ The Regular user can perform the user functions and the Admin users can only per
 | OPENFIL  | IEFBR14  | Open files in CICS                         |
 | INTCALC  | CBACT04C | Run interest calculations                  |
 | COMBTRAN | SORT     | Combine transaction files                  |
-
 
 <br/>
 
