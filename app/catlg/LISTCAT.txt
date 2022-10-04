@@ -1,0 +1,3956 @@
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      1
+0
+    LISTCAT LEVEL(AWS.M2.CARDDEMO)  -
+            ALL
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      2
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.ACCTDATA.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS.INDEX
+0DATA ---------- AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      3
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------11     AVGLRECL-------------300     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL-------------300     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL-------------50     SPLITS-CI--------------0     EXCPS----------------315
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED----------311     FREESPACE-%CA----------0          X'DC088DC10ACE6842'
+        REC-RETRIEVED--------350     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYO7     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01D20000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'01D2000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------11     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------5     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DC10ACE6842' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      4
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYO7     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'0169000C'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'0169000C'     HIGH-RBA-----------25087
+0NONVSAM ------- AWS.M2.CARDDEMO.BIND
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYIX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.BMS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYIX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.CARDDATA.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTN     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      5
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0PATH ---------- AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.PATH
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX
+        DATA-----AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.INDEX
+        DATA-----AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.INDEX
+      ATTRIBUTES
+        UPDATE
+0CLUSTER ------- AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.INDEX
+        AIX------AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX
+0DATA ---------- AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      6
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL-------------150     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL-------------150     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL-------------50     SPLITS-CI--------------0     EXCPS------------------3
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D926D42B542'
+        REC-RETRIEVED---------50     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYTO     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'002B0000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'002B000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------4     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D926D42B542' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      7
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTO     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'00190004'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'00190004'     HIGH-RBA-----------25087
+0AIX ----------- AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        SMS MANAGED--------(YES)
+        CA-RECLAIM---------(YES)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ATTRIBUTES
+        UPGRADE
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.INDEX
+        CLUSTER--AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS
+        PATH-----AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.PATH
+0DATA ---------- AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX
+      ATTRIBUTES
+        KEYLEN----------------11     AVGLRECL-------------150     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------5     MAXLRECL-------------150     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        AXRKP-----------------16
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        SPANNED       NONUNIQKEY
+      STATISTICS
+        REC-TOTAL-------------50     SPLITS-CI--------------0     EXCPS------------------3
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D931E110442'
+        REC-RETRIEVED----------0     FREESPC----------4128768
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      8
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA---------4147200
+        SPACE-PRI--------------5     HI-U-RBA----------829440
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYO7     PHYREC-SIZE--------18432     HI-A-RBA---------4147200     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'02110000'     LOW-RBA----------------0     TRACKS----------------75
+        HIGH-CCHH----X'0215000E'     HIGH-RBA---------4147199
+0INDEX --------- AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX
+      ATTRIBUTES
+        KEYLEN----------------11     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------5     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------3     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D931E110442' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYO7     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'0169000D'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'0169000D'     HIGH-RBA-----------25087
+0NONVSAM ------- AWS.M2.CARDDEMO.CARDXREF.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE      9
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTC     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0PATH ---------- AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.PATH
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX
+        DATA-----AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.INDEX
+        DATA-----AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.INDEX
+      ATTRIBUTES
+        UPDATE
+0CLUSTER ------- AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     10
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.INDEX
+        AIX------AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX
+0DATA ---------- AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL--------------50     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL--------------50     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL-------------50     SPLITS-CI--------------0     EXCPS-----------------54
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D96E9753742'
+        REC-RETRIEVED--------400     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYTA     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'016E0000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'016E000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     11
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------6     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D96E9753742' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTA     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'016C0009'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'016C0009'     HIGH-RBA-----------25087
+0AIX ----------- AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        SMS MANAGED--------(YES)
+        CA-RECLAIM---------(YES)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ATTRIBUTES
+        UPGRADE
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.DATA
+        INDEX----AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.INDEX
+        CLUSTER--AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS
+        PATH-----AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.PATH
+0DATA ---------- AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX
+      ATTRIBUTES
+        KEYLEN----------------11     AVGLRECL--------------50     BUFSPACE-----------37376     CISIZE-------------18432
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     12
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       RKP--------------------5     MAXLRECL--------------50     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        AXRKP-----------------25
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        SPANNED       NONUNIQKEY
+      STATISTICS
+        REC-TOTAL-------------50     SPLITS-CI--------------0     EXCPS------------------4
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI---------10     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA---------20          X'DC088D979A9B7542'
+        REC-RETRIEVED---------50     FREESPC----------4128768
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA---------4147200
+        SPACE-PRI--------------5     HI-U-RBA----------829440
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTC     PHYREC-SIZE--------18432     HI-A-RBA---------4147200     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'030F0000'     LOW-RBA----------------0     TRACKS----------------75
+        HIGH-CCHH----X'0313000E'     HIGH-RBA---------4147199
+0INDEX --------- AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.CARDXREF.VSAM.AIX
+      ATTRIBUTES
+        KEYLEN----------------11     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------5     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------4     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D979A9B7542' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTC     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     13
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       EXTENTS:
+        LOW-CCHH-----X'00190003'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'00190003'     HIGH-RBA-----------25087
+0NONVSAM ------- AWS.M2.CARDDEMO.CBL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.035
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.204.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT0     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.CNTL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.154
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.155.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.CPY
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYIX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     14
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.CUSTDATA.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS.INDEX
+0DATA ---------- AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     15
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------9     AVGLRECL-------------500     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL-------------500     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL-------------50     SPLITS-CI--------------0     EXCPS------------------2
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D9C6E182D42'
+        REC-RETRIEVED----------0     FREESPC-----------792576
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYO7     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01D30000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'01D3000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------9     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------3     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088D9C6E182D42' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     16
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYO7     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'0169000E'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'0169000E'     HIGH-RBA-----------25087
+0GDG BASE ------ AWS.M2.CARDDEMO.DALYREJS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     LAST ALTER------2022.242
+      ATTRIBUTES
+        LIMIT------------------5      SCRATCH    NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.DALYREJS.G0022V00
+        NONVSAM--AWS.M2.CARDDEMO.DALYREJS.G0023V00
+        NONVSAM--AWS.M2.CARDDEMO.DALYREJS.G0024V00
+        NONVSAM--AWS.M2.CARDDEMO.DALYREJS.G0025V00
+        NONVSAM--AWS.M2.CARDDEMO.DALYREJS.G0026V00
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYREJS.G0022V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.DALYREJS
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYREJS.G0023V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     17
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.DALYREJS
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYREJS.G0024V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.DALYREJS
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYREJS.G0025V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.DALYREJS
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYREJS.G0026V00
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     18
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTG     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.DALYREJS
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYTRAN.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.153
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DALYTRAN.PS.INIT
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     19
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.DATEPARM
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTL     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DCL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYIX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.DISCGRP.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     20
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS.INDEX
+0DATA ---------- AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL--------------50     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL--------------50     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL-------------51     SPLITS-CI--------------0     EXCPS------------------3
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DA1BD67A542'
+        REC-RETRIEVED--------100     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     21
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       VOLSER------------YYYYTI     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01680000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'0168000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.DISCGRP.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------4     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DA1BD67A542' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTI     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'00190001'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'00190001'     HIGH-RBA-----------25087
+0NONVSAM ------- AWS.M2.CARDDEMO.JCL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYIX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     22
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.JCL.UTIL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT0     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.LISTCAT
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.244
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.LISTING
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.137
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        DSNTYPE----------LIBRARY
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTW     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     23
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.LOADLIB
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.046
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        DSNTYPE----------LIBRARY
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.204.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT1     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.LST
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.035
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.204.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT0     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.PRC.UTIL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYIX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.PROC
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     24
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATASET-OWNER-----(NULL)     CREATION--------2022.154
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTI     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.REXX.UTIL
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.047
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT1     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.SECURITY.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.040
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.047.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT0     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0GDG BASE ------ AWS.M2.CARDDEMO.SYSTRAN
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     25
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATASET-OWNER-----(NULL)     CREATION--------2022.192
+        RELEASE----------------2     LAST ALTER------2022.242
+      ATTRIBUTES
+        LIMIT------------------5      SCRATCH    NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.SYSTRAN.G0018V00
+        NONVSAM--AWS.M2.CARDDEMO.SYSTRAN.G0019V00
+        NONVSAM--AWS.M2.CARDDEMO.SYSTRAN.G0020V00
+        NONVSAM--AWS.M2.CARDDEMO.SYSTRAN.G0021V00
+        NONVSAM--AWS.M2.CARDDEMO.SYSTRAN.G0022V00
+0NONVSAM ------- AWS.M2.CARDDEMO.SYSTRAN.G0018V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTF     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.SYSTRAN
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.SYSTRAN.G0019V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.SYSTRAN
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.SYSTRAN.G0020V00
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     26
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTI     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.SYSTRAN
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.SYSTRAN.G0021V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.SYSTRAN
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.SYSTRAN.G0022V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     27
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.SYSTRAN
+      ATTRIBUTES
+0GDG BASE ------ AWS.M2.CARDDEMO.TCATBALF.BKUP
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     LAST ALTER------2022.189
+      ATTRIBUTES
+        LIMIT------------------5      SCRATCH    NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.TCATBALF.BKUP.G0005V00
+        NONVSAM--AWS.M2.CARDDEMO.TCATBALF.BKUP.G0006V00
+        NONVSAM--AWS.M2.CARDDEMO.TCATBALF.BKUP.G0007V00
+        NONVSAM--AWS.M2.CARDDEMO.TCATBALF.BKUP.G0008V00
+        NONVSAM--AWS.M2.CARDDEMO.TCATBALF.BKUP.G0009V00
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.BKUP.G0005V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TCATBALF.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.BKUP.G0006V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     28
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TCATBALF.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.BKUP.G0007V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TCATBALF.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.BKUP.G0008V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TCATBALF.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.BKUP.G0009V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     29
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TCATBALF.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.189.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO7     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TCATBALF.REPT
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     30
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS.INDEX
+0DATA ---------- AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------17     AVGLRECL--------------50     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL--------------50     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL------------100     SPLITS-CI--------------0     EXCPS----------------266
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED----------49     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED----------212     FREESPACE-%CA----------0          X'DC088DB70514A142'
+        REC-RETRIEVED--------312     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     31
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     VOLUME
+        VOLSER------------YYYYTT     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01410000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'0141000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------17     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------5     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DB70514A142' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTT     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'0019000B'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'0019000B'     HIGH-RBA-----------25087
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANCATG.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.149
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.198.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     32
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.201
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.202.0615
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS.INDEX
+0DATA ---------- AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.201
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------6     AVGLRECL--------------60     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL--------------60     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     33
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       REC-TOTAL-------------18     SPLITS-CI--------------0     EXCPS------------------2
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DBD52DC641A7E242'
+        REC-RETRIEVED----------0     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYTL     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01730000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'0173000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.201
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------6     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------3     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DBD52DC641A7E242' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTL     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'016A0007'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'016A0007'     HIGH-RBA-----------25087
+0GDG BASE ------ AWS.M2.CARDDEMO.TRANREPT
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     34
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     LAST ALTER------2022.199
+      ATTRIBUTES
+        LIMIT------------------5      SCRATCH    NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.TRANREPT.G0010V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANREPT.G0011V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANREPT.G0012V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANREPT.G0013V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANREPT.G0014V00
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANREPT.G0010V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANREPT
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANREPT.G0011V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANREPT
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     35
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANREPT.G0012V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.196
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANREPT
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANREPT.G0013V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTF     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANREPT
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANREPT.G0014V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     36
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     VOLUMES
+        VOLSER------------YYYYTO     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANREPT
+      ATTRIBUTES
+0GDG BASE ------ AWS.M2.CARDDEMO.TRANSACT.BKUP
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.155
+        RELEASE----------------2     LAST ALTER------2022.242
+      ATTRIBUTES
+        LIMIT------------------5      NOSCRATCH  NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.BKUP.G0072V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.BKUP.G0073V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.BKUP.G0074V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.BKUP.G0075V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.BKUP.G0076V00
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0072V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0073V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     37
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0074V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0075V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTT     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0076V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     38
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTY     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.BKUP
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0001V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.155
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.156.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT7     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0002V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.157.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTO     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     39
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0003V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.157.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0004V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.157.0618
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTA     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0005V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     40
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0006V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTK     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0007V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0618
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTA     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0008V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0618
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     41
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO7     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0009V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0618
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0010V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTK     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0011V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     42
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0012V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0013V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0014V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.164
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     43
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0015V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.164
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0016V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0017V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     44
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0018V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTL     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0019V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTO     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     45
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0020V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0021V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0022V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO7     DEVTYPE------X'3010200F'     FSEQN------------------0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     46
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0023V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0024V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0025V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     47
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0026V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.189
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.190.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0027V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.192
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.193.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0028V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.192
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     48
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.193.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0029V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.192
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.193.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0030V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.193
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.194.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0031V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.193
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     49
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.194.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0032V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.193
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.194.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTA     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0033V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.193
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.194.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0034V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     50
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTO     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0035V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0036V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     51
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0037V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTF     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0038V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0039V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     52
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0040V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0041V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0042V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     53
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTK     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0043V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0044V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTL     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0045V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     54
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0046V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTI     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0047V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTF     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0048V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.196
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     55
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTA     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0049V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.196
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0050V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.196
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTU     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0051V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     56
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0052V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTL     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0053V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     57
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0054V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0055V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTA     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0056V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT9     DEVTYPE------X'3010200F'     FSEQN------------------0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     58
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0057V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0058V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0059V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     59
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0060V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0061V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO7     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0062V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     60
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0063V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0064V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTO     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0065V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     61
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTS     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0066V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0067V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0068V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     62
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0069V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTL     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0070V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     63
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.BKUP.G0071V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0GDG BASE ------ AWS.M2.CARDDEMO.TRANSACT.COMBINED
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.192
+        RELEASE----------------2     LAST ALTER------2022.242
+      ATTRIBUTES
+        LIMIT------------------5      SCRATCH    NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0015V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0016V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0017V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0018V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0019V00
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0015V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.COMBINED
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     64
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0016V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.198
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.199.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.COMBINED
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0017V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTF     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.COMBINED
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0018V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     65
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     VOLUMES
+        VOLSER------------YYYYO7     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.COMBINED
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.COMBINED.G0019V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.COMBINED
+      ATTRIBUTES
+0GDG BASE ------ AWS.M2.CARDDEMO.TRANSACT.DALY
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.155
+        RELEASE----------------2     LAST ALTER------2022.199
+      ATTRIBUTES
+        LIMIT------------------5      NOSCRATCH  NOEMPTY    LIFO       NOPURGE    NOEXTENDED
+      ASSOCIATIONS
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.DALY.G0026V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.DALY.G0027V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.DALY.G0028V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.DALY.G0029V00
+        NONVSAM--AWS.M2.CARDDEMO.TRANSACT.DALY.G0030V00
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0026V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     66
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.DALY
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0027V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTA     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.DALY
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0028V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT6     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.DALY
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0029V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     67
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTI     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.DALY
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0030V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.199
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS------------ACTIVE
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.200.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS
+        GDG------AWS.M2.CARDDEMO.TRANSACT.DALY
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0001V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.155
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.156.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTB     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     68
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0002V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.155
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.156.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0003V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.155
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.156.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTP     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0004V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.157.0618
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     69
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0005V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.157.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0006V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.156
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.157.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0007V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     70
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT4     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0008V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0009V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTM     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0010V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.160
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     71
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.161.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYT8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0011V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTI     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0012V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0618
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO7     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0013V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     72
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0014V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0015V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.161
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.162.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0016V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     73
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.164
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0017V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.164
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0617
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO8     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0018V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.187
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.188.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTQ     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     74
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0019V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.194
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTX     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0020V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.195.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYO9     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0021V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTX     DEVTYPE------X'3010200F'     FSEQN------------------0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     75
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0022V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTF     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0023V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.195
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.196.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0024V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.196
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     76
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTO     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANSACT.DALY.G0025V00
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.196
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+        STATUS--------ROLLED-OFF
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.197.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTK     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0PATH ---------- AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX
+        DATA-----AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.DATA
+        INDEX----AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.INDEX
+        DATA-----AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.INDEX
+      ATTRIBUTES
+        UPDATE
+0CLUSTER ------- AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     77
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.INDEX
+        AIX------AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX
+0DATA ---------- AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL-------------350     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL-------------350     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(2,3)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL------------311     SPLITS-CI--------------0     EXCPS------------------8
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DCBBC3A1142'
+        REC-RETRIEVED--------311     FREESPC-----------718848
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYT4     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01700000'     LOW-RBA----------------0     TRACKS----------------15
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     78
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       HIGH-CCHH----X'0170000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN----------------16     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(2,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------4     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DCBBC3A1142' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYT4     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'00190007'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'00190007'     HIGH-RBA-----------25087
+0AIX ----------- AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        SMS MANAGED--------(YES)
+        CA-RECLAIM---------(YES)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ATTRIBUTES
+        UPGRADE
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.DATA
+        INDEX----AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.INDEX
+        CLUSTER--AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     79
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       PATH-----AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH
+0DATA ---------- AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX
+      ATTRIBUTES
+        KEYLEN----------------26     AVGLRECL-------------350     BUFSPACE-----------37888     CISIZE-------------18432
+        RKP--------------------5     MAXLRECL-------------350     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        AXRKP----------------304
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        SPANNED       NONUNIQKEY
+      STATISTICS
+        REC-TOTAL-------------39     SPLITS-CI--------------0     EXCPS------------------3
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DD1F1FB0042'
+        REC-RETRIEVED----------0     FREESPC----------4128768
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA---------4147200
+        SPACE-PRI--------------5     HI-U-RBA----------829440
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTE     PHYREC-SIZE--------18432     HI-A-RBA---------4147200     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'01730000'     LOW-RBA----------------0     TRACKS----------------75
+        HIGH-CCHH----X'0177000E'     HIGH-RBA---------4147199
+0INDEX --------- AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        AIX------AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX
+      ATTRIBUTES
+        KEYLEN----------------26     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE--------------1024
+        RKP--------------------5     MAXLRECL------------1017     EXCPEXIT----------(NULL)     CI/CA-----------------33
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     80
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------3     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DD1F1FB0042' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------32768                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------33792
+        SPACE-PRI--------------1     HI-U-RBA------------1024
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTE     PHYREC-SIZE---------1024     HI-A-RBA-----------33792     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------33     HI-U-RBA------------1024     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'0019000C'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'0019000C'     HIGH-RBA-----------33791
+0NONVSAM ------- AWS.M2.CARDDEMO.TRANTYPE.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.136
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.165.0616
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTL     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     81
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS.DATA
+        INDEX----AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS.INDEX
+0DATA ---------- AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS.DATA
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------2     AVGLRECL--------------60     BUFSPACE-----------37376     CISIZE-------------18432
+        RKP--------------------0     MAXLRECL--------------60     EXCPEXIT----------(NULL)     CI/CA-----------------45
+        SHROPTNS(1,4)   RECOVERY     UNIQUE             ERASE     INDEXED       NOWRITECHK     UNORDERED        NOREUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL--------------7     SPLITS-CI--------------0     EXCPS------------------2
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DABD6622842'
+        REC-RETRIEVED----------0     FREESPC-----------811008
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA----------829440
+        SPACE-PRI--------------1     HI-U-RBA----------829440
+        SPACE-SEC--------------5
+      VOLUME
+        VOLSER------------YYYYTP     PHYREC-SIZE--------18432     HI-A-RBA----------829440     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------3     HI-U-RBA----------829440     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+        EXTENTS:
+        LOW-CCHH-----X'016A0000'     LOW-RBA----------------0     TRACKS----------------15
+        HIGH-CCHH----X'016A000E'     HIGH-RBA----------829439
+0INDEX --------- AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS.INDEX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     82
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0     PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------2     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE---------------512
+        RKP--------------------0     MAXLRECL-------------505     EXCPEXIT----------(NULL)     CI/CA-----------------49
+        SHROPTNS(1,4)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     NOREUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------3     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------6
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DABD6622842' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------24576                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------25088
+        SPACE-PRI--------------1     HI-U-RBA-------------512
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTP     PHYREC-SIZE----------512     HI-A-RBA-----------25088     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK-----------49     HI-U-RBA-------------512     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'0169000E'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'0169000E'     HIGH-RBA-----------25087
+0NONVSAM ------- AWS.M2.CARDDEMO.USRSEC.PS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+        DATACLASS --------(NULL)     LBACKUP ---2022.243.0615
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      VOLUMES
+        VOLSER------------YYYYTH     DEVTYPE------X'3010200F'     FSEQN------------------0
+      ASSOCIATIONS--------(NULL)
+      ATTRIBUTES
+0CLUSTER ------- AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      SMSDATA
+        STORAGECLASS -----SCTECH     MANAGEMENTCLASS---(NULL)
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     83
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       DATACLASS --------(NULL)     LBACKUP ---0000.000.0000
+        CA-RECLAIM---------(YES)
+        EATTR-------------(NULL)
+        BWO STATUS------00000000     BWO TIMESTAMP---00000 00:00:00.0
+        BWO---------------(NULL)
+      RLSDATA
+        LOG ----------------(NULL)   RECOVERY REQUIRED --(NO)     FRLOG ------------(NULL)
+        VSAM QUIESCED -------(NO)    RLS IN USE ---------(NO)     LOGREPLICATE-------------(NO)
+0       LOGSTREAMID-----------------------------(NULL)
+        RECOVERY TIMESTAMP LOCAL-----X'0000000000000000'
+        RECOVERY TIMESTAMP GMT-------X'0000000000000000'
+        DATABASE -----------------(NULL)
+      ENCRYPTIONDATA
+        DATA SET ENCRYPTION-----(NO)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        DATA-----AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS.DAT
+        INDEX----AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS.IDX
+0DATA ---------- AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS.DAT
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+        ACCOUNT-INFO-----------------------------------(NULL)
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------8     AVGLRECL--------------80     BUFSPACE-----------24576     CISIZE--------------8192
+        RKP--------------------0     MAXLRECL--------------80     EXCPEXIT----------(NULL)     CI/CA-----------------90
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     INDEXED       NOWRITECHK     UNORDERED          REUSE
+        NONSPANNED
+      STATISTICS
+        REC-TOTAL-------------10     SPLITS-CI--------------0     EXCPS------------------3
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI---------10     SYSTEM-TIMESTAMP:
+        REC-UPDATED------------0     FREESPACE-%CA---------15          X'DC088DB135184842'
+        REC-RETRIEVED----------0     FREESPC----------2203648
+      ALLOCATION
+        SPACE-TYPE------CYLINDER     HI-A-RBA---------2211840
+        SPACE-PRI--------------3     HI-U-RBA----------737280
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTC     PHYREC-SIZE---------8192     HI-A-RBA---------2211840     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------6     HI-U-RBA----------737280     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA-------------15
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     84
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0       EXTENTS:
+        LOW-CCHH-----X'03140000'     LOW-RBA----------------0     TRACKS----------------45
+        HIGH-CCHH----X'0316000E'     HIGH-RBA---------2211839
+0INDEX --------- AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS.IDX
+      IN-CAT --- CATALOG.XXXXXXXX.YYYY
+      HISTORY
+        DATASET-OWNER-----(NULL)     CREATION--------2022.242
+        RELEASE----------------2     EXPIRATION------0000.000
+      PROTECTION-PSWD-----(NULL)     RACF----------------(NO)
+      ASSOCIATIONS
+        CLUSTER--AWS.M2.CARDDEMO.USRSEC.VSAM.KSDS
+      ATTRIBUTES
+        KEYLEN-----------------8     AVGLRECL---------------0     BUFSPACE---------------0     CISIZE--------------8192
+        RKP--------------------0     MAXLRECL------------8185     EXCPEXIT----------(NULL)     CI/CA------------------6
+        SHROPTNS(1,3)   RECOVERY     UNIQUE           NOERASE     NOWRITECHK     UNORDERED     REUSE
+      STATISTICS
+        REC-TOTAL--------------1     SPLITS-CI--------------0     EXCPS------------------3     INDEX:
+        REC-DELETED------------0     SPLITS-CA--------------0     EXTENTS----------------1     LEVELS-----------------1
+        REC-INSERTED-----------0     FREESPACE-%CI----------0     SYSTEM-TIMESTAMP:            ENTRIES/SECT-----------9
+        REC-UPDATED------------0     FREESPACE-%CA----------0          X'DC088DB135184842' SEQ-SET-RBA----------------0
+        REC-RETRIEVED----------0     FREESPC------------40960                              HI-LEVEL-RBA---------------0
+      ALLOCATION
+        SPACE-TYPE---------TRACK     HI-A-RBA-----------49152
+        SPACE-PRI--------------1     HI-U-RBA------------8192
+        SPACE-SEC--------------1
+      VOLUME
+        VOLSER------------YYYYTC     PHYREC-SIZE---------8192     HI-A-RBA-----------49152     EXTENT-NUMBER----------1
+        DEVTYPE------X'3010200F'     PHYRECS/TRK------------6     HI-U-RBA------------8192     EXTENT-TYPE--------X'00'
+        VOLFLAG------------PRIME     TRACKS/CA--------------1
+        EXTENTS:
+        LOW-CCHH-----X'00190004'     LOW-RBA----------------0     TRACKS-----------------1
+        HIGH-CCHH----X'00190004'     HIGH-RBA-----------49151
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     85
+-                             LISTING FROM CATALOG -- CATALOG.XXXXXXXX.YYYY
+0         THE NUMBER OF ENTRIES PROCESSED WAS:
+                    AIX -------------------3
+                    ALIAS -----------------0
+                    CLUSTER --------------10
+                    DATA -----------------13
+                    GDG -------------------7
+                    INDEX ----------------13
+                    NONVSAM -------------160
+                    PAGESPACE -------------0
+                    PATH ------------------3
+                    SPACE -----------------0
+                    USERCATALOG -----------0
+                    TAPELIBRARY -----------0
+                    TAPEVOLUME ------------0
+                    TOTAL ---------------209
+0         THE NUMBER OF PROTECTED ENTRIES SUPPRESSED WAS 0
+0IDC0001I FUNCTION COMPLETED, HIGHEST CONDITION CODE WAS 0
+1IDCAMS  SYSTEM SERVICES                                           TIME: 15:36:44        09/01/22     PAGE     86
+0
+0IDC0002I IDCAMS PROCESSING COMPLETE. MAXIMUM CONDITION CODE WAS 0
