@@ -1,6 +1,6 @@
-## CARDDEMO -- Mainframe Card Demo Application
+## CardDemo -- Mainframe CardDemo Application
 
-- [CARDDEMO -- Mainframe Card Demo Application](#carddemo----mainframe-card-demo-application)
+- [CardDemo -- Mainframe CardDemo Application](#carddemo----mainframe-card-demo-application)
 - [Description](#description)
 - [Technologies used](#technologies-used)
 - [Installation on the mainframe](#installation-on-the-mainframe)
@@ -23,7 +23,7 @@
 <br/>
 
 ## Description
-Card Demo is a Mainframe application designed and developed to test and showcase AWS and partner technology for mainframe migration and modernization use-cases such as discovery, migration, modernization, performance test, augmentation, service enablement, service extraction, test creation, test harness, etc.
+CardDemo is a Mainframe application designed and developed to test and showcase AWS and partner technology for mainframe migration and modernization use-cases such as discovery, migration, modernization, performance test, augmentation, service enablement, service extraction, test creation, test harness, etc.
 
 Note that the intent of this application is to provide mainframe coding scenarios to excercise analysis, transformation and migration tooling. So, the coding style is not uniform across the application
 
@@ -152,7 +152,7 @@ To install this repository on the mainframe please follow the following steps
       ```
 6. Enjoy the demo
 
-   * For online functions : Start the credit card demo application using the CC00 transaction
+   * For online functions : Start the CardDemo application using the CC00 transaction
      - Enter userid ADMIN001 and the initially configured password PASSWORD to manage users
      - Enter userid USER0001 and the initially configured password PASSWORD to access back office functions
    * For batch            : See the instructions for running full batch below.
