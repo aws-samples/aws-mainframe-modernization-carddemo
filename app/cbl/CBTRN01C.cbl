@@ -225,8 +225,9 @@
            EXIT.
       *---------------------------------------------------------------*
        2000-LOOKUP-XREF.
+           MOVE XREF-CARD-NUM TO FD-XREF-CARD-NUM
            READ XREF-FILE  RECORD INTO CARD-XREF-RECORD
-           KEY IS XREF-CARD-NUM
+           KEY IS FD-XREF-CARD-NUM
                 INVALID KEY
                   DISPLAY 'INVALID CARD NUMBER FOR XREF'
                   MOVE 4 TO WS-XREF-READ-STATUS
@@ -238,8 +239,9 @@
            END-READ.
       *---------------------------------------------------------------*
        3000-READ-ACCOUNT.
+           MOVE ACCT-ID TO FD-ACCT-ID
            READ ACCOUNT-FILE RECORD INTO ACCOUNT-RECORD
-           KEY IS ACCT-ID
+           KEY IS FD-ACCT-ID
                 INVALID KEY
                   DISPLAY 'INVALID ACCOUNT NUMBER FOUND'
                   MOVE 4 TO WS-ACCT-READ-STATUS
@@ -485,4 +487,5 @@
                DISPLAY 'FILE STATUS IS: NNNN' IO-STATUS-04
            END-IF
            EXIT.
+
 
