@@ -15,7 +15,7 @@
            05  DALYTRAN-CARD-NUM                       PIC X(16).               
            05  DALYTRAN-ORIG-TS                        PIC X(26).               
            05  DALYTRAN-PROC-TS                        PIC X(26).               
-           05  FILLER                                  PIC X(20).                     
+           05  FILLER                                  PIC X(20).       
       *
       * Ver: CardDemo_v1.0-15-g27d6c6f-68 Date: 2022-07-19 23:16:01 CDT
       *

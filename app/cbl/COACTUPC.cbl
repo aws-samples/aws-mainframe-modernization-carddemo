@@ -583,22 +583,14 @@
       ******************************************************************
       * Literals for use in INSPECT statements
       ******************************************************************
-          05 FILLER.
-             10 FILLER.
+          05 LIT-ALL-ALPHANUM-FROM-X.
+             10 LIT-ALL-ALPHA-FROM-X.
                 15 LIT-UPPER                       PIC X(26)
                                  VALUE 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.
                 15 LIT-LOWER                       PIC X(26)
                                  VALUE 'abcdefghijklmnopqrstuvwxyz'.
              10 LIT-NUMBERS                        PIC X(10)
-                                 VALUE '0123456789'.
-      ******************************************************************
-      *Level 66 variables to add some variety
-      ******************************************************************
-          66 LIT-ALL-ALPHA-FROM-X       RENAMES  LIT-UPPER
-                                        THRU     LIT-LOWER.
-          66 LIT-ALL-ALPHANUM-FROM-X    RENAMES  LIT-UPPER
-                                        THRU     LIT-NUMBERS.
-
+                                 VALUE '0123456789'.             
       ******************************************************************
       *Other common working storage Variables
       ******************************************************************
@@ -3122,8 +3114,8 @@
               WHEN FLG-LAST-NAME-BLANK
                   MOVE -1              TO ACSLNAML OF CACTUPAI
       *    Address Line 1
-              WHEN FLG-FICO-SCORE-NOT-OK
-              WHEN FLG-FICO-SCORE-BLANK
+              WHEN FLG-ADDRESS-LINE-1-NOT-OK
+              WHEN FLG-ADDRESS-LINE-1-BLANK
                   MOVE -1              TO ACSADL1L OF CACTUPAI
       *    State (appears next to Line 2 on screen before city)
               WHEN FLG-STATE-NOT-OK

@@ -25,7 +25,7 @@
 ## Description
 Card Demo is a Mainframe application designed and developed to test and showcase AWS and partner technology for mainframe migration and modernization use-cases such as discovery, migration, modernization, performance test, augmentation, service enablement, service extraction, test creation, test harness, etc.
 
-Note that the intent of this application is to provide mainframe coding scenarios to exercise analysis, transformation and migration tooling. So, the coding style is not uniform across the application
+Note that the intent of this application is to provide mainframe coding scenarios to excercise analysis, transformation and migration tooling. So, the coding style is not uniform across the application
 
 <br/>
 
@@ -101,8 +101,7 @@ To install this repository on the mainframe please follow the following steps
    
    You should use the compile process followed by your mainframe shopfloor
    
-   We have however provided some sample JCLs in UTIL folders in git to help you craft the JCL
-   
+   We have however provided some sample JCLs in the samples folder in git to help you craft the JCL   
 
 5. Create resources in the CARDDEMO group in CICS
    
@@ -154,7 +153,9 @@ To install this repository on the mainframe please follow the following steps
 6. Enjoy the demo
 
    * For online functions : Start the credit card demo application using the CC00 transaction
-   * For running batch    : Use the JCLs described in the JCL dataset
+     - Enter userid ADMIN001 and the initially configured password PASSWORD to manage users
+     - Enter userid USER0001 and the initially configured password PASSWORD to access back office functions
+   * For batch            : See the instructions for running full batch below.
 
 ## Running full batch 
    
@@ -181,7 +182,7 @@ To install this repository on the mainframe please follow the following steps
 <br/>
 
 ## Application Details 
-The CardDemo is a Credit Card management application, built primarily using COBOL programming language. The application has various functions that allow users to manage Account, Credit card, Transaction and Bill payment. 
+The CardDemo is a Credit Card management application, built primarily using COBOL programming language. The application has various functions that allows users to manage Account, Credit card, Transaction and Bill payment. 
 
 There are 2 types of users:
 * Regular User
@@ -271,7 +272,7 @@ The Regular user can perform the user functions and the Admin users can only per
 
 ## Support
 
-If you have questions or requests for improvement please raise a ticket .... TBD
+If you have questions or requests for improvement please raise an issue in the repository.
 
 <br/>
 
@@ -281,7 +282,7 @@ The following features are planned for upcoming releases
 
 1. More database types
 
-   1. Relational database usage : Db2 
+   1. Relational Database usage : Db2 
    
    2. Hierachical database calls : IMS
 
@@ -311,7 +312,7 @@ This is intended to be a community resource and it is released under the Apache 
 
 ## Project status
 
-We are planning a v2 of this application in October 2022.
+We are planning a v2 of this application in December 2022.
 
 Watch this space for updates
 
