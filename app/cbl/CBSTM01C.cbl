@@ -218,10 +218,69 @@
        01  WS-TRN-TBL-CNTR.                                                     
            05  WS-TRN-TBL-CTR OCCURS 51 TIMES.                                  
                10  WS-TRCT               PIC S9(4) COMP.                        
-                                                                                
+                                                                       
+       01  PSAPTR                  POINTER.                            
+       01  BUMP-TIOT               PIC S9(08) BINARY VALUE ZERO.       
+       01  TIOT-INDEX              REDEFINES BUMP-TIOT POINTER.        
+       LINKAGE SECTION.                                                
+       01  ALIGN-PSA               PIC 9(16) BINARY.                   
+       01  PSA-BLOCK.                                                  
+           05  FILLER       PIC X(536).                                
+           05  TCB-POINT    POINTER.                                   
+       01  TCB-BLOCK.                                                  
+           05  FILLER       PIC X(12).                                 
+           05  TIOT-POINT   POINTER.                                   
+       01  TIOT-BLOCK.                                                 
+           05  TIOTNJOB     PIC X(08).                                 
+           05  TIOTJSTP     PIC X(08).                                 
+           05  TIOTPSTP     PIC X(08).                                 
+       01  TIOT-ENTRY.                                                 
+           05  ONE-TIOT.                                               
+               10  FILLER   PIC X(04).                                 
+               10  TIOCDDNM PIC X(08).                                 
+               10  FILLER   PIC X(05).                                 
+               10  UCB-ADDR PIC X(03).                                 
+                 88  NULL-UCB     VALUE LOW-VALUES.                    
+           05  FILLER       PIC X(04).                                 
+             88  END-OF-TIOT      VALUE LOW-VALUES.                    
+                                                                                                                                                       
       *****************************************************************         
        PROCEDURE DIVISION.                                                      
-                                                                                
+      *****************************************************************
+      * GETHER SYSTEM LEVEL INFORMATION FROM IBM STANDARD MACROS      *
+      * WHEN RUNNING THIS PROGRAM YOU WILL GET BELOW INFORMATION:     *
+      * 1. NAME OF THE JOB WHICH IS RUNNING THIS PROGRAM.             *
+      * 2. JOB STEP WHERE THIS PROGRAM IS GETTING EXECUTED.           *
+      * 3. DD NAMES OF ALL THE FILES GETTING USED IN THE STEP.        *
+      *****************************************************************
+           SET ADDRESS OF PSA-BLOCK TO PSAPTR.                         
+           SET ADDRESS OF TCB-BLOCK TO TCB-POINT.                      
+           SET ADDRESS OF TIOT-BLOCK TO TIOT-POINT.                    
+           SET TIOT-INDEX TO TIOT-POINT.                               
+           DISPLAY 'JOB NAME    : ' TIOTNJOB.                          
+           DISPLAY 'STEP NAME   : ' TIOTJSTP.                          
+           DISPLAY 'PSAPTR      : ' PSAPTR                             
+           DISPLAY 'TCBBLK      : ' TCB-BLOCK                          
+           COMPUTE BUMP-TIOT = BUMP-TIOT + LENGTH OF TIOT-BLOCK.       
+           SET ADDRESS OF TIOT-ENTRY TO TIOT-INDEX.                    
+                                                                       
+           PERFORM UNTIL END-OF-TIOT                                   
+               DISPLAY 'TIOT-ENTRY  : ' TIOT-ENTRY                     
+               IF NOT NULL-UCB                                         
+                   DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD VALID UCB'  
+               ELSE                                                    
+                   DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD NULL UCB'   
+               END-IF                                                  
+               COMPUTE BUMP-TIOT = BUMP-TIOT + LENGTH OF ONE-TIOT      
+               SET ADDRESS OF TIOT-ENTRY TO TIOT-INDEX                 
+           END-PERFORM.                                                
+           DISPLAY 'TIOT-ENTRY  : ' TIOT-ENTRY                         
+           IF NOT NULL-UCB                                             
+               DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD VALID UCB'      
+           ELSE                                                        
+               DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD NULL UCB'       
+           END-IF.                                                     
+                                                                                                                                                       
            INITIALIZE WS-TRNX-TABLE WS-TRN-TBL-CNTR.                            
            MOVE 0 TO FL-CNT.                                                    
            SET 1ST-READ-Y TO TRUE.                                              
