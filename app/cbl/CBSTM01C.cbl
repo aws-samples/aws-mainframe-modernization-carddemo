@@ -1,13 +1,36 @@
        IDENTIFICATION DIVISION.                                                 
        PROGRAM-ID.    CBSTM01C.                                                 
-       AUTHOR.        AWS.                                                      
-      *********************************************************************************
-      *  This program is to create statement based on the data in transaction file
-      *  It is using below COBOL statements to convert into JAVA for testing:
-      *  1. GO TO statements
-      *  2. COMP and COMP-3 variables
-      *  3. 2 dimensional array
-      *********************************************************************************
+       AUTHOR.        AWS.                                   
+      ******************************************************************
+      * Program     : CBSTM01C.CBL                                      
+      * Application : CardDemo                                          
+      * Type        : BATCH COBOL Program                                
+      * Function    : Print Account Statements from Transaction data.   
+      ******************************************************************
+      * Copyright Amazon.com, Inc. or its affiliates.                   
+      * All Rights Reserved.                                            
+      *                                                                 
+      * Licensed under the Apache License, Version 2.0 (the "License"). 
+      * You may not use this file except in compliance with the License.
+      * You may obtain a copy of the License at                         
+      *                                                                 
+      *    http://www.apache.org/licenses/LICENSE-2.0                   
+      *                                                                 
+      * Unless required by applicable law or agreed to in writing,      
+      * software distributed under the License is distributed on an     
+      * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,    
+      * either express or implied. See the License for the specific     
+      * language governing permissions and limitations under the License
+      ******************************************************************
+      * This program is to create statement based on the data in 
+      * transaction file. The following features are excercised
+      * to help create excercise modernization tooling
+      ******************************************************************
+      *  1. Mainframe Control block addressing
+      *  2. Alter and GO TO statements
+      *  3. COMP and COMP-3 variables
+      *  4. 2 dimensional array
+      ******************************************************************
        ENVIRONMENT DIVISION.                                                    
        INPUT-OUTPUT SECTION.                                                    
        FILE-CONTROL.                                                            
@@ -131,16 +154,16 @@
            05 COB-REST                  PIC X(05).                              
        01  DB2-FORMAT-TS                PIC X(26).                              
        01  FILLER REDEFINES DB2-FORMAT-TS.                                      
-           06 DB2-YYYY                  PIC X(004).                      E      
-           06 DB2-STREEP-1              PIC X.                           -      
-           06 DB2-MM                    PIC X(002).                      M      
-           06 DB2-STREEP-2              PIC X.                           -      
-           06 DB2-DD                    PIC X(002).                      D      
-           06 DB2-STREEP-3              PIC X.                           -      
-           06 DB2-HH                    PIC X(002).                      U      
-           06 DB2-DOT-1                 PIC X.                                  
-           06 DB2-MIN                   PIC X(002).                             
-           06 DB2-DOT-2                 PIC X.                                  
+           06 DB2-YYYY                  PIC X(004).                       
+           06 DB2-STREEP-1              PIC X.                            
+           06 DB2-MM                    PIC X(002).                       
+           06 DB2-STREEP-2              PIC X.                            
+           06 DB2-DD                    PIC X(002).                       
+           06 DB2-STREEP-3              PIC X.                            
+           06 DB2-HH                    PIC X(002).                       
+           06 DB2-DOT-1                 PIC X.                            
+           06 DB2-MIN                   PIC X(002).                       
+           06 DB2-DOT-2                 PIC X.                            
            06 DB2-SS                    PIC X(002).                             
            06 DB2-DOT-3                 PIC X.                                  
            06 DB2-MIL                   PIC 9(002).                             
@@ -221,7 +244,8 @@
                                                                        
        01  PSAPTR                  POINTER.                            
        01  BUMP-TIOT               PIC S9(08) BINARY VALUE ZERO.       
-       01  TIOT-INDEX              REDEFINES BUMP-TIOT POINTER.        
+       01  TIOT-INDEX              REDEFINES BUMP-TIOT POINTER.   
+       
        LINKAGE SECTION.                                                
        01  ALIGN-PSA               PIC 9(16) BINARY.                   
        01  PSA-BLOCK.                                                  
@@ -243,29 +267,28 @@
                  88  NULL-UCB     VALUE LOW-VALUES.                    
            05  FILLER       PIC X(04).                                 
              88  END-OF-TIOT      VALUE LOW-VALUES.                    
-                                                                                                                                                       
+                                                                        
       *****************************************************************         
        PROCEDURE DIVISION.                                                      
       *****************************************************************
-      * GETHER SYSTEM LEVEL INFORMATION FROM IBM STANDARD MACROS      *
-      * WHEN RUNNING THIS PROGRAM YOU WILL GET BELOW INFORMATION:     *
+      * GATHER SYSTEM LEVEL INFORMATION FROM MAINFRAME BLOCKS         *
       * 1. NAME OF THE JOB WHICH IS RUNNING THIS PROGRAM.             *
       * 2. JOB STEP WHERE THIS PROGRAM IS GETTING EXECUTED.           *
       * 3. DD NAMES OF ALL THE FILES GETTING USED IN THE STEP.        *
       *****************************************************************
-           SET ADDRESS OF PSA-BLOCK TO PSAPTR.                         
-           SET ADDRESS OF TCB-BLOCK TO TCB-POINT.                      
-           SET ADDRESS OF TIOT-BLOCK TO TIOT-POINT.                    
-           SET TIOT-INDEX TO TIOT-POINT.                               
+           SET ADDRESS OF PSA-BLOCK   TO PSAPTR.                        
+           SET ADDRESS OF TCB-BLOCK   TO TCB-POINT.                     
+           SET ADDRESS OF TIOT-BLOCK  TO TIOT-POINT.                    
+           SET TIOT-INDEX             TO TIOT-POINT.                  
            DISPLAY 'JOB NAME    : ' TIOTNJOB.                          
            DISPLAY 'STEP NAME   : ' TIOTJSTP.                          
-           DISPLAY 'PSAPTR      : ' PSAPTR                             
-           DISPLAY 'TCBBLK      : ' TCB-BLOCK                          
+      *    DISPLAY 'PSAPTR      : ' PSAPTR                             
+      *    DISPLAY 'TCBBLK      : ' TCB-BLOCK                          
            COMPUTE BUMP-TIOT = BUMP-TIOT + LENGTH OF TIOT-BLOCK.       
            SET ADDRESS OF TIOT-ENTRY TO TIOT-INDEX.                    
                                                                        
            PERFORM UNTIL END-OF-TIOT                                   
-               DISPLAY 'TIOT-ENTRY  : ' TIOT-ENTRY                     
+      *        DISPLAY 'TIOT-ENTRY  : ' TIOT-ENTRY                     
                IF NOT NULL-UCB                                         
                    DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD VALID UCB'  
                ELSE                                                    
@@ -273,35 +296,39 @@
                END-IF                                                  
                COMPUTE BUMP-TIOT = BUMP-TIOT + LENGTH OF ONE-TIOT      
                SET ADDRESS OF TIOT-ENTRY TO TIOT-INDEX                 
-           END-PERFORM.                                                
-           DISPLAY 'TIOT-ENTRY  : ' TIOT-ENTRY                         
+           END-PERFORM.
+           
+      *    DISPLAY 'TIOT-ENTRY  : ' TIOT-ENTRY                         
            IF NOT NULL-UCB                                             
                DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD VALID UCB'      
            ELSE                                                        
                DISPLAY 'DD NAME     : ' TIOCDDNM ' HAD NULL UCB'       
            END-IF.                                                     
-                                                                                                                                                       
+                                                                        
            INITIALIZE WS-TRNX-TABLE WS-TRN-TBL-CNTR.                            
            MOVE 0 TO FL-CNT.                                                    
            SET 1ST-READ-Y TO TRUE.                                              
                                                                                 
        0000-START.                                                              
-                                                                                
-           ADD 1 TO FL-CNT.                                                     
+           ADD 1 TO FL-CNT.
            EVALUATE WS-FL-DD                                                    
              WHEN 'TRANFILE'                                                    
-               GO TO 8100-TRNXFILE-OPEN                                         
+               ALTER 8100-FILE-OPEN TO PROCEED TO 8100-TRNXFILE-OPEN
+               GO TO 8100-FILE-OPEN
              WHEN 'XREFFILE'                                                    
-               GO TO 8200-XREFFILE-OPEN                                         
+               ALTER 8100-FILE-OPEN TO PROCEED TO 8200-XREFFILE-OPEN    
+               GO TO 8100-FILE-OPEN
              WHEN 'CUSTFILE'                                                    
-               GO TO 8300-CUSTFILE-OPEN                                         
+               ALTER 8100-FILE-OPEN TO PROCEED TO 8300-CUSTFILE-OPEN    
+               GO TO 8100-FILE-OPEN
              WHEN 'ACCTFILE'                                                    
-               GO TO 8400-ACCTFILE-OPEN                                         
+               ALTER 8100-FILE-OPEN TO PROCEED TO 8400-ACCTFILE-OPEN    
+               GO TO 8100-FILE-OPEN
              WHEN 'READTRAN'                                                    
                GO TO 8500-READTRAN-READ                                         
              WHEN OTHER                                                         
-               GO TO 9999-GOBACK.                                               
-                                                                                
+               GO TO 9999-GOBACK.
+                                                                              
        1000-MAINLINE.                                                           
            PERFORM UNTIL END-OF-FILE = 'Y'                                      
                IF  END-OF-FILE = 'N'                                            
@@ -317,13 +344,22 @@
                END-IF                                                           
            END-PERFORM.                                                         
                                                                                 
-           PERFORM 9100-TRNXFILE-CLOSE.                                         
-           PERFORM 9200-XREFFILE-CLOSE.                                         
-           PERFORM 9300-CUSTFILE-CLOSE.                                         
-           PERFORM 9400-ACCTFILE-CLOSE.                                         
-                                                                                
-       9999-GOBACK.                                                             
-           GOBACK.                                                              
+           PERFORM 9100-TRNXFILE-CLOSE.   
+           PERFORM 9200-XREFFILE-CLOSE.          
+           PERFORM 9300-CUSTFILE-CLOSE.          
+           PERFORM 9400-ACCTFILE-CLOSE.          
+   
+
+
+
+
+
+
+
+   
+       9999-GOBACK.                                                     
+           GOBACK.                                                      
+                                                                        
       *---------------------------------------------------------------*         
        1000-XREFFILE-GET-NEXT.                                                  
            READ XREF-FILE INTO CARD-XREF-RECORD.                                
@@ -334,8 +370,9 @@
                    MOVE 16 TO APPL-RESULT                                       
                ELSE                                                             
                    MOVE 12 TO APPL-RESULT                                       
-               END-IF                                                           
-           END-IF                                                               
+               END-IF   
+           END-IF       
+          
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -476,7 +513,11 @@
                                                                                 
            EXIT.                                                                
                                                                                 
-      *---------------------------------------------------------------*         
+      *---------------------------------------------------------------*
+       8100-FILE-OPEN.
+           GO TO 8100-TRNXFILE-OPEN
+           .
+                                                                                
        8100-TRNXFILE-OPEN.                                                      
            MOVE 8 TO APPL-RESULT.                                               
            OPEN INPUT TRNX-FILE.                                                
@@ -484,7 +525,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF.                                                              
+           END-IF.      
+      
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -509,7 +551,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF.                                                              
+           END-IF.    
+        
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -529,7 +572,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF.                                                              
+           END-IF.      
+    
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -549,7 +593,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF.                                                              
+           END-IF.   
+      
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -598,7 +643,8 @@
                MOVE 0 TO  APPL-RESULT                                           
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF                                                               
+           END-IF       
+       
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -617,7 +663,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF                                                               
+           END-IF     
+     
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -635,7 +682,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF                                                               
+           END-IF 
+         
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
@@ -653,7 +701,8 @@
                MOVE 0 TO APPL-RESULT                                            
            ELSE                                                                 
                MOVE 12 TO APPL-RESULT                                           
-           END-IF                                                               
+           END-IF  
+         
            IF  APPL-AOK                                                         
                CONTINUE                                                         
            ELSE                                                                 
