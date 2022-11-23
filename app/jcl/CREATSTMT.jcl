@@ -1,7 +1,7 @@
 //CREASTMT JOB 'Create Statement',CLASS=A,MSGCLASS=0,       
 // NOTIFY=&SYSUID
 //******************************************************************
-//* Copyright vikas.com, Inc. or its affiliates.                   
+//* Copyright amazon.com, Inc. or its affiliates.                   
 //* All Rights Reserved.                                            
 //*                                                                 
 //* Licensed under the Apache License, Version 2.0 (the "License"). 
