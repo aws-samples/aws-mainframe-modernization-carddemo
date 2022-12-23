@@ -312,7 +312,7 @@ This is intended to be a community resource and it is released under the Apache 
 
 ## Project status
 
-We are planning a v2 of this application in December 2022.
+We are planning a v2 of this application in Q1 2023.
 
 Watch this space for updates
 
