@@ -177,6 +177,7 @@ To install this repository on the mainframe please follow the following steps
     | INTCALC  | Run interest calculations                           |
     | TRANBKP  | Backup Transaction database                         |
     | COMBTRAN | Combine system transactions with daily ones         |
+    | CREASTMT | Produce transaction statement                       | 	
     | TRANIDX  | Define alternate index on transaction file          |
     | OPENFIL  | Makes files available to CICS                       |
 <br/>
@@ -250,6 +251,7 @@ The Regular user can perform the user functions and the Admin users can only per
 | OPENFIL  | IEFBR14  | Open files in CICS                         |
 | INTCALC  | CBACT04C | Run interest calculations                  |
 | COMBTRAN | SORT     | Combine transaction files                  |
+| CREASTMT | CBSTM03A | Produce transaction statement              |
 
 <br/>
 
