@@ -64,19 +64,20 @@ To install this repository on the mainframe please follow the following steps
    
       * Upload the sample data provided in the main/-/data/EBCDIC/ folder to the mainframe. Ensure that you use transfer mode binary
 
-         | Dataset name                     | Name                                             | Format | Length | Name of equivalent ascii file |
-         | :------------------------------- | :----------------------------------------------- | :----- | -----: | :---------------------------- |
-         | AWS.M2.CARDDEMO.USRSEC.PS        | User Security file                               | FB     |     80 |                               |
-         | AWS.M2.CARDDEMO.ACCTDATA.PS      | Account Data                                     | FB     |    300 | acctdata.txt                  |
-         | AWS.M2.CARDDEMO.CARDDATA.PS      | Card Data                                        | FB     |    150 | carddata.txt                  |
-         | AWS.M2.CARDDEMO.CUSTDATA.PS      | Customer Data                                    | FB     |    500 | custdata.txt                  |
-         | AWS.M2.CARDDEMO.CARDXREF.PS      | Customer Account Card Cross reference            | FB     |     50 | cardxref.txt                  |
-         | AWS.M2.CARDDEMO.DALYTRAN.PS.INIT | Transaction database initialization record       | FB     |    350 |                               |
-         | AWS.M2.CARDDEMO.DALYTRAN.PS      | Transaction data which has to go through posting | FB     |    350 | dailytran.txt                 |
-         | AWS.M2.CARDDEMO.DISCGRP.PS       | Disclosure Groups                                | FB     |     50 | discgrp.txt                   |
-         | AWS.M2.CARDDEMO.TRANCATG.PS      | Transaction categories                           | FB     |     60 | trancatg.txt                  |
-         | AWS.M2.CARDDEMO.TRANTYPE.PS      | Transaction Types                                | FB     |     60 | trantype.txt                  |
-         | AWS.M2.CARDDEMO.TCATBALF.PS      | Transaction Category Balance                     | FB     |     50 | tcatbal.txt                   |
+         | Dataset name                      | Name                                             | Copybook (Layout) | Format | Length | Name of equivalent ascii file |
+         | :---------------------------------| :----------------------------------------------- | :-----            | :----- | -----: | :---------------------------- |
+         | AWS.M2.CARDDEMO.USRSEC.PS         | User Security file                               | CSUSR01Y          | FB     |     80 | See DEFUSR01.jcl (inline)     |
+         | AWS.M2.CARDDEMO.ACCTDATA.PS       | Account Data                                     | CVACT01Y          | FB     |    300 | acctdata.txt                  |
+         | AWS.M2.CARDDEMO.CARDDATA.PS       | Card Data                                        | CVACT02Y          | FB     |    150 | carddata.txt                  |
+         | AWS.M2.CARDDEMO.CUSTDATA.PS       | Customer Data                                    | CVCUS01Y          | FB     |    500 | custdata.txt                  |
+         | AWS.M2.CARDDEMO.CARDXREF.PS       | Customer Account Card Cross reference            | CVACT03Y          | FB     |     50 | cardxref.txt                  |
+         | AWS.M2.CARDDEMO.DALYTRAN.PS.INIT  | Transaction database initialization record       | CVTRA06Y          | FB     |    350 | 1 record (low-values ending with 00000100)|
+         | AWS.M2.CARDDEMO.DALYTRAN.PS       | Transaction data which has to go through posting | CVTRA06Y          | FB     |    350 | dailytran.txt                 |
+         | AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS| Transaction data entered online                  | CVTRA05Y          | FB     |    350 | not applicable                |
+         | AWS.M2.CARDDEMO.DISCGRP.PS        | Disclosure Groups                                | CVTRA02Y          | FB     |     50 | discgrp.txt                   |
+         | AWS.M2.CARDDEMO.TRANCATG.PS       | Transaction Category Types                       | CVTRA04Y          | FB     |     60 | trancatg.txt                  |
+         | AWS.M2.CARDDEMO.TRANTYPE.PS       | Transaction Types                                | CVTRA03Y          | FB     |     60 | trantype.txt                  |
+         | AWS.M2.CARDDEMO.TCATBALF.PS       | Transaction Category Balance                     | CVTRA01Y          | FB     |     50 | tcatbal.txt                   |
 
       * Execute the following JCLs in order
 
