@@ -1,0 +1,8 @@
+mock-data-generator/node_modules/*
+sample/*
+.vscode/*
+mock-data-generator/markers/*
+batch-app/markers/*
+/.idea/
+.DS_Store
+**/.DS_Store

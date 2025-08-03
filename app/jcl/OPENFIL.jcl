@@ -1,4 +1,4 @@
-//OEPNFIL JOB 'Open files in CICS',CLASS=A,MSGCLASS=0,
+//OPENFIL JOB 'Open files in CICS',CLASS=A,MSGCLASS=0,
 // NOTIFY=&SYSUID
 //******************************************************************
 //* Copyright Amazon.com, Inc. or its affiliates.                   

@@ -1,24 +1,24 @@
-      ******************************************************************        
+      ******************************************************************
       * Program     : COMEN01C.CBL
       * Application : CardDemo
       * Type        : CICS COBOL Program
       * Function    : Main Menu for the Regular users
       ******************************************************************
-      * Copyright Amazon.com, Inc. or its affiliates.                   
-      * All Rights Reserved.                                            
-      *                                                                 
-      * Licensed under the Apache License, Version 2.0 (the "License"). 
+      * Copyright Amazon.com, Inc. or its affiliates.
+      * All Rights Reserved.
+      *
+      * Licensed under the Apache License, Version 2.0 (the "License").
       * You may not use this file except in compliance with the License.
-      * You may obtain a copy of the License at                         
-      *                                                                 
-      *    http://www.apache.org/licenses/LICENSE-2.0                   
-      *                                                                 
-      * Unless required by applicable law or agreed to in writing,      
-      * software distributed under the License is distributed on an     
-      * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,    
-      * either express or implied. See the License for the specific     
+      * You may obtain a copy of the License at
+      *
+      *    http://www.apache.org/licenses/LICENSE-2.0
+      *
+      * Unless required by applicable law or agreed to in writing,
+      * software distributed under the License is distributed on an
+      * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+      * either express or implied. See the License for the specific
       * language governing permissions and limitations under the License
-      ****************************************************************** 
+      ******************************************************************
        IDENTIFICATION DIVISION.
        PROGRAM-ID. COMEN01C.
        AUTHOR.     AWS.
@@ -143,25 +143,51 @@
            END-IF
 
            IF NOT ERR-FLG-ON
-               IF CDEMO-MENU-OPT-PGMNAME(WS-OPTION)(1:5) NOT = 'DUMMY'
-                   MOVE WS-TRANID    TO CDEMO-FROM-TRANID
-                   MOVE WS-PGMNAME   TO CDEMO-FROM-PROGRAM
-      *            MOVE WS-USER-ID   TO CDEMO-USER-ID
-      *            MOVE SEC-USR-TYPE TO CDEMO-USER-TYPE
-                   MOVE ZEROS        TO CDEMO-PGM-CONTEXT
-                   EXEC CICS
-                       XCTL PROGRAM(CDEMO-MENU-OPT-PGMNAME(WS-OPTION))
-                       COMMAREA(CARDDEMO-COMMAREA)
+              EVALUATE TRUE
+                WHEN CDEMO-MENU-OPT-PGMNAME(WS-OPTION) = 'COPAUS0C'
+                   EXEC CICS INQUIRE
+                       PROGRAM(CDEMO-MENU-OPT-PGMNAME(WS-OPTION))
+                       NOHANDLE
                    END-EXEC
-               END-IF
-               MOVE SPACES             TO WS-MESSAGE
-               MOVE DFHGREEN           TO ERRMSGC  OF COMEN1AO
-               STRING 'This option '       DELIMITED BY SIZE
-                       CDEMO-MENU-OPT-NAME(WS-OPTION)
-                                       DELIMITED BY SPACE
-                       'is coming soon ...'   DELIMITED BY SIZE
-                  INTO WS-MESSAGE
-               PERFORM SEND-MENU-SCREEN
+                   IF EIBRESP = DFHRESP(NORMAL)
+                      MOVE WS-TRANID    TO CDEMO-FROM-TRANID
+                      MOVE WS-PGMNAME   TO CDEMO-FROM-PROGRAM
+                      MOVE ZEROS        TO CDEMO-PGM-CONTEXT
+                      EXEC CICS XCTL
+                          PROGRAM(CDEMO-MENU-OPT-PGMNAME(WS-OPTION))
+                          COMMAREA(CARDDEMO-COMMAREA)
+                      END-EXEC
+                   ELSE
+                      MOVE SPACES             TO WS-MESSAGE
+                      MOVE DFHRED             TO ERRMSGC  OF COMEN1AO
+                      STRING 'This option '       DELIMITED BY SIZE
+                               CDEMO-MENU-OPT-NAME(WS-OPTION)
+                                          DELIMITED BY '  '
+                            ' is not installed...'   DELIMITED BY SIZE
+                          INTO WS-MESSAGE
+                     END-IF
+                  WHEN CDEMO-MENU-OPT-PGMNAME(WS-OPTION)(1:5) = 'DUMMY'
+                     MOVE SPACES             TO WS-MESSAGE
+                     MOVE DFHGREEN           TO ERRMSGC  OF COMEN1AO
+                     STRING 'This option '       DELIMITED BY SIZE
+                             CDEMO-MENU-OPT-NAME(WS-OPTION)
+                                         DELIMITED BY SPACE
+                            'is coming soon ...'   DELIMITED BY SIZE
+                       INTO WS-MESSAGE
+                  WHEN OTHER
+                     MOVE WS-TRANID    TO CDEMO-FROM-TRANID
+                     MOVE WS-PGMNAME   TO CDEMO-FROM-PROGRAM
+                     MOVE WS-PGMNAME   TO CDEMO-FROM-PROGRAM
+      *              MOVE WS-USER-ID   TO CDEMO-USER-ID
+      *              MOVE SEC-USR-TYPE TO CDEMO-USER-TYPE
+                     MOVE ZEROS        TO CDEMO-PGM-CONTEXT
+                     EXEC CICS
+                         XCTL PROGRAM(CDEMO-MENU-OPT-PGMNAME(WS-OPTION))
+                         COMMAREA(CARDDEMO-COMMAREA)
+                     END-EXEC
+              END-EVALUATE
+
+              PERFORM SEND-MENU-SCREEN
            END-IF.
 
       *----------------------------------------------------------------*

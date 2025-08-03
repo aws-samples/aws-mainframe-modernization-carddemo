@@ -18,7 +18,7 @@
       ****************************************************************** 
        01 CARDDEMO-MAIN-MENU-OPTIONS.
 
-         05 CDEMO-MENU-OPT-COUNT           PIC 9(02) VALUE 10.
+         05 CDEMO-MENU-OPT-COUNT           PIC 9(02) VALUE 11.
 
          05 CDEMO-MENU-OPTIONS-DATA.
 
@@ -81,6 +81,12 @@
            10 FILLER                       PIC X(35) VALUE
                'Bill Payment                       '.
            10 FILLER                       PIC X(08) VALUE 'COBIL00C'.
+           10 FILLER                       PIC X(01) VALUE 'U'.
+
+           10 FILLER                       PIC 9(02) VALUE 11.
+           10 FILLER                       PIC X(35) VALUE
+               'Pending Authorization View         '.
+           10 FILLER                       PIC X(08) VALUE 'COPAUS0C'.
            10 FILLER                       PIC X(01) VALUE 'U'.
 
 

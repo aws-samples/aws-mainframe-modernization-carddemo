@@ -1,0 +1,137 @@
+***********************************************************************
+*    CardDemo -Transaction Type Update Screen
+***********************************************************************
+* Copyright Amazon.com, Inc. or its affiliates.
+* All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*    http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific
+* language governing permissions and limitations under the License
+******************************************************************
+        TITLE 'BMS MAP FOR TRANSACTION TYPE UPDATE'
+COTRTUP DFHMSD LANG=COBOL,                                             -
+               MODE=INOUT,                                             -
+               STORAGE=AUTO,                                           -
+               TIOAPFX=YES,                                            -
+               TYPE=&&SYSPARM
+CTRTUPA DFHMDI CTRL=(FREEKB),                                          -
+               DSATTS=(COLOR,HILIGHT,PS,VALIDN),                       -
+               MAPATTS=(COLOR,HILIGHT,PS,VALIDN),                      -
+               SIZE=(24,80)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(1,1),                                              -
+               INITIAL='Tran:'
+TRNNAME DFHMDF ATTRB=(ASKIP,FSET,NORM),                                -
+               COLOR=BLUE,                                             -
+               LENGTH=4,                                               -
+               POS=(1,7)
+TITLE01 DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=40,                                              -
+               POS=(1,21)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(1,65),                                             -
+               INITIAL='Date:'
+CURDATE DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(1,71),                                             -
+               INITIAL='mm/dd/yy'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(2,1),                                              -
+               INITIAL='Prog:'
+PGMNAME DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(2,7)
+TITLE02 DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=40,                                              -
+               POS=(2,21)
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=5,                                               -
+               POS=(2,65),                                             -
+               INITIAL='Time:'
+CURTIME DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=BLUE,                                             -
+               LENGTH=8,                                               -
+               POS=(2,71),                                             -
+               INITIAL='hh:mm:ss'
+        DFHMDF COLOR=NEUTRAL,                                          -
+               LENGTH=25,                                              -
+               POS=(7,28),                                             -
+               INITIAL='Maintain Transaction Type'
+        DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=TURQUOISE,                                        -
+               LENGTH=19,                                              -
+               POS=(12,4),                                             -
+               INITIAL='Transaction Type  :'
+TRTYPCD DFHMDF ATTRB=(IC,UNPROT),                                      -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=2,                                               -
+               POS=(12,26)
+        DFHMDF LENGTH=0,                                               -
+               POS=(12,29)
+        DFHMDF COLOR=TURQUOISE,                                        -
+               LENGTH=19,                                              -
+               POS=(14,4),                                             -
+               INITIAL='Description       :'
+TRTYDSC DFHMDF ATTRB=(UNPROT),                                         -
+               HILIGHT=UNDERLINE,                                      -
+               LENGTH=50,                                              -
+               POS=(14,26)
+        DFHMDF LENGTH=0,                                               -
+               POS=(14,77)
+INFOMSG DFHMDF ATTRB=(ASKIP),                                          -
+               COLOR=NEUTRAL,                                          -
+               HILIGHT=OFF,                                            -
+               LENGTH=45,                                              -
+               POS=(22,23)
+        DFHMDF LENGTH=0,                                               -
+               POS=(22,69)
+ERRMSG  DFHMDF ATTRB=(ASKIP,BRT,FSET),                                 -
+               COLOR=RED,                                              -
+               LENGTH=78,                                              -
+               POS=(23,1)
+FKEYS   DFHMDF ATTRB=(ASKIP,NORM),                                     -
+               COLOR=YELLOW,                                           -
+               LENGTH=21,                                              -
+               POS=(24,1),                                             -
+               INITIAL='ENTER=Process F3=Exit'
+FKEY04  DFHMDF ATTRB=(ASKIP,DRK),                                      -
+               COLOR=YELLOW,                                           -
+               LENGTH=9,                                               -
+               POS=(24,23),                                            -
+               INITIAL='F4=Delete'
+FKEY05  DFHMDF ATTRB=(ASKIP,DRK),                                      -
+               COLOR=YELLOW,                                           -
+               LENGTH=8,                                               -
+               POS=(24,33),                                            -
+               INITIAL='F5=Save'
+FKEY06  DFHMDF ATTRB=(ASKIP,DRK),                                      -
+               COLOR=YELLOW,                                           -
+               LENGTH=6,                                               -
+               POS=(24,43),                                            -
+               INITIAL='F6=Add'
+FKEY12  DFHMDF ATTRB=(ASKIP,DRK),                                      -
+               COLOR=YELLOW,                                           -
+               LENGTH=10,                                              -
+               POS=(24,69),                                            -
+               INITIAL='F12=Cancel'
+        DFHMSD TYPE=FINAL
+        END

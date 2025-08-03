@@ -627,7 +627,7 @@
            DISPLAY 'ABENDING PROGRAM'                                           
            MOVE 0 TO TIMING                                                     
            MOVE 999 TO ABCODE                                                   
-           CALL 'CEE3ABD'.                                                      
+           CALL 'CEE3ABD' USING ABCODE, TIMING.                                 
                                                                                 
       *****************************************************************         
        9910-DISPLAY-IO-STATUS.                                                  
@@ -645,5 +645,5 @@
            END-IF                                                               
            EXIT.                                                                
       *
-      * Ver: CardDemo_v1.0-15-g27d6c6f-68 Date: 2022-07-19 23:12:32 CDT
+      * Ver: CardDemo_v2.0-25-gdb72e6b-235 Date: 2025-04-29 11:01:29 CDT
       *
