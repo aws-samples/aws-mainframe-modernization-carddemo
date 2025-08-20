@@ -1,26 +1,19 @@
-# CardDemo Requirements Validator Dependencies
+# Core dependencies for the CardDemo Requirements Validator
+dataclasses
+pathlib
+typing-extensions
 
-# Core dependencies
-pathlib2>=2.3.0
-typing-extensions>=4.0.0
-dataclasses>=0.6; python_version<"3.7"
+# DeepEval for semantic validation
+deepeval>=3.4.0
 
-# Optional: For enhanced code analysis (if using Deep Delve)
-# Note: Deep Delve integration would require additional setup
-# deep-delve>=1.0.0  # Uncomment if Deep Delve is available
+# Markdown processing
+markdown>=3.8.0
 
-# Optional: For better JSON handling
-jsonschema>=3.2.0
+# Logging and utilities
+colorama>=0.4.6
+colorlog>=6.9.0
+tqdm>=4.66.1
 
-# Optional: For enhanced logging
-colorlog>=6.0.0
-
-# Optional: For progress bars
-tqdm>=4.64.0
-
-# Optional: For data analysis and reporting
-pandas>=1.5.0
-matplotlib>=3.5.0
-
-# Optional: For web-based reporting
-jinja2>=3.1.0
+# Optional: PDF generation (if needed)
+# weasyprint>=66.0
+# reportlab>=4.4.0
