@@ -48,8 +48,8 @@ def main():
     # =============================================================================
     
     # Check for AI-generated requirements file
-    if not os.path.exists('app/catlg/CD-Requirements.json'):
-        print("❌ Error: CD-Requirements.json not found in app/catlg/")
+    if not os.path.exists('docs/CD-Requirements.json'):
+        print("❌ Error: CD-Requirements.json not found in docs/")
         print("Please run this script from the CardDemo root directory")
         return False
     
@@ -65,7 +65,7 @@ def main():
         # =============================================================================
         print("🔍 Initializing validator...")
         validator = CardDemoRequirementsValidator(
-            requirements_file='app/catlg/CD-Requirements.json',  # AI-generated requirements
+            requirements_file='docs/CD-Requirements.json',  # AI-generated requirements
             codebase_path='.'  # Current directory (CardDemo root)
         )
         

@@ -940,17 +940,55 @@ class CardDemoRequirementsValidator:
         report.append("### Failed Technical Requirements (Top 5)")
         report.append("")
         
-        # Show top 5 failed technical requirements as examples
+        # Show top 5 failed technical requirements as examples with detailed error breakdowns
         failed_tech = [r for r in tech_results if r.status == 'FAIL'][:5]
         if failed_tech:
-            report.append("| ID | Status | Confidence | Issues |")
-            report.append("|----|--------|------------|--------|")
+            report.append("| ID | Status | Confidence | Error Count | Primary Issues |")
+            report.append("|----|--------|------------|-------------|----------------|")
             for result in failed_tech:
-                issues = len(result.errors)  # Count number of validation errors
-                report.append(f"| {result.requirement_id} | ❌ Fail | {result.confidence:.2f} | {issues} |")
+                error_count = len(result.errors)
+                # Show the first 2-3 errors as primary issues
+                primary_issues = []
+                for error in result.errors[:3]:
+                    # Extract the key part of the error message
+                    if "not found" in error:
+                        primary_issues.append("Missing component")
+                    elif "no CICS commands" in error:
+                        primary_issues.append("Missing CICS details")
+                    elif "no screen mapping" in error:
+                        primary_issues.append("Missing BMS details")
+                    elif "no file operations" in error:
+                        primary_issues.append("Missing VSAM details")
+                    elif "no job structure" in error:
+                        primary_issues.append("Missing JCL details")
+                    else:
+                        primary_issues.append("Validation error")
+                
+                issues_summary = ", ".join(set(primary_issues))  # Remove duplicates
+                if len(result.errors) > 3:
+                    issues_summary += f" (+{len(result.errors) - 3} more)"
+                
+                report.append(f"| {result.requirement_id} | ❌ Fail | {result.confidence:.2f} | {error_count} | {issues_summary} |")
         else:
             report.append("*No failed technical requirements found.*")
         report.append("")
+        
+        # Show sample partial requirements
+        partial_tech = [r for r in tech_results if r.status == 'PARTIAL'][:3]
+        if partial_tech:
+            report.append("### Partial Technical Requirements (Sample)")
+            report.append("")
+            report.append("| ID | Status | Confidence | Error Count | Issues |")
+            report.append("|----|--------|------------|-------------|--------|")
+            for result in partial_tech:
+                error_count = len(result.errors)
+                # Show the specific errors
+                issues_summary = "; ".join([error.split(": ")[-1] if ": " in error else error for error in result.errors[:2]])
+                if len(result.errors) > 2:
+                    issues_summary += f" (+{len(result.errors) - 2} more)"
+                
+                report.append(f"| {result.requirement_id} | ⚠ Partial | {result.confidence:.2f} | {error_count} | {issues_summary} |")
+            report.append("")
         
         # =============================================================================
         # COVERAGE ANALYSIS - Detailed analysis of gaps and missing components
@@ -1014,19 +1052,96 @@ class CardDemoRequirementsValidator:
         report.append("")
         
         # =============================================================================
-        # DETAILED RESULTS - Complete validation results table
+        # DETAILED RESULTS - Complete validation results with error breakdowns
         # =============================================================================
         report.append("## Appendix: Detailed Results")
         report.append("")
-        report.append("### All Validation Results")
-        report.append("")
-        report.append("| ID | Type | Status | Confidence | Text Preview |")
-        report.append("|----|------|--------|------------|--------------|")
         
-        # Generate complete results table with 500+ character previews
-        for result in self.validation_results:  # Show all results for complete report
+        # =============================================================================
+        # FAILED REQUIREMENTS DETAILS - Show exact errors for failed requirements
+        # =============================================================================
+        failed_requirements = [r for r in self.validation_results if r.status == 'FAIL']
+        if failed_requirements:
+            report.append("### Failed Requirements - Detailed Error Analysis")
+            report.append("")
+            report.append("The following requirements failed validation. Each failure includes the specific errors found:")
+            report.append("")
+            
+            for result in failed_requirements:
+                report.append(f"#### {result.requirement_id} - {result.status} (Confidence: {result.confidence:.2f})")
+                report.append("")
+                report.append("**Requirement Text:**")
+                report.append(f"```")
+                report.append(result.requirement_text[:1000] + ("..." if len(result.requirement_text) > 1000 else ""))
+                report.append("```")
+                report.append("")
+                
+                if result.errors:
+                    report.append("**Validation Errors:**")
+                    report.append("")
+                    for i, error in enumerate(result.errors, 1):
+                        report.append(f"{i}. ❌ {error}")
+                    report.append("")
+                
+                if result.evidence:
+                    report.append("**Supporting Evidence:**")
+                    report.append("")
+                    for i, evidence in enumerate(result.evidence, 1):
+                        report.append(f"{i}. ✅ {evidence}")
+                    report.append("")
+                
+                report.append("---")
+                report.append("")
+        
+        # =============================================================================
+        # PARTIAL REQUIREMENTS DETAILS - Show issues for partial requirements
+        # =============================================================================
+        partial_requirements = [r for r in self.validation_results if r.status == 'PARTIAL']
+        if partial_requirements:
+            report.append("### Partial Requirements - Issues Found")
+            report.append("")
+            report.append("The following requirements passed with minor issues:")
+            report.append("")
+            
+            for result in partial_requirements:
+                report.append(f"#### {result.requirement_id} - {result.status} (Confidence: {result.confidence:.2f})")
+                report.append("")
+                report.append("**Requirement Text:**")
+                report.append(f"```")
+                report.append(result.requirement_text[:800] + ("..." if len(result.requirement_text) > 800 else ""))
+                report.append("```")
+                report.append("")
+                
+                if result.errors:
+                    report.append("**Issues Found:**")
+                    report.append("")
+                    for i, error in enumerate(result.errors, 1):
+                        report.append(f"{i}. ⚠️ {error}")
+                    report.append("")
+                
+                if result.evidence:
+                    report.append("**Valid Elements:**")
+                    report.append("")
+                    for i, evidence in enumerate(result.evidence, 1):
+                        report.append(f"{i}. ✅ {evidence}")
+                    report.append("")
+                
+                report.append("---")
+                report.append("")
+        
+        # =============================================================================
+        # SUMMARY TABLE - All validation results in table format
+        # =============================================================================
+        report.append("### All Validation Results Summary")
+        report.append("")
+        report.append("| ID | Type | Status | Confidence | Error Count | Text Preview |")
+        report.append("|----|------|--------|------------|-------------|--------------|")
+        
+        # Generate complete results table with error counts
+        for result in self.validation_results:
             req_type = "Tech" if result.requirement_id.startswith('TECH_REQ') else "User"
             status_icon = "✅" if result.status == 'PASS' else "⚠" if result.status == 'PARTIAL' else "❌"
+            error_count = len(result.errors)
             
             # Create text preview with 500+ character minimum and word boundary breaking
             preview = result.requirement_text[:500].replace('\n', ' ').replace('|', '\\|').strip()
@@ -1036,7 +1151,7 @@ class CardDemoRequirementsValidator:
                 if last_space > 450:  # Only break at word if we have enough content
                     preview = preview[:last_space]
                 preview = preview + "..."
-            report.append(f"| {result.requirement_id} | {req_type} | {status_icon} {result.status} | {result.confidence:.2f} | {preview} |")
+            report.append(f"| {result.requirement_id} | {req_type} | {status_icon} {result.status} | {result.confidence:.2f} | {error_count} | {preview} |")
         
         # =============================================================================
         # REPORT FOOTER - Final formatting and file output
