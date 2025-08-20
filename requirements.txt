@@ -1,0 +1,26 @@
+# CardDemo Requirements Validator Dependencies
+
+# Core dependencies
+pathlib2>=2.3.0
+typing-extensions>=4.0.0
+dataclasses>=0.6; python_version<"3.7"
+
+# Optional: For enhanced code analysis (if using Deep Delve)
+# Note: Deep Delve integration would require additional setup
+# deep-delve>=1.0.0  # Uncomment if Deep Delve is available
+
+# Optional: For better JSON handling
+jsonschema>=3.2.0
+
+# Optional: For enhanced logging
+colorlog>=6.0.0
+
+# Optional: For progress bars
+tqdm>=4.64.0
+
+# Optional: For data analysis and reporting
+pandas>=1.5.0
+matplotlib>=3.5.0
+
+# Optional: For web-based reporting
+jinja2>=3.1.0

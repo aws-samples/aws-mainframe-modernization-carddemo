@@ -1,11 +1,9 @@
+# CardDemo Requirements Validator - Git Ignore File
+
+# Original project ignores
 mock-data-generator/node_modules/*
 sample/*
-.vscode/*
-mock-data-generator/markers/*
 batch-app/markers/*
-/.idea/
-.DS_Store
-**/.DS_Store
 
 # Python virtual environments
 carddemo-validator-env/
@@ -18,6 +16,7 @@ env/
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
 # Distribution / packaging
 .Python
@@ -41,6 +40,10 @@ wheels/
 *.manifest
 *.spec
 
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -59,23 +62,40 @@ coverage.xml
 # pyenv
 .python-version
 
-# Environment variables
-.env
-.venv
-env/
-venv/
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
 ENV/
 env.bak/
 venv.bak/
 
-# IDE
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -83,3 +103,15 @@ venv.bak/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Generated validation reports
+CardDemo_Requirements_Validation_Report.*
+test_validation_report.*
+
+# Test files
+test_*.py
