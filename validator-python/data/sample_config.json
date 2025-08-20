@@ -1,0 +1,35 @@
+{
+  "validator_config": {
+    "project_name": "CardDemo Mainframe Modernization",
+    "version": "1.0.0",
+    "description": "Sample configuration for CardDemo validation tools",
+    "settings": {
+      "output_directory": "../reports",
+      "log_level": "INFO",
+      "max_file_size": "10MB",
+      "timeout_seconds": 300
+    },
+    "validation_rules": {
+      "require_documentation": true,
+      "check_code_quality": true,
+      "validate_data_structures": true,
+      "verify_business_logic": true
+    },
+    "reporting": {
+      "generate_html": true,
+      "generate_pdf": false,
+      "include_charts": true,
+      "detailed_logging": true
+    }
+  },
+  "data_sources": {
+    "requirements_file": "CD-Requirements.json",
+    "cobol_source_dir": "../../app",
+    "output_reports_dir": "../reports",
+    "test_data_dir": "../test"
+  },
+  "dependencies": {
+    "python_version": "3.8+",
+    "required_packages": ["deepeval", "pandas", "numpy", "matplotlib", "json5"]
+  }
+}

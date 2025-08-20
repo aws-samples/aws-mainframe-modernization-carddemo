@@ -36,8 +36,8 @@ def main():
     print("=" * 70)
     
     # Configuration
-    requirements_file = "docs/CD-Requirements.json"
-    codebase_path = "."
+    requirements_file = "../data/CD-Requirements.json"
+    codebase_path = "../.."
     
     # Validate file paths
     if not os.path.exists(requirements_file):
@@ -84,13 +84,13 @@ def main():
         
         # Generate DeepEval report
         print("1. Generating DeepEval report...")
-        deepeval_report_file = "CardDemo_DeepEval_Validation_Report.md"
+        deepeval_report_file = "../reports/CardDemo_DeepEval_Validation_Report.md"
         validator.generate_deepeval_report(deepeval_report_file)
         print(f"   ✅ DeepEval report saved: {deepeval_report_file}")
         
         # Generate text version
         print("2. Generating text report...")
-        text_report_file = "CardDemo_DeepEval_Validation_Report.txt"
+        text_report_file = "../reports/CardDemo_DeepEval_Validation_Report.txt"
         validator.generate_deepeval_report(text_report_file)
         print(f"   ✅ Text report saved: {text_report_file}")
         

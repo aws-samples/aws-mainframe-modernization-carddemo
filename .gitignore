@@ -112,6 +112,7 @@ Thumbs.db
 # Generated validation reports
 CardDemo_Requirements_Validation_Report.*
 test_validation_report.*
+sample_validation_report.*
 
 # Test files
 test_*.py

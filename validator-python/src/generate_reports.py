@@ -51,15 +51,15 @@ def main():
     # =============================================================================
     
     # Check for AI-generated requirements file
-    if not os.path.exists('docs/CD-Requirements.json'):
-        print("❌ Error: CD-Requirements.json not found in docs/")
-        print("Please run this script from the CardDemo root directory")
+    if not os.path.exists('../data/CD-Requirements.json'):
+        print("❌ Error: CD-Requirements.json not found in data/")
+        print("Please run this script from the validator-python/src directory")
         return False
     
     # Check for CardDemo codebase structure
-    if not os.path.exists('app/cbl'):
+    if not os.path.exists('../../app/cbl'):
         print("❌ Error: CardDemo codebase not found")
-        print("Please run this script from the CardDemo root directory")
+        print("Please run this script from the validator-python/src directory")
         return False
     
     try:
@@ -68,8 +68,8 @@ def main():
         # =============================================================================
         print("🔍 Initializing validator...")
         validator = CardDemoRequirementsValidator(
-            requirements_file='docs/CD-Requirements.json',  # AI-generated requirements
-            codebase_path='.'  # Current directory (CardDemo root)
+            requirements_file='../data/CD-Requirements.json',  # AI-generated requirements
+            codebase_path='../..'  # CardDemo root directory
         )
         
         # =============================================================================
@@ -103,13 +103,13 @@ def main():
         
         # Generate Markdown report (primary format with rich formatting)
         print("1. Generating Markdown report...")
-        markdown_file = "CardDemo_Requirements_Validation_Report.md"
+        markdown_file = "../reports/CardDemo_Requirements_Validation_Report.md"
         validator.generate_markdown_report(markdown_file)
         print(f"   ✅ Markdown report saved: {markdown_file}")
         
         # Generate text report (legacy format for compatibility)
         print("2. Generating text report...")
-        text_file = "CardDemo_Requirements_Validation_Report.txt"
+        text_file = "../reports/CardDemo_Requirements_Validation_Report.txt"
         validator.generate_report(text_file)
         print(f"   ✅ Text report saved: {text_file}")
         

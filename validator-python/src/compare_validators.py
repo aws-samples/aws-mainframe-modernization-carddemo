@@ -224,8 +224,8 @@ def main():
     print("=" * 50)
     
     # Configuration
-    requirements_file = "docs/CD-Requirements.json"
-    codebase_path = "."
+    requirements_file = "../data/CD-Requirements.json"
+    codebase_path = "../.."
     
     # Validate file paths
     if not os.path.exists(requirements_file):
@@ -249,7 +249,7 @@ def main():
         comparison_report = generate_comparison_report(comparison_data, regex_results, deepeval_results)
         
         # Save comparison report
-        report_file = "CardDemo_Validator_Comparison_Report.md"
+        report_file = "../reports/CardDemo_Validator_Comparison_Report.md"
         with open(report_file, 'w', encoding='utf-8') as f:
             f.write(comparison_report)
         
