@@ -13,8 +13,8 @@ Key improvements over the regex-based validator:
 4. Detailed explanations of validation failures
 5. Learning capability for improved accuracy
 
-Author: AI Assistant
-Date: 2024
+Author: Savantly
+Date: 2025
 """
 
 # =============================================================================

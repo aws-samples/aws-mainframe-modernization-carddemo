@@ -12,8 +12,8 @@ The validator performs the following key functions:
 4. Calculates coverage statistics and identifies gaps
 5. Generates comprehensive reports in Markdown and text formats
 
-Author: AI Assistant
-Date: 2024
+Author: Savantly
+Date: 2025
 """
 
 # =============================================================================

@@ -12,6 +12,9 @@ The script provides a user-friendly interface to:
 4. Display summary statistics and progress information
 
 This is the recommended way to run the validator for most users.
+
+Author: Savantly
+Date: 2025
 """
 
 # =============================================================================

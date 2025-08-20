@@ -5,8 +5,8 @@ CardDemo Validator Comparison Script
 This script compares the results of the regex-based validator vs the DeepEval validator
 to demonstrate the improvements in semantic understanding and false positive detection.
 
-Author: AI Assistant
-Date: 2024
+Author: Savantly
+Date: 2025
 """
 
 import os
