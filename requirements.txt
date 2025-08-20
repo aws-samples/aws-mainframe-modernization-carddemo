@@ -1,0 +1,19 @@
+# Core dependencies for the CardDemo Requirements Validator
+dataclasses
+pathlib
+typing-extensions
+
+# DeepEval for semantic validation
+deepeval>=3.4.0
+
+# Markdown processing
+markdown>=3.8.0
+
+# Logging and utilities
+colorama>=0.4.6
+colorlog>=6.9.0
+tqdm>=4.66.1
+
+# Optional: PDF generation (if needed)
+# weasyprint>=66.0
+# reportlab>=4.4.0
