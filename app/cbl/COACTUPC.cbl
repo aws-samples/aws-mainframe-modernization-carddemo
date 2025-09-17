@@ -645,6 +645,9 @@
       *CUSTOMER LAYOUT
        COPY CVCUS01Y.
 
+      *AUDIT PARAMETERS LAYOUT
+       COPY CVAUD01Y.
+
       ******************************************************************
       *Application Commmarea Copybook
        COPY COCOM01Y.
@@ -4074,7 +4077,7 @@
       * Did account update succeed ?  *
       *****************************************************************
            IF WS-RESP-CD EQUAL TO DFHRESP(NORMAL)
-             CONTINUE
+             PERFORM 9800-AUDIT-ACCOUNT-UPDATE
            ELSE
              SET LOCKED-BUT-UPDATE-FAILED    TO TRUE
              GO TO 9600-WRITE-PROCESSING-EXIT
@@ -4093,7 +4096,7 @@
       * Did customer update succeed ? *
       *****************************************************************
            IF WS-RESP-CD EQUAL TO DFHRESP(NORMAL)
-             CONTINUE
+             PERFORM 9900-AUDIT-CUSTOMER-UPDATE
            ELSE
              SET LOCKED-BUT-UPDATE-FAILED    TO TRUE
              EXEC CICS
@@ -4226,6 +4229,69 @@
        ABEND-ROUTINE-EXIT.
            EXIT
            .
+
+      ******************************************************************
+      * Audit Account Update
+      ******************************************************************
+       9800-AUDIT-ACCOUNT-UPDATE.
+           INITIALIZE AUDIT-PARMS
+           MOVE CDEMO-USER-ID              TO AUDIT-IN-USER-ID
+           MOVE CDEMO-USER-TYPE            TO AUDIT-IN-USER-TYPE
+           SET AUDIT-IN-UPDATE             TO TRUE
+           SET AUDIT-IN-ACCOUNT            TO TRUE
+           MOVE LENGTH OF ACCT-UPDATE-RECORD TO AUDIT-IN-RECORD-LENGTH
+           MOVE ACCT-UPDATE-RECORD         TO AUDIT-IN-RECORD-DATA
+
+           DISPLAY 'ACTUPD AUDIT-PARMS : ' AUDIT-PARMS
+
+           EXEC CICS LINK
+                PROGRAM('COAUDIT')
+                COMMAREA(AUDIT-PARMS)
+                LENGTH(LENGTH OF AUDIT-PARMS)
+                RESP(WS-RESP-CD)
+                RESP2(WS-REAS-CD)
+           END-EXEC
+
+           IF WS-RESP-CD NOT EQUAL TO DFHRESP(NORMAL)
+               CONTINUE
+           END-IF
+           .
+
+       9800-AUDIT-ACCOUNT-UPDATE-EXIT.
+           EXIT
+           .
+
+      ******************************************************************
+      * Audit Customer Update
+      ******************************************************************
+       9900-AUDIT-CUSTOMER-UPDATE.
+           INITIALIZE AUDIT-PARMS
+           MOVE CDEMO-USER-ID              TO AUDIT-IN-USER-ID
+           MOVE CDEMO-USER-TYPE            TO AUDIT-IN-USER-TYPE
+           SET AUDIT-IN-UPDATE             TO TRUE
+           SET AUDIT-IN-CUSTOMER           TO TRUE
+           MOVE LENGTH OF CUST-UPDATE-RECORD TO AUDIT-IN-RECORD-LENGTH
+           MOVE CUST-UPDATE-RECORD         TO AUDIT-IN-RECORD-DATA
+
+           DISPLAY 'ACTUPD AUDIT-PARMS : ' AUDIT-PARMS
+
+           EXEC CICS LINK
+                PROGRAM('COAUDIT')
+                COMMAREA(AUDIT-PARMS)
+                LENGTH(LENGTH OF AUDIT-PARMS)
+                RESP(WS-RESP-CD)
+                RESP2(WS-REAS-CD)
+           END-EXEC
+
+           IF WS-RESP-CD NOT EQUAL TO DFHRESP(NORMAL)
+               CONTINUE
+           END-IF
+           .
+
+       9900-AUDIT-CUSTOMER-UPDATE-EX.
+           EXIT
+           .
+
       ******************************************************************
       * Common Date Routines
       ******************************************************************

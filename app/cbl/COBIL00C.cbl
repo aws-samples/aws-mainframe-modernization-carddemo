@@ -80,6 +80,7 @@
        COPY CVACT01Y.
        COPY CVACT03Y.
        COPY CVTRA05Y.
+       COPY CVAUD01Y.
 
        COPY DFHAID.
        COPY DFHBMSCA.
@@ -386,7 +387,7 @@
 
            EVALUATE WS-RESP-CD
                WHEN DFHRESP(NORMAL)
-                   CONTINUE
+                   PERFORM AUDIT-ACCOUNT-UPDATE
                WHEN DFHRESP(NOTFND)
                    MOVE 'Y'     TO WS-ERR-FLG
                    MOVE 'Account ID NOT found...' TO
@@ -521,6 +522,7 @@
 
            EVALUATE WS-RESP-CD
                WHEN DFHRESP(NORMAL)
+                   PERFORM AUDIT-TRANSACTION-CREATE
                    PERFORM INITIALIZE-ALL-FIELDS
                    MOVE SPACES             TO WS-MESSAGE
                    MOVE DFHGREEN           TO ERRMSGC  OF COBIL0AO
@@ -564,6 +566,54 @@
                                    CURBALI  OF COBIL0AI
                                    CONFIRMI OF COBIL0AI
                                    WS-MESSAGE.
+
+      *----------------------------------------------------------------*
+      *                      AUDIT-ACCOUNT-UPDATE
+      *----------------------------------------------------------------*
+       AUDIT-ACCOUNT-UPDATE.
+
+           INITIALIZE AUDIT-PARMS
+           MOVE CDEMO-USER-ID           TO AUDIT-IN-USER-ID
+           MOVE CDEMO-USER-TYPE         TO AUDIT-IN-USER-TYPE
+           SET AUDIT-IN-UPDATE          TO TRUE
+           SET AUDIT-IN-ACCOUNT         TO TRUE
+           MOVE LENGTH OF ACCOUNT-RECORD TO AUDIT-IN-RECORD-LENGTH
+           MOVE ACCOUNT-RECORD          TO AUDIT-IN-RECORD-DATA
+
+           EXEC CICS LINK
+                PROGRAM('COAUDIT')
+                COMMAREA(AUDIT-PARMS)
+                LENGTH(LENGTH OF AUDIT-PARMS)
+           END-EXEC
+
+           IF NOT AUDIT-SUCCESS AND NOT AUDIT-WARNING
+               DISPLAY 'AUDIT WARNING - Account update audit failed: '
+                       AUDIT-OUT-ERROR-MSG
+           END-IF.
+
+      *----------------------------------------------------------------*
+      *                      AUDIT-TRANSACTION-CREATE
+      *----------------------------------------------------------------*
+       AUDIT-TRANSACTION-CREATE.
+
+           INITIALIZE AUDIT-PARMS
+           MOVE CDEMO-USER-ID           TO AUDIT-IN-USER-ID
+           MOVE CDEMO-USER-TYPE         TO AUDIT-IN-USER-TYPE
+           SET AUDIT-IN-INSERT          TO TRUE
+           SET AUDIT-IN-TRANSACTION     TO TRUE
+           MOVE LENGTH OF TRAN-RECORD   TO AUDIT-IN-RECORD-LENGTH
+           MOVE TRAN-RECORD             TO AUDIT-IN-RECORD-DATA
+
+           EXEC CICS LINK
+                PROGRAM('COAUDIT')
+                COMMAREA(AUDIT-PARMS)
+                LENGTH(LENGTH OF AUDIT-PARMS)
+           END-EXEC
+
+           IF NOT AUDIT-SUCCESS AND NOT AUDIT-WARNING
+               DISPLAY 'AUDIT WARNING - create audit failed: '
+                       AUDIT-OUT-ERROR-MSG
+           END-IF.
 
 
 
