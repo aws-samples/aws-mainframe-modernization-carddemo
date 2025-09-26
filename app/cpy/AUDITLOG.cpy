@@ -11,6 +11,7 @@
                88  AUDIT-CUSTOMER        VALUE 'C'.
                88  AUDIT-ACCOUNT         VALUE 'A'.
                88  AUDIT-TRANSACTION     VALUE 'T'.
+               88  AUDIT-CARD            VALUE 'R'.
            05  AUDIT-TIMESTAMP           PIC X(26).
            05  AUDIT-TIMESTAMP-R REDEFINES AUDIT-TIMESTAMP.
                10  AUDIT-DATE            PIC X(10).
@@ -89,3 +90,14 @@
                    15  AUDIT-TRAN-ORIG-TS              PIC X(26).
                    15  AUDIT-TRAN-PROC-TS              PIC X(26).
                    15  AUDIT-TRAN-FILLER               PIC X(180).
+      ******************************************************************
+      * Card Record Structure - From CVACT02Y.cpy         
+      ******************************************************************
+               10  AUDIT-CARD-DATA REDEFINES AUDIT-RECORD-DATA.
+                   15  AUDIT-CARD-NUM                  PIC X(16).
+                   15  AUDIT-CARD-ACCT-ID              PIC 9(11) COMP.
+                   15  AUDIT-CARD-CVV-CD               PIC 9(03) COMP.
+                   15  AUDIT-CARD-EMBOSSED-NAME        PIC X(50).
+                   15  AUDIT-CARD-EXPIRAION-DATE       PIC X(10).
+                   15  AUDIT-CARD-ACTIVE-STATUS        PIC X(01).
+                   15  AUDIT-CARD-FILLER               PIC X(413).

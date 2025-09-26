@@ -8,6 +8,7 @@
       *   CUSTIN  - Customer records (CUSTREC format)
       *   ACCTIN  - Account records (CVACT01Y format)  
       *   TRANIN  - Transaction records (CVTRA05Y format)
+      *   CARDIN  - CARD records 
       *
       * Output Files:
       *   AUDOUT  - Audit log records (AUDITLOG format)
@@ -46,6 +47,12 @@
                ACCESS MODE IS SEQUENTIAL
                FILE STATUS IS WS-TRANIN-STATUS
                .
+           SELECT CARDIN-FILE
+               ASSIGN TO CARDIN
+               ORGANIZATION IS SEQUENTIAL
+               ACCESS MODE IS SEQUENTIAL
+               FILE STATUS IS WS-CARDIN-STATUS
+               .
            SELECT AUDOUT-FILE
                ASSIGN TO AUDOUT
                ORGANIZATION IS SEQUENTIAL
@@ -77,6 +84,13 @@
            .
            COPY CVTRA05Y.
            
+       FD  CARDIN-FILE
+           RECORDING MODE IS F
+           RECORD CONTAINS 150 CHARACTERS
+           BLOCK CONTAINS 0 RECORDS
+           .
+           COPY CVACT02Y.
+           
        FD  AUDOUT-FILE
            RECORDING MODE IS F
            RECORD CONTAINS 565 CHARACTERS
@@ -97,6 +111,9 @@
            05  WS-TRANIN-STATUS            PIC X(02) VALUE SPACES.
                88  WS-TRANIN-EOF           VALUE '10'.
                88  WS-TRANIN-OK            VALUE '00'.
+           05  WS-CARDIN-STATUS            PIC X(02) VALUE SPACES.
+               88  WS-CARDIN-EOF           VALUE '10'.
+               88  WS-CARDIN-OK            VALUE '00'.
            05  WS-AUDOUT-STATUS            PIC X(02) VALUE SPACES.
                88  WS-AUDOUT-OK            VALUE '00'.
                
@@ -116,6 +133,7 @@
            05  WS-CUSTOMER-COUNT           PIC 9(07) VALUE ZERO.
            05  WS-ACCOUNT-COUNT            PIC 9(07) VALUE ZERO.
            05  WS-TRANSACTION-COUNT        PIC 9(07) VALUE ZERO.
+           05  WS-CARD-COUNT               PIC 9(07) VALUE ZERO.
            05  WS-AUDIT-COUNT              PIC 9(07) VALUE ZERO.
            05  WS-ERROR-COUNT              PIC 9(07) VALUE ZERO.
            
@@ -172,6 +190,10 @@
                PERFORM 4000-PROCESS-TRANSACTIONS
            END-IF
            
+           IF WS-PROGRAM-OK
+               PERFORM 4500-PROCESS-CARDS
+           END-IF
+           
            PERFORM 9000-TERMINATE
            
            DISPLAY WS-MSG-PROGRAM-END
@@ -206,6 +228,7 @@
            MOVE SPACES TO WS-CUSTIN-STATUS
            MOVE SPACES TO WS-ACCTIN-STATUS
            MOVE SPACES TO WS-TRANIN-STATUS
+           MOVE SPACES TO WS-CARDIN-STATUS
            MOVE SPACES TO WS-AUDOUT-STATUS
            
            DISPLAY 'CBAUDP01: Opening input files...'
@@ -221,6 +244,11 @@
       *    Open transaction input file
            IF WS-PROGRAM-OK
                PERFORM 1300-OPEN-TRANIN-FILE
+           END-IF
+           
+      *    Open card input file
+           IF WS-PROGRAM-OK
+               PERFORM 1350-OPEN-CARDIN-FILE
            END-IF
            
       *    Open audit output file
@@ -345,6 +373,44 @@
                WHEN OTHER
                    DISPLAY 'CBAUDP01: TRANIN file open error'
                    DISPLAY 'CBAUDP01: File Status: ' WS-TRANIN-STATUS
+                   SET WS-PROGRAM-ERROR TO TRUE
+                   SET WS-ERROR TO TRUE
+                   ADD 1 TO WS-ERROR-COUNT
+           END-EVALUATE
+           
+           .
+           
+      ******************************************************************
+      * Open Card Input File
+      ******************************************************************
+       1350-OPEN-CARDIN-FILE.
+           
+           OPEN INPUT CARDIN-FILE
+           
+           EVALUATE WS-CARDIN-STATUS
+               WHEN '00'
+                   DISPLAY 'CBAUDP01: CARDIN file opened successfully'
+               WHEN '35'
+                   DISPLAY 'CBAUDP01: CARDIN file not found'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   SET WS-PROGRAM-ERROR TO TRUE
+                   SET WS-ERROR TO TRUE
+                   ADD 1 TO WS-ERROR-COUNT
+               WHEN '37'
+                   DISPLAY 'CBAUDP01: CARDIN file not available'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   SET WS-PROGRAM-ERROR TO TRUE
+                   SET WS-ERROR TO TRUE
+                   ADD 1 TO WS-ERROR-COUNT
+               WHEN '90'
+                   DISPLAY 'CBAUDP01: CARDIN file record length error'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   SET WS-PROGRAM-ERROR TO TRUE
+                   SET WS-ERROR TO TRUE
+                   ADD 1 TO WS-ERROR-COUNT
+               WHEN OTHER
+                   DISPLAY 'CBAUDP01: CARDIN file open error'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
                    SET WS-PROGRAM-ERROR TO TRUE
                    SET WS-ERROR TO TRUE
                    ADD 1 TO WS-ERROR-COUNT
@@ -744,6 +810,162 @@
            .
            
       ******************************************************************
+      * Process Card Records
+      ******************************************************************
+       4500-PROCESS-CARDS.
+           
+           DISPLAY 'CBAUDP01: Processing Card Records'
+           
+      *    Initialize card processing
+           MOVE ZERO TO WS-CARD-COUNT
+           
+      *    Read first card record
+           PERFORM 4600-READ-CARD
+           
+      *    Process all card records until end of file
+           PERFORM UNTIL WS-CARDIN-EOF OR WS-PROGRAM-ERROR
+               ADD 1 TO WS-CARD-COUNT
+               
+      *        Validate and create audit record for this card
+               PERFORM 4700-VALIDATE-CARD-RECORD
+               
+               IF WS-SUCCESS OR WS-WARNING
+                   PERFORM 4800-CREATE-CARD-AUDIT-RECORD
+               END-IF
+               
+      *        Read next card record
+               PERFORM 4600-READ-CARD
+           END-PERFORM
+           
+           DISPLAY 'CBAUDP01: Card processing completed'
+           DISPLAY 'CBAUDP01: Total cards processed: '
+                   WS-CARD-COUNT
+           
+           .
+           
+      ******************************************************************
+      * Read Card Record
+      ******************************************************************
+       4600-READ-CARD.
+           
+           READ CARDIN-FILE
+           
+           EVALUATE WS-CARDIN-STATUS
+               WHEN '00'
+      *            Successful read - no action needed
+                   CONTINUE
+               WHEN '10'
+                   DISPLAY 'CBAUDP01: End of card file reached'
+               WHEN '23'
+                   DISPLAY 'CBAUDP01: Card record key not found'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   ADD 1 TO WS-ERROR-COUNT
+                   IF WS-SUCCESS
+                       SET WS-WARNING TO TRUE
+                   END-IF
+               WHEN '30'
+                   DISPLAY 'CBAUDP01: Card file permanent error'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   SET WS-PROGRAM-ERROR TO TRUE
+                   SET WS-ERROR TO TRUE
+                   ADD 1 TO WS-ERROR-COUNT
+               WHEN '90'
+                   DISPLAY 'CBAUDP01: Card record length error'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   ADD 1 TO WS-ERROR-COUNT
+                   IF WS-SUCCESS
+                       SET WS-WARNING TO TRUE
+                   END-IF
+               WHEN OTHER
+                   DISPLAY 'CBAUDP01: Card file read error'
+                   DISPLAY 'CBAUDP01: File Status: ' WS-CARDIN-STATUS
+                   SET WS-PROGRAM-ERROR TO TRUE
+                   SET WS-ERROR TO TRUE
+                   ADD 1 TO WS-ERROR-COUNT
+           END-EVALUATE
+           
+           .
+           
+      ******************************************************************
+      * Validate Card Record
+      ******************************************************************
+       4700-VALIDATE-CARD-RECORD.
+           
+      *    Validate card number is not spaces
+           IF CARD-NUM = SPACES
+               DISPLAY 'CBAUDP01: Missing card number - '
+                       'Record: ' WS-CARD-COUNT
+               ADD 1 TO WS-ERROR-COUNT
+               IF WS-SUCCESS
+                   SET WS-WARNING TO TRUE
+               END-IF
+           END-IF
+           
+      *    Validate account ID is not zero
+           IF CARD-ACCT-ID = ZERO
+               DISPLAY 'CBAUDP01: Invalid account ID (zero) - '
+                       'Record: ' WS-CARD-COUNT
+               ADD 1 TO WS-ERROR-COUNT
+               IF WS-SUCCESS
+                   SET WS-WARNING TO TRUE
+               END-IF
+           END-IF
+           
+      *    Validate card status
+           IF CARD-ACTIVE-STATUS NOT = 'Y' AND
+              CARD-ACTIVE-STATUS NOT = 'N'
+               DISPLAY 'CBAUDP01: Invalid card status - '
+                       'Record: ' WS-CARD-COUNT
+                       ' Status: ' CARD-ACTIVE-STATUS
+               ADD 1 TO WS-ERROR-COUNT
+               IF WS-SUCCESS
+                   SET WS-WARNING TO TRUE
+               END-IF
+           END-IF
+           
+      *    Validate embossed name is not spaces
+           IF CARD-EMBOSSED-NAME = SPACES
+               DISPLAY 'CBAUDP01: Missing embossed name - '
+                       'Record: ' WS-CARD-COUNT
+               ADD 1 TO WS-ERROR-COUNT
+               IF WS-SUCCESS
+                   SET WS-WARNING TO TRUE
+               END-IF
+           END-IF
+           
+           .
+           
+      ******************************************************************
+      * Create Card Audit Record
+      ******************************************************************
+       4800-CREATE-CARD-AUDIT-RECORD.
+           
+      *    Initialize audit record
+           INITIALIZE AUDIT-LOG-RECORD
+           
+      *    Set audit log type to Card
+           SET AUDIT-CARD TO TRUE
+           
+      *    Set common audit fields
+           PERFORM 5100-GENERATE-TIMESTAMP
+           PERFORM 5200-GENERATE-USER-ID
+           MOVE 'B' TO AUDIT-USER-TYPE
+           SET AUDIT-INSERT TO TRUE
+           
+      *    Move card data to audit record
+           MOVE CARD-NUM TO AUDIT-CARD-NUM
+           MOVE CARD-ACCT-ID TO AUDIT-CARD-ACCT-ID
+           MOVE CARD-CVV-CD TO AUDIT-CARD-CVV-CD
+           MOVE CARD-EMBOSSED-NAME TO AUDIT-CARD-EMBOSSED-NAME
+           MOVE CARD-EXPIRAION-DATE TO AUDIT-CARD-EXPIRAION-DATE
+           MOVE CARD-ACTIVE-STATUS TO AUDIT-CARD-ACTIVE-STATUS
+           
+      *    Write audit record
+           PERFORM 5000-WRITE-AUDIT-RECORD
+           
+           .
+           
+      ******************************************************************
       * Read Transaction Record
       ******************************************************************
        4100-READ-TRANSACTION.
@@ -975,6 +1197,7 @@
            DISPLAY '  Customer Records: ' WS-CUSTOMER-COUNT
            DISPLAY '  Account Records:  ' WS-ACCOUNT-COUNT
            DISPLAY '  Transaction Records: ' WS-TRANSACTION-COUNT
+           DISPLAY '  Card Records: ' WS-CARD-COUNT
            DISPLAY '  Audit Records Created: ' WS-AUDIT-COUNT
            DISPLAY '  Error Records: ' WS-ERROR-COUNT
            DISPLAY '  Return Code: ' WS-RETURN-CODE
@@ -1013,6 +1236,16 @@
            IF NOT WS-TRANIN-OK AND NOT WS-TRANIN-EOF
                DISPLAY 'CBAUDP01: Warning - TRANIN close status: '
                        WS-TRANIN-STATUS
+               IF WS-SUCCESS
+                   SET WS-WARNING TO TRUE
+               END-IF
+           END-IF
+           
+      *    Close card input file
+           CLOSE CARDIN-FILE
+           IF NOT WS-CARDIN-OK AND NOT WS-CARDIN-EOF
+               DISPLAY 'CBAUDP01: Warning - CARDIN close status: '
+                       WS-CARDIN-STATUS
                IF WS-SUCCESS
                    SET WS-WARNING TO TRUE
                END-IF
