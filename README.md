@@ -85,7 +85,13 @@ CardDemo includes several optional modules that extend the base functionality:
    - Account details inquiry via MQ (CDRA transaction)
    - Demonstrates asynchronous processing patterns
 
-4. **Additional JCL Utilities**
+4. **Audit Trail System**
+   - Audit logging for all data modifications
+   - VSAM-based audit storage with timestamp-based keys
+   - Automated logging of customer, account, and transaction changes
+   - Centralized audit subprogram for consistent logging across applications
+
+5. **Additional JCL Utilities**
    - FTP integration
    - Text-to-PDF conversion
    - DB2 and IMS DB load/unload operations
@@ -142,6 +148,7 @@ CardDemo includes several optional modules that extend the base functionality:
      | AWS.M2.CARDDEMO.TRANCATG.PS       | Transaction Category Types                   | CVTRA04Y     | FB     |     60 |
      | AWS.M2.CARDDEMO.TRANTYPE.PS       | Transaction Types                            | CVTRA03Y     | FB     |     60 |
      | AWS.M2.CARDDEMO.TCATBALF.PS       | Transaction Category Balance                 | CVTRA01Y     | FB     |     50 |
+     | AWS.M2.CARDDEMO.AUDITLOG.VSAM.KSDS| Audit trail log data                         | AUDITLOG     | FB     |    565 |
 
 5. **Initialize the Environment**
    - Execute the following JCLs in sequence:
@@ -164,6 +171,7 @@ CardDemo includes several optional modules that extend the base functionality:
      | OPENFIL  | Makes files available to CICS                     |                 |
      | DEFGDGB  | Defines GDG Base                                  |                 |
      | DEFGDGD  | Defines GDG Bases added for Db2                   |                 |
+     | DEFAUDIT | Defines VSAM audit cluster for audit trail        |                 |
 
 6. **Compile the Programs**
    - Use your standard mainframe compilation procedures
@@ -323,6 +331,7 @@ Admin users can perform the following functions:
 | ESDSRRDS | IDCAMS   | Create ESDS and RRDS VSAM files                      |                |
 | CBPAUP0J | CBPAUP0C | Purge Expired Authorizations                         | IMS-DB2-MQ: Pending Authorizations |
 | MNTTRDB2 | COBTUPDT | Maintain Transaction type table                      | Db2: Transaction Type Mgmt |
+| REPAUDIT | IDCAMS   | VSAM audit file maintenance and reporting            | Audit Trail     |
 | WAITSTEP | COBSWAIT | Wait job for given time                              |                |
 
 ### Application Screens
@@ -343,11 +352,63 @@ Admin users can perform the following functions:
 
 **Note**: Options 5 and 6 will be enabled only if you install the Transaction Type Management with DB2 optional feature (transactions CTTU and CTLI).
 
+## Audit Trail System
+
+CardDemo includes an audit trail system that automatically logs all data modifications across the application. This system provides traceability for compliance and monitoring purposes.
+
+### Architecture Overview
+
+```mermaid
+graph TD
+    A[COACTUPC.cbl<br/>Account Update] --> D[COAUDIT.cbl<br/>Audit Logger]
+    B[COBIL00C.cbl<br/>Bill Payment] --> D
+    C[COTRN02C.cbl<br/>Transaction Add] --> D
+    D --> E[(AUDITLOG.VSAM<br/>Audit Data)]
+    
+    G[CVACT01Y.cpy<br/>Account Structure] -.-> A
+    H[CVCUS01Y.cpy<br/>Customer Structure] -.-> A
+    I[CVTRA05Y.cpy<br/>Transaction Structure] -.-> B
+    I -.-> C
+    J[AUDITLOG.cpy<br/>Audit Record Structure] -.-> D
+    K[CVAUD01Y.cpy<br/>Audit Parameter Structure] -.-> D
+```
+
+### Key Components
+
+#### Programs
+- **COAUDIT.cbl**: Central audit subprogram that handles all audit logging operations
+- **Modified Programs**: COACTUPC, COBIL00C, COTRN02C enhanced with audit trail calls
+
+#### Data Structures
+- **AUDITLOG.cpy**: 565-byte audit record structure with customer, account, and transaction data using REDEFINES
+- **CVAUD01Y.cpy**: Parameter interface for audit subprogram calls
+
+#### Storage
+- **AUDITLOG.VSAM**: KSDS file with 35-byte composite key (log type + timestamp + user ID)
+- **565-byte fixed records** optimized for storage efficiency with COMP/COMP-3 fields
+
+#### JCL Jobs
+- **DEFAUDIT.jcl**: Creates and defines the VSAM audit cluster
+- **REPAUDIT.jcl**: Maintenance operations for audit file backup and reporting
+
+### Features
+- **Automatic Logging**: Transparent audit trail integration in existing programs
+- **Timestamp-based Keys**: Ensures chronological ordering and uniqueness
+- **Multi-record Support**: Handles customer, account, and transaction record types
+- **Error Handling**: Comprehensive error detection and reporting
+- **CICS Integration**: Full CICS resource definitions included
+
+### Audit Events Logged
+- Customer record updates (COACTUPC)
+- Account record updates (COACTUPC, COBIL00C)
+- Transaction record creation (COTRN02C, COBIL00C)
+- User identification and action tracking
+
 ## Technical Highlights
 
 | Component | Domain Features | Technical Features |
 |:----------|:----------------|:-------------------|
-| **Base Application** | Customer<br>Account<br>Card<br>Transaction<br>Bill Payment<br>Statement/Report | COBOL<br>CICS<br>JCL (Batch)<br>VSAM (KSDS with AIX) |
+| **Base Application** | Customer<br>Account<br>Card<br>Transaction<br>Bill Payment<br>Statement/Report<br>Audit Trail | COBOL<br>CICS<br>JCL (Batch)<br>VSAM (KSDS with AIX)<br>Timestamp-based audit logging |
 | **Optional Features** | Authorization<br>Fraud<br>Transaction Type (Extension) | DB2<br>MQ<br>IMS DB<br>JCL Utilities<br>Complex data formats<br>Various dataset types<br>Advanced copybook structures |
 
 ## Support
@@ -389,10 +450,11 @@ The CardDemo application has been enhanced with optional features that extend it
 - Credit Card Authorizations with IMS, DB2, and MQ
 - Transaction Type Management with DB2
 - Account Extractions using MQ and VSAM
+- Audit Trail System
 - Additional JCL Utilities
 - Enhanced Data and Copybook Features
 
-These optional features make CardDemo an even more useful resource for customers looking to modernize their mainframe applications. With modules for DB2, MQ, IMS DB, JCL utilities, and more data formats now available, customers can leverage CardDemo to test a wider array of mainframe migration, refactoring, replatforming, and augmentation scenarios.
+These optional features make CardDemo an even more useful resource for customers looking to modernize their mainframe applications. With modules for DB2, MQ, IMS DB, audit trail logging, JCL utilities, and more data formats now available, customers can leverage CardDemo to test a wider array of mainframe migration, refactoring, replatforming, and augmentation scenarios.
 
-Last updated: April 2025
+Last updated: September 2025
 

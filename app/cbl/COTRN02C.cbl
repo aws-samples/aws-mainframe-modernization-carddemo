@@ -88,6 +88,7 @@
        COPY CVTRA05Y.
        COPY CVACT01Y.
        COPY CVACT03Y.
+       COPY CVAUD01Y.
 
        COPY DFHAID.
        COPY DFHBMSCA.
@@ -722,6 +723,7 @@
 
            EVALUATE WS-RESP-CD
                WHEN DFHRESP(NORMAL)
+                   PERFORM AUDIT-TRANSACTION-CREATE
                    PERFORM INITIALIZE-ALL-FIELDS
                    MOVE SPACES             TO WS-MESSAGE
                    MOVE DFHGREEN           TO ERRMSGC  OF COTRN2AO
@@ -777,6 +779,30 @@
                                    MZIPI    OF COTRN2AI
                                    CONFIRMI OF COTRN2AI
                                    WS-MESSAGE.
+
+      *----------------------------------------------------------------*
+      *                    AUDIT-TRANSACTION-CREATE
+      *----------------------------------------------------------------*
+       AUDIT-TRANSACTION-CREATE.
+
+           INITIALIZE AUDIT-PARMS
+           
+           MOVE CDEMO-USER-ID       TO AUDIT-IN-USER-ID
+           MOVE CDEMO-USER-TYPE     TO AUDIT-IN-USER-TYPE
+           SET AUDIT-IN-INSERT      TO TRUE
+           SET AUDIT-IN-TRANSACTION TO TRUE
+           MOVE LENGTH OF TRAN-RECORD TO AUDIT-IN-RECORD-LENGTH
+           MOVE TRAN-RECORD         TO AUDIT-IN-RECORD-DATA
+           
+           EXEC CICS LINK
+                PROGRAM('COAUDIT')
+                COMMAREA(AUDIT-PARMS)
+                LENGTH(LENGTH OF AUDIT-PARMS)
+           END-EXEC
+           
+           IF NOT AUDIT-SUCCESS
+               DISPLAY 'AUDIT WARNING: ' AUDIT-OUT-ERROR-MSG
+           END-IF.
 
       *
       * Ver: CardDemo_v1.0-15-g27d6c6f-68 Date: 2022-07-19 23:12:34 CDT

@@ -6,3 +6,5 @@ batch-app/markers/*
 /.idea/
 .DS_Store
 **/.DS_Store
+.kiro
+_prompt.md
