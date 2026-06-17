@@ -1521,6 +1521,15 @@
 152100*    Transaction Type data                                        15210000
 152200******************************************************************15220000
 152300     MOVE DCL-TR-TYPE         TO TTUP-OLD-TTYP-TYPE               15230000
+      *    Bound the DB2 VARCHAR length to the host text size (X(50)) before
+      *    using it as a reference-modification length, so an unexpected
+      *    length cannot read past DCL-TR-DESCRIPTION-TEXT (IBM LR "Reference
+      *    modification").
+           IF DCL-TR-DESCRIPTION-LEN > 50
+              MOVE 50 TO DCL-TR-DESCRIPTION-LEN
+           END-IF
+           MOVE SPACES TO TTUP-OLD-TTYP-TYPE-DESC
+           IF DCL-TR-DESCRIPTION-LEN > 0
 152400     MOVE DCL-TR-DESCRIPTION-TEXT(1: DCL-TR-DESCRIPTION-LEN)      15240000
 152500                              TO TTUP-OLD-TTYP-TYPE-DESC          15250000
 152600                                                                  15260000
