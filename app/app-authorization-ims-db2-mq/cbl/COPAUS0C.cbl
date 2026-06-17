@@ -362,6 +362,9 @@
        PROCESS-PF7-KEY.
       *****************************************************************
 
+           IF CDEMO-CPVS-PAGE-NUM > 20
+              MOVE 20 TO CDEMO-CPVS-PAGE-NUM
+           END-IF
            IF CDEMO-CPVS-PAGE-NUM > 1
               COMPUTE CDEMO-CPVS-PAGE-NUM = CDEMO-CPVS-PAGE-NUM - 1
 
@@ -434,10 +437,18 @@
                        MOVE PA-AUTHORIZATION-KEY TO
                                              CDEMO-CPVS-PAUKEY-LAST
                        IF WS-IDX = 2
+      *                CDEMO-CPVS-PAUKEY-PREV-PG has OCCURS 20 and
+      *                CDEMO-CPVS-PAGE-NUM comes from the (caller-supplied)
+      *                COMMAREA, so only record a page key while the count is
+      *                within the table; paging forward past 20 pages must not
+      *                index past it (IBM LR "Subscripting").
+                        IF CDEMO-CPVS-PAGE-NUM >= 0 AND
+                           CDEMO-CPVS-PAGE-NUM < 20
                           COMPUTE CDEMO-CPVS-PAGE-NUM =
                                   CDEMO-CPVS-PAGE-NUM + 1
                           MOVE PA-AUTHORIZATION-KEY TO
                           CDEMO-CPVS-PAUKEY-PREV-PG(CDEMO-CPVS-PAGE-NUM)
+                        END-IF
                        END-IF
                    END-IF
                END-PERFORM
