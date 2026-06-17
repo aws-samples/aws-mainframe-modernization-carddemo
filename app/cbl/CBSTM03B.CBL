@@ -96,6 +96,11 @@
            05  ACCTFILE-STAT1      PIC X.
            05  ACCTFILE-STAT2      PIC X.
 
+      * Bounded copy of the caller-supplied key length, clamped to the size
+      * of LK-M03B-KEY (25), so a reference modification of the key cannot run
+      * past it (IBM LR "Reference modification").
+       01  WS-M03B-KEY-LN     PIC S9(4) COMP.
+
        LINKAGE SECTION.
        01  LK-M03B-AREA.
            05  LK-M03B-DD          PIC X(08).
@@ -115,6 +120,10 @@
 
        0000-START.
 
+           MOVE LK-M03B-KEY-LN TO WS-M03B-KEY-LN
+           IF WS-M03B-KEY-LN > 25
+              MOVE 25 TO WS-M03B-KEY-LN
+           END-IF
            EVALUATE LK-M03B-DD
              WHEN 'TRNXFILE'
                PERFORM 1000-TRNXFILE-PROC THRU 1999-EXIT
@@ -186,10 +195,15 @@
            END-IF.
 
            IF M03B-READ-K
-               MOVE LK-M03B-KEY (1:LK-M03B-KEY-LN) TO FD-CUST-ID
-               READ CUST-FILE INTO LK-M03B-FLDT
-               END-READ
-               GO TO 3900-EXIT
+               IF WS-M03B-KEY-LN >= 1
+                   MOVE LK-M03B-KEY (1:WS-M03B-KEY-LN) TO FD-CUST-ID
+                   READ CUST-FILE INTO LK-M03B-FLDT
+                   END-READ
+                   GO TO 3900-EXIT
+               ELSE
+                   MOVE '23' TO LK-M03B-RC
+                   GO TO 3999-EXIT
+               END-IF
            END-IF.
 
            IF M03B-CLOSE
@@ -211,10 +225,15 @@
            END-IF.
 
            IF M03B-READ-K
-               MOVE LK-M03B-KEY (1:LK-M03B-KEY-LN) TO FD-ACCT-ID
-               READ ACCT-FILE INTO LK-M03B-FLDT
-               END-READ
-               GO TO 4900-EXIT
+               IF WS-M03B-KEY-LN >= 1
+                   MOVE LK-M03B-KEY (1:WS-M03B-KEY-LN) TO FD-ACCT-ID
+                   READ ACCT-FILE INTO LK-M03B-FLDT
+                   END-READ
+                   GO TO 4900-EXIT
+               ELSE
+                   MOVE '23' TO LK-M03B-RC
+                   GO TO 4999-EXIT
+               END-IF
            END-IF.
 
            IF M03B-CLOSE
