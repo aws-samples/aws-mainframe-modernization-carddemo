@@ -351,6 +351,15 @@
        2100-EXTRACT-REQUEST-MSG.                                                
       * ------------------------------------------------------------- *         
       *                                                                         
+      *    W01-DATALEN is the data length returned by the MQ GET. Clamp it to
+      *    the W01-GET-BUFFER size (500) so a longer message cannot read past
+      *    the buffer, and treat a zero-length message as an empty request
+      *    rather than reference-modifying a stray byte (IBM LR "Reference
+      *    modification").
+           IF W01-DATALEN > 500
+              MOVE 500 TO W01-DATALEN
+           END-IF
+           IF W01-DATALEN > 0
            UNSTRING W01-GET-BUFFER(1:W01-DATALEN)                               
                     DELIMITED BY ','                                            
                     INTO PA-RQ-AUTH-DATE                                        
@@ -371,7 +380,11 @@
                          PA-RQ-MERCHANT-STATE                                   
                          PA-RQ-MERCHANT-ZIP                                     
                          PA-RQ-TRANSACTION-ID                                   
-           END-UNSTRING                                                         
+           END-UNSTRING
+           ELSE
+              INITIALIZE PENDING-AUTH-REQUEST
+              MOVE ZEROES TO WS-TRANSACTION-AMT-AN
+           END-IF                                                         
                                                                                 
            COMPUTE PA-RQ-TRANSACTION-AMT =                                      
                                FUNCTION NUMVAL(WS-TRANSACTION-AMT-AN)           
