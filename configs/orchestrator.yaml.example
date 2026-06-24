@@ -1,0 +1,30 @@
+# CardDemo batch orchestrator configuration (example).
+# Copy to orchestrator.yaml and adjust paths for your environment.
+# Each job lists its steps in execution order; steps are run by cmd/batch.
+
+jobs:
+  daily-transaction-processing:
+    description: "Daily transaction post and categorisation (replaces POSTTRAN.jcl + TRANCATG.jcl)"
+    steps:
+      - name: post-transaction
+        cmd: carddemo-batch post-transaction
+        args: ["--input", "/data/transactions/daily.dat"]
+      - name: categorize-transaction
+        cmd: carddemo-batch categorize-transaction
+        args: ["--date", "today"]
+      - name: daily-rejects
+        cmd: carddemo-batch daily-rejects
+        args: ["--output", "/data/rejects/daily.dat"]
+
+  monthly-statement:
+    description: "Monthly statement generation (replaces CREASTMT.JCL + REPTFILE.jcl)"
+    steps:
+      - name: interest-calc
+        cmd: carddemo-batch interest-calc
+        args: ["--month", "current"]
+      - name: create-statement
+        cmd: carddemo-batch create-statement
+        args: ["--output-dir", "/data/statements"]
+      - name: report-file
+        cmd: carddemo-batch report-file
+        args: ["--output", "/data/reports/monthly.rpt"]

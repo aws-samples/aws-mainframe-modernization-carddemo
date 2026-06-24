@@ -1,398 +1,188 @@
-# CardDemo - Mainframe Credit Card Management Application
-
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
-
-## Executive Summary
-CardDemo is a comprehensive mainframe application that simulates a credit card management system. Designed specifically to showcase AWS and partner technologies for mainframe migration and modernization scenarios, it provides a realistic environment for testing various modernization approaches including discovery, migration, performance testing, service enablement, and more.
-
-## Table of Contents
-- [Description](#description)
-- [Technologies](#technologies)
-- [Optional Features](#optional-features)
-- [Installation](#installation)
-- [Running Batch Jobs](#running-batch-jobs)
-- [Application Details](#application-details)
-  - [User Functions](#user-functions)
-  - [Admin Functions](#admin-functions)
-  - [Application Inventory](#application-inventory)
-  - [Application Screens](#application-screens)
-- [Technical Highlights](#technical-highlights)
-- [Support](#support)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Project Status](#project-status)
-
-## Description
-CardDemo is a mainframe application designed to test and showcase AWS and partner technology for mainframe migration and modernization use-cases. It provides a realistic environment for:
-
-- Application discovery and analysis
-- Migration assessment and planning
-- Modernization strategy development
-- Performance testing
-- System augmentation
-- Service enablement and extraction
-- Test creation and automation
-
-The application intentionally incorporates various coding styles and patterns to exercise analysis, transformation, and migration tooling across different mainframe programming paradigms.
-
-## Technologies
-
-### Core Technologies
-- **COBOL**: Primary programming language
-- **CICS**: Transaction processing
-- **VSAM (KSDS with AIX)**: Data storage
-- **JCL**: Batch processing
-- **RACF**: Security
-- **ASSEMBLER**: System-level programming
-  - MVSWAIT: Timer control for batch jobs
-  - COBDATFT: Date format conversion utility
-
-### Optional Technologies
-- **Db2**: Relational database management
-- **IMS DB**: Hierarchical database
-- **MQ**: Message queuing
-- **JCL Utilities**: FTP, TXT2PDF, DB2 LOAD/UNLOAD, IMS DB LOAD/UNLOAD, Internal Reader
-- **Advanced Data Formats**: COMP, COMP-3, Zoned Decimal, Signed, Unsigned
-- **Additional Dataset Types**: VSAM (ESDS/RRDS), GDG, PDS
-- **Record Formats**: VB, FBA, and others
-- **Complex Copybook Structures**: REDEFINES, OCCURS, OCCURS DEPENDING ON
-
-## Optional Features
-
-CardDemo includes several optional modules that extend the base functionality:
-
-1. **Credit Card Authorizations with IMS, DB2, and MQ**
-   - Simulate credit card authorization requests using MQ
-   - Retrieve customer data from IMS databases
-   - Log transactions in DB2 tables
-   - Features include:
-     - Authorization request processing
-     - Pending authorization summary and details
-     - Batch purging of expired authorizations
-   - More details: [Pending Authorization Extension](./app/app-authorization-ims-db2-mq)
-
-2. **Transaction Type Management with DB2**
-   - Maintain transaction type reference data in DB2 tables
-   - Add, update, or delete transaction types from CICS transactions
-   - Manage transaction types through batch jobs
-   - Demonstrates DB2 integration patterns including cursors and SQL operations
-
-3. **Account Extractions using MQ and VSAM**
-   - Extract and transmit account data through MQ channels
-   - System date inquiry via MQ (CDRD transaction)
-   - Account details inquiry via MQ (CDRA transaction)
-   - Demonstrates asynchronous processing patterns
-
-4. **Additional JCL Utilities**
-   - FTP integration
-   - Text-to-PDF conversion
-   - DB2 and IMS DB load/unload operations
-   - Internal reader functionality
-
-## Installation
-
-### Prerequisites
-- Mainframe environment with CICS, VSAM, and JCL support
-- Optional: DB2, IMS DB, and MQ for extended features
-- File transfer capability between local environment and mainframe
-
-### Installation Steps
-
-1. **Prepare Your Environment**
-   - Clone this repository to your local development environment
-   - Ensure you have appropriate access to your mainframe environment
-
-2. **Create Mainframe Datasets**
-   - Define a High Level Qualifier (HLQ) for your datasets
-   - Create the following datasets with the specified formats:
-
-     | HLQ    | Name          | Format | Length |
-     | :----- | :------------ | :----- | -----: |
-     | AWS.M2 | CARDDEMO.JCL  | FB     |     80 |
-     | AWS.M2 | CARDDEMO.PROC | FB     |     80 |
-     | AWS.M2 | CARDDEMO.CBL  | FB     |     80 |
-     | AWS.M2 | CARDDEMO.CPY  | FB     |     80 |
-     | AWS.M2 | CARDDEMO.BMS  | FB     |     80 |
-     | AWS.M2 | CARDDEMO.ASM  | FB     |     80 |
-     | AWS.M2 | CARDDEMO.MACLIB| FB    |     80 |
-
-3. **Upload Source Code**
-   - Upload the application source folders from the repository to your mainframe
-   - Use $INDFILE or your preferred file transfer tool
-   - Ensure proper transfer modes (binary/text) as appropriate
-
-4. **Upload Sample Data**
-   - Transfer the sample data from the `main/-/data/EBCDIC/` folder to the mainframe
-   - Use binary transfer mode to preserve data integrity
-   - Create the following datasets:
-
-     | Dataset name                      | Description                                  | Copybook     | Format | Length |
-     | :---------------------------------| :------------------------------------------- | :----------- | :----- | -----: |
-     | AWS.M2.CARDDEMO.USRSEC.PS         | User Security file                           | CSUSR01Y     | FB     |     80 |
-     | AWS.M2.CARDDEMO.ACCTDATA.PS       | Account Data                                 | CVACT01Y     | FB     |    300 |
-     | AWS.M2.CARDDEMO.CARDDATA.PS       | Card Data                                    | CVACT02Y     | FB     |    150 |
-     | AWS.M2.CARDDEMO.CUSTDATA.PS       | Customer Data                                | CVCUS01Y     | FB     |    500 |
-     | AWS.M2.CARDDEMO.CARDXREF.PS       | Customer Account Card Cross reference        | CVACT03Y     | FB     |     50 |
-     | AWS.M2.CARDDEMO.DALYTRAN.PS.INIT  | Transaction database initialization record   | CVTRA06Y     | FB     |    350 |
-     | AWS.M2.CARDDEMO.DALYTRAN.PS       | Transaction data for posting                 | CVTRA06Y     | FB     |    350 |
-     | AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS| Online transaction data                      | CVTRA05Y     | FB     |    350 |
-     | AWS.M2.CARDDEMO.DISCGRP.PS        | Disclosure Groups                            | CVTRA02Y     | FB     |     50 |
-     | AWS.M2.CARDDEMO.TRANCATG.PS       | Transaction Category Types                   | CVTRA04Y     | FB     |     60 |
-     | AWS.M2.CARDDEMO.TRANTYPE.PS       | Transaction Types                            | CVTRA03Y     | FB     |     60 |
-     | AWS.M2.CARDDEMO.TCATBALF.PS       | Transaction Category Balance                 | CVTRA01Y     | FB     |     50 |
-
-5. **Initialize the Environment**
-   - Execute the following JCLs in sequence:
-
-     | Jobname  | Purpose                                           | Optional Module |
-     | :------- | :------------------------------------------------ |:--------------- |
-     | DUSRSECJ | Sets up user security VSAM file                   |                 |
-     | CLOSEFIL | Closes files opened by CICS                       |                 |
-     | ACCTFILE | Loads Account database using sample data          |                 |
-     | CARDFILE | Loads Card database with credit card sample data  |                 |
-     | CUSTFILE | Creates customer database                         |                 |
-     | XREFFILE | Loads Customer Card account cross reference       |                 |
-     | CREADB21 | Creates CardDemo Db2 database and loads tables    | Db2: Transaction Type Mgmt |
-     | TRANFILE | Copies initial Transaction file to VSAM           |                 |
-     | TRANEXTR | Extracts TRAN type and category tables from Db2   | Db2: Transaction Type Mgmt |
-     | DISCGRP  | Copies initial Disclosure Group file to VSAM      |                 |
-     | TCATBALF | Copies initial TCATBALF file to VSAM              |                 |
-     | TRANCATG | Copies initial transaction category file to VSAM  |                 |
-     | TRANTYPE | Copies initial transaction type file to VSAM      |                 |
-     | OPENFIL  | Makes files available to CICS                     |                 |
-     | DEFGDGB  | Defines GDG Base                                  |                 |
-     | DEFGDGD  | Defines GDG Bases added for Db2                   |                 |
-
-6. **Compile the Programs**
-   - Use your standard mainframe compilation procedures
-   - Sample JCLs are provided in the samples folder to assist with compilation
-
-7. **Configure CICS Resources**
-   - Option 1 (Preferred): Use the DFHCSDUP JCL with the CSD file in the CSD folder
-   - Option 2: Use CEDA transaction to manually define resources:
-
-     ```
-     DEFINE LIBRARY(COM2DOLL) GROUP(CARDDEMO) DSNAME01(&HLQ..LOADLIB)
-     DEF PROGRAM(COCRDLIC) GROUP(CARDDEMO)
-     DEF MAPSET(COCRDLI) GROUP(CARDDEMO)
-     DEFINE PROGRAM(COSGN00C) GROUP(CARDDEMO) DA(ANY) TRANSID(CC00) DESCRIPTION(LOGIN)
-     DEFINE TRANSACTION(CC00) GROUP(CARDDEMO) PROGRAM(COSGN00C) TASKDATAL(ANY)
-     ```
-
-8. **Install and Load Resources**
-   - Install the resources in your CICS region:
-
-     ```
-     CEDA INSTALL TRANS(CCLI) GROUP(CARDDEMO)
-     CEDA INSTALL FILE(CARDDAT) GROUP(CARDDEMO)
-     CECI LOAD PROG(COCRDUP)
-     CECI LOAD PROG(COCRDUPC)
-     ```
-
-   - Execute NEWCOPY for mapsets and programs:
-
-     ```
-     CEMT SET PROG(COCRDUP) NEWCOPY
-     CEMT SET PROG(COCRDUPC) NEWCOPY
-     ```
-
-### Accessing the Application
-- **Online Functions**: Start the CardDemo application using the CC00 transaction
-  - Admin access: Use userid ADMIN001 with password PASSWORD
-  - User access: Use userid USER0001 with password PASSWORD
-- **Batch Functions**: See the "Running Batch Jobs" section below
-
-## Running Batch Jobs
-
-Execute the following JCLs in sequence to run the full batch process:
-
-| Jobname  | Purpose                                             | Optional Module |
-| :------- | :-------------------------------------------------- |:--------------- |
-| CLOSEFIL | Closes files opened by CICS                         |                 |
-| ACCTFILE | Loads Account database using sample data            |                 |
-| CARDFILE | Loads Card database with credit card sample data    |                 |
-| XREFFILE | Loads Customer Card account cross reference to VSAM |                 |
-| CUSTFILE | Creates customer database                           |                 |
-| TRANBKP  | Creates Transaction database                        |                 |
-| TRANEXTR | Extracts latest Db2 data for Transaction types      | Db2: Transaction Type Mgmt |
-| TRANCATG | Copies latest transaction category file to VSAM     |                 |
-| TRANTYPE | Copies latest transaction type file to VSAM         |                 |
-| DISCGRP  | Copies initial disclosure Group file to VSAM        |                 |
-| TCATBALF | Copies initial TCATBALF file to VSAM                |                 |
-| DUSRSECJ | Sets up user security VSAM file                     |                 |
-| POSTTRAN | Core transaction processing job                     |                 |
-| INTCALC  | Run interest calculations                           |                 |
-| TRANBKP  | Backup Transaction database                         |                 |
-| COMBTRAN | Combine system transactions with daily ones         |                 |
-| CREASTMT | Produce transaction statement                       |                 |
-| TRANIDX  | Define alternate index on transaction file          |                 |
-| OPENFIL  | Makes files available to CICS                       |                 |
-| WAITSTEP | Defines a step to wait job for given time           |                 |
-| CBPAUP0J | Purge expired authorizations                        | IMS-DB2-MQ: Pending Authorizations |
-
-## Application Details
-
-CardDemo is a comprehensive credit card management application built primarily using COBOL. It provides functionality for managing accounts, credit cards, transactions, and bill payments.
-
-### User Types
-
-The application supports two user roles:
-- **Regular Users**: Can perform standard card management functions
-- **Admin Users**: Can perform administrative functions like user management
-
-### User Functions
-
-![User Function Flow](./diagrams/Application-Flow-User.png "User Function Flow")
-
-The regular user can perform the following functions:
-- View and update account information
-- Manage credit cards
-- View, add, and process transactions
-- Generate transaction reports
-- Make bill payments
-- View pending authorizations (with optional module)
-
-### Admin Functions
-
-![Admin Function Flow](./diagrams/Application-Flow-Admin.png "Admin Function Flow")
-
-Admin users can perform the following functions:
-- User management (list, add, update, delete)
-- Transaction type management (with DB2 optional module)
-
-### Application Inventory
-
-#### Online Components
-
-| Transaction | BMS Map | Program  | Function                        | Optional Module                    | Notes                                                     |
-|:------------|:--------|:---------|:--------------------------------|:-----------------------------------|:----------------------------------------------------------|
-| CC00        | COSGN00 | COSGN00C | Signon Screen                   |                                    |                                                           |
-| CM00        | COMEN01 | COMEN01C | Main Menu                       |                                    |                                                           |
-| CAVW        | COACTVW | COACTVWC | Account View                    |                                    |                                                           |
-| CAUP        | COACTUP | COACTUPC | Account Update                  |                                    |                                                           |
-| CCLI        | COCRDLI | COCRDLIC | Credit Card List                |                                    |                                                           |
-| CCDL        | COCRDSL | COCRDSLC | Credit Card View                |                                    |                                                           |
-| CCUP        | COCRDUP | COCRDUPC | Credit Card Update              |                                    |                                                           |
-| CT00        | COTRN00 | COTRN00C | Transaction List                |                                    |                                                           |
-| CT01        | COTRN01 | COTRN01C | Transaction View                |                                    |                                                           |
-| CT02        | COTRN02 | COTRN02C | Transaction Add                 |                                    |                                                           |
-| CR00        | CORPT00 | CORPT00C | Transaction Reports             |                                    |                                                           |
-| CB00        | COBIL00 | COBIL00C | Bill Payment                    |                                    |                                                           |
-| CPVS        | COPAU00 | COPAUS0C | Pending Authorization Summary   | IMS-DB2-MQ: Pending Authorizations | Read IMS and VSAM                                         |
-| CPVD        | COPAU01 | COPAUS1C | Pending Authorization Details   | IMS-DB2-MQ: Pending Authorizations | Update IMS and Insert DB2                                 |
-| CP00        |         | COPAUA0C | Process Authorization Requests  | IMS-DB2-MQ: Pending Authorizations | MQ trigger, request and response; Insert and Update to IMS|
-| CA00        | COADM01 | COADM01C | Admin Menu                      | Db2: Transaction Type Mgmt         |                                                           |
-| CU00        | COUSR00 | COUSR00C | List Users                      |                                    |                                                           |
-| CU01        | COUSR01 | COUSR01C | Add User                        |                                    |                                                           |
-| CU02        | COUSR02 | COUSR02C | Update User                     |                                    |                                                           |
-| CU03        | COUSR03 | COUSR03C | Delete User                     |                                    |                                                           |
-| CTTU        | COTRTUP | COTRTUPC | Tran Type add/edit              | Db2: Transaction Type Mgmt         | Update and insert on Db2                                  |
-| CTLI        | COTRTLI | COTRTLIC | Tran Type list/update/delete    | Db2: Transaction Type Mgmt         | Demonstrates cursor and delete in Db2                     |
-| CDRD        |         | CODATE01 | Inquire System Date via MQ      | MQ Integration                     | Demonstrates MQ request/response pattern                  |
-| CDRA        |         | COACCT01 | Inquire account details via MQ  | MQ Integration                     | Demonstrates MQ request/response pattern                  |
-
-#### Batch Components
-
-| Job      | Program  | Function                                             | Optional Module |
-|:---------|:---------|:-----------------------------------------------------|:---------------|
-| DUSRSECJ | IEBGENER | Initial Load of User security file                   |                |
-| DEFGDGB  | IDCAMS   | Setup GDG Bases                                      |                |
-| DEFGDGD  | IDCAMS   | Setup more GDG Bases for Db2                         |                |
-| ACCTFILE | IDCAMS   | Refresh Account Master                               |                |
-| CARDFILE | IDCAMS   | Refresh Card Master                                  |                |
-| CUSTFILE | IDCAMS   | Refresh Customer Master                              |                |
-| CREADB21 | DSNTEP4  | Creates CardDemo Db2 database and loads tables       | Db2: Transaction Type Mgmt |
-| TRANEXTR | DSNTIAUL | Extracts latest Db2 data for Transaction types       | Db2: Transaction Type Mgmt |
-| DISCGRP  | IDCAMS   | Load Disclosure Group File                           |                |
-| TRANFILE | IDCAMS   | Load Transaction Master file                         |                |
-| TRANCATG | IDCAMS   | Load Transaction category types                      |                |
-| TRANTYPE | IDCAMS   | Load Transaction type file                           |                |
-| XREFFILE | IDCAMS   | Account, Card and Customer cross reference           |                |
-| CLOSEFIL | IEFBR14  | Close VSAM files in CICS                             |                |
-| TCATBALF | IDCAMS   | Refresh Transaction Category Balance                 |                |
-| TRANBKP  | IDCAMS   | Refresh Transaction Master                           |                |
-| POSTTRAN | CBTRN02C | Transaction processing job                           |                |
-| TRANIDX  | IDCAMS   | Define AIX for transaction file                      |                |
-| OPENFIL  | IEFBR14  | Open files in CICS                                   |                |
-| INTCALC  | CBACT04C | Run interest calculations                            |                |
-| COMBTRAN | SORT     | Combine transaction files                            |                |
-| CREASTMT | CBSTM03A | Produce transaction statement                        |                |
-| TRANREPT | CBTRN03C | Transaction Report - Submitted from CICS             |                |
-| ESDSRRDS | IDCAMS   | Create ESDS and RRDS VSAM files                      |                |
-| CBPAUP0J | CBPAUP0C | Purge Expired Authorizations                         | IMS-DB2-MQ: Pending Authorizations |
-| MNTTRDB2 | COBTUPDT | Maintain Transaction type table                      | Db2: Transaction Type Mgmt |
-| WAITSTEP | COBSWAIT | Wait job for given time                              |                |
-
-### Application Screens
-
-#### Signon Screen
-
-![Signon Screen](./diagrams/Signon-Screen.png "Signon Screen")
-
-#### Main Menu
-
-![Main Menu](./diagrams/Main-Menu.png "Main Menu")
-
-**Note**: Option 11 (Pending Authorizations) is only available with the optional Credit Card Authorizations feature. Please refer to [the authorization documentation](./app/app-authorization-ims-db2-mq) for details.
-
-#### Admin Menu
-
-![Admin Menu](./diagrams/Admin-Menu.png "Admin Menu")
-
-**Note**: Options 5 and 6 will be enabled only if you install the Transaction Type Management with DB2 optional feature (transactions CTTU and CTLI).
-
-## Technical Highlights
-
-| Component | Domain Features | Technical Features |
-|:----------|:----------------|:-------------------|
-| **Base Application** | Customer<br>Account<br>Card<br>Transaction<br>Bill Payment<br>Statement/Report | COBOL<br>CICS<br>JCL (Batch)<br>VSAM (KSDS with AIX) |
-| **Optional Features** | Authorization<br>Fraud<br>Transaction Type (Extension) | DB2<br>MQ<br>IMS DB<br>JCL Utilities<br>Complex data formats<br>Various dataset types<br>Advanced copybook structures |
-
-## Support
-
-For questions, issues, or improvement requests, please raise an issue in the repository with detailed information about your concern. The maintainers will respond according to availability.
-
-## Roadmap
-
-The following features are planned for upcoming releases:
-
-1. **Additional Database Syntax Usage Scenarios**
-   - DB2 Rewards: Calculate rewards for transactions based on transaction types, categories, and rules
-     - Will include stored procedures, functions, and dynamic SQL
-   - Hierarchical database: IMS DC implementation
-
-2. **Integration Enhancements**
-   - FTP and SFTP integration
-   - Web Service connectivity
-   - Exposure of transactions for distributed application integration
-
-## Contributing
-
-We welcome contributions and enhancements to this codebase from the mainframe community. To contribute:
-
-1. Fork the repository
-2. Create your feature branch
-3. Implement your changes with appropriate tests
-4. Submit a pull request with a clear description of the changes
-
-Feel free to raise issues, create code, and submit merge requests for enhancements to help build this application as a resource for programmers wanting to understand and modernize their mainframes.
+# CardDemo — Go Port
+
+A faithful, modernised re-implementation of the [AWS Mainframe Modernization CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) reference application in Go. The original is a COBOL/CICS/VSAM credit-card management system; this port replaces each layer while preserving the data model and business logic so the two can be compared side-by-side.
+
+```
+module: github.com/aws-samples/aws-mainframe-modernization-carddemo
+go:     1.26.4
+```
+
+---
+
+## What this is
+
+| COBOL layer | Go replacement |
+|---|---|
+| CICS online transactions (BMS screens) | `cmd/carddemo` HTTP server — `html/template` pages, session cookies |
+| RACF user security + CICS sign-on | `internal/auth` — bcrypt, server-side sessions, CSRF, rate-limiting |
+| VSAM KSDS / sequential datasets | Flat EBCDIC binary files (`internal/cobolfmt`) + repository interfaces (SQLite/Postgres planned, ADR 0004) |
+| JCL batch job streams | `cmd/batch` subcommand CLI driven by `configs/orchestrator.yaml` |
+| COMP-3 / zoned-decimal arithmetic | `github.com/shopspring/decimal` (ADR 0007) |
+
+> **Implementation status.** The auth, user-management, and COBOL-format layers are complete and tested. The full BMS-screen web layer (`cmd/web`) and the 12 batch subcommands (`cmd/batch`) are stubs being wired up in RAU-43 and RAU-44 respectively. The COBOL flat-file data structures are fully defined and round-trip tested.
+
+---
+
+## Architecture
+
+```mermaid
+graph TD
+    Browser["Browser"] -->|HTTP :8080| Web["cmd/carddemo<br/>(auth + admin)"]
+    Web --> Auth["internal/auth<br/>sessions · bcrypt · CSRF · rate-limit"]
+    Web --> Domain["internal/domain<br/>Account · Card · Customer · Transaction"]
+    Auth --> Repo["internal/repo<br/>UserSecRepo (in-memory → SQLite/PG)"]
+    Domain --> FlatFiles["Flat EBCDIC binary files<br/>(VSAM-compatible layout)"]
+
+    CLI["cmd/batch<br/>post-transaction · interest-calc · …"] --> Domain
+    CLI --> FlatFiles
+
+    subgraph "internal/cobolfmt"
+        EBCDIC["EBCDIC decode/encode"]
+        Packed["COMP-3 (packed decimal)"]
+        Zoned["Zoned decimal"]
+        Binary["COMP binary"]
+    end
+    Domain --> EBCDIC
+```
+
+---
+
+## Prerequisites
+
+- Go 1.26.4 or later (`go version`)
+- `make` (optional but used throughout this guide)
+
+---
+
+## Quick start
+
+```bash
+# 1. Clone
+git clone https://github.com/aws-samples/aws-mainframe-modernization-carddemo.git
+cd aws-mainframe-modernization-carddemo
+
+# 2. Build everything
+make build
+
+# 3. Start the auth + admin server (seeds ADMIN001 / USER0001 automatically)
+#    NOTE: `make run-web` starts cmd/web — a health-check-only stub pending RAU-43.
+#    The working login binary today is cmd/carddemo:
+go run ./cmd/carddemo
+# → carddemo listening on :8080
+
+# 4. Open http://localhost:8080/login
+#    Log in as ADMIN001 / PASSWORD  (admin)
+#    Log in as USER0001 / PASSWORD  (regular user)
+```
+
+To override the listen address:
+
+```bash
+CARDDEMO_ADDR=:9090 go run ./cmd/carddemo
+```
+
+---
+
+## Default credentials
+
+| User ID | Password | Role | Legacy equivalent |
+|---|---|---|---|
+| `ADMIN001` | `PASSWORD` | Admin | ADMIN001 in `AWS.M2.CARDDEMO.USRSEC.PS` |
+| `USER0001` | `PASSWORD` | Regular user | USER0001 in `AWS.M2.CARDDEMO.USRSEC.PS` |
+
+Users are seeded at server startup via `internal/auth.SeedDefaultUsers`. Passwords are stored as bcrypt hashes; the plaintext `PASSWORD` only appears at seed time and is never persisted.
+
+---
+
+## Running batch jobs
+
+The `cmd/batch` binary maps each legacy JCL step to a named subcommand:
+
+```bash
+# List all subcommands
+go run ./cmd/batch --help
+
+# Run a single step
+go run ./cmd/batch post-transaction --input /data/transactions/daily.dat
+go run ./cmd/batch interest-calc --month current
+
+# Run a multi-step job using the orchestrator config
+cp configs/orchestrator.yaml.example configs/orchestrator.yaml
+# edit paths as needed, then:
+go run ./cmd/batch run --config configs/orchestrator.yaml --job daily-transaction-processing
+```
+
+Full JCL-to-subcommand mapping: [docs/migration-guide.md — JCL mapping](docs/migration-guide.md#jcl-to-subcommand-mapping)
+
+---
+
+## Data model
+
+The Go domain types in `internal/domain/` are byte-for-byte compatible with the original VSAM and sequential dataset layouts. Each struct field carries a `cobol:"FIELD-NAME,offset,length,encoding"` tag that names the originating copybook field.
+
+| Go struct | COBOL copybook | Record length | Dataset |
+|---|---|---|---|
+| `AccountRecord` | `CVACT01Y.cpy` | 300 bytes | `CARDDEMO.ACCTDATA.PS` |
+| `CardRecord` | `CVACT02Y.cpy` | 150 bytes | `CARDDEMO.CARDDATA.PS` |
+| `CardXrefRecord` | `CVACT03Y.cpy` | 50 bytes | `CARDDEMO.CARDXREF.PS` |
+| `CustomerRecord` | `CVCUS01Y.cpy` / `CUSTREC.cpy` | 500 bytes | `CARDDEMO.CUSTDATA.PS` |
+| `TransactionRecord` | `CVTRA05Y.cpy` | 350 bytes | `CARDDEMO.TRANSACT.VSAM.KSDS` |
+| `DailyTransactionRecord` | `CVTRA06Y.cpy` | 350 bytes | `CARDDEMO.DALYTRAN.PS` |
+| `TranTypeRecord` | `CVTRA03Y.cpy` | 60 bytes | `CARDDEMO.TRANTYPE.PS` |
+| `TranCatRecord` | `CVTRA04Y.cpy` | 60 bytes | `CARDDEMO.TRANCATG.PS` |
+| `TranCatBalRecord` | `CVTRA01Y.cpy` | 50 bytes | `CARDDEMO.TCATBALF.PS` |
+| `DiscGroupRecord` | `CVTRA02Y.cpy` | 50 bytes | `CARDDEMO.DISCGRP.PS` |
+| `UserSecRecord` | `CSUSR01Y.cpy` | 80 bytes | `CARDDEMO.USRSEC.PS` |
+
+Full field-by-field mapping: [docs/migration-guide.md — Copybook mapping](docs/migration-guide.md#copybook-to-go-struct-mapping)
+
+---
+
+## HTTP routes
+
+The current `cmd/carddemo` server exposes:
+
+| Method | Path | Auth | Function |
+|---|---|---|---|
+| `GET` | `/login` | public | Sign-in form |
+| `POST` | `/login` | public | Authenticate, set session cookie |
+| `POST` | `/logout` | session | Destroy session |
+| `GET` | `/admin/users` | admin | List users |
+| `POST` | `/admin/users` | admin | Create user |
+| `GET` | `/admin/users/{id}` | admin | View user |
+| `POST` | `/admin/users/{id}` | admin | Update user |
+| `POST` | `/admin/users/{id}/delete` | admin | Delete user |
+
+Full BMS-screen-to-route mapping: [docs/migration-guide.md — Online transactions](docs/migration-guide.md#online-transaction-mapping)
+
+---
+
+## Development
+
+```bash
+make test       # run the full test suite
+make lint       # golangci-lint
+make vet        # go vet
+make tidy       # go mod tidy
+
+# Disable the Secure cookie flag for local HTTP testing
+CARDDEMO_INSECURE_COOKIES=1 go run ./cmd/carddemo
+```
+
+---
+
+## Documentation
+
+| Document | Contents |
+|---|---|
+| [docs/adr/README.md](docs/adr/README.md) | Architectural decision records index |
+| [docs/migration-guide.md](docs/migration-guide.md) | COBOL→Go: program, copybook, and JCL mapping |
+| [docs/operations/runbook.md](docs/operations/runbook.md) | Seed, run, restore, troubleshoot |
+| [docs/security/threat-model.md](docs/security/threat-model.md) | Security threat model |
+| [docs/security/findings.md](docs/security/findings.md) | Security review findings and mitigations |
+
+---
 
 ## License
 
-This project is intended to be a community resource and is released under the Apache 2.0 license.
-
-## Project Status
-
-The CardDemo application has been enhanced with optional features that extend its functionality:
-- Credit Card Authorizations with IMS, DB2, and MQ
-- Transaction Type Management with DB2
-- Account Extractions using MQ and VSAM
-- Additional JCL Utilities
-- Enhanced Data and Copybook Features
-
-These optional features make CardDemo an even more useful resource for customers looking to modernize their mainframe applications. With modules for DB2, MQ, IMS DB, JCL utilities, and more data formats now available, customers can leverage CardDemo to test a wider array of mainframe migration, refactoring, replatforming, and augmentation scenarios.
-
-Last updated: April 2025
-
+Apache 2.0 — see [LICENSE](LICENSE).

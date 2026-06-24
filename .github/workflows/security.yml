@@ -1,0 +1,52 @@
+name: Security scan
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    name: SAST / SCA
+    runs-on: ubuntu-latest
+    # Job is a no-op until go.mod exists; safe to merge before the Go port lands.
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for go.mod
+        id: gomod
+        run: |
+          if [ -f go.mod ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Set up Go
+        if: steps.gomod.outputs.exists == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: govulncheck (fails on HIGH)
+        if: steps.gomod.outputs.exists == 'true'
+        run: |
+          go install golang.org/x/vuln/cmd/govulncheck@latest
+          govulncheck ./...
+
+      - name: gosec (fails on HIGH severity)
+        if: steps.gomod.outputs.exists == 'true'
+        run: |
+          go install github.com/securego/gosec/v2/cmd/gosec@latest
+          gosec -severity high -confidence medium -exclude-generated ./...
+
+      - name: staticcheck
+        if: steps.gomod.outputs.exists == 'true'
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          staticcheck ./...
+
+      - name: go vet
+        if: steps.gomod.outputs.exists == 'true'
+        run: go vet ./...

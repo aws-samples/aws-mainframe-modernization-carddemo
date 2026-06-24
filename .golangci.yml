@@ -1,0 +1,38 @@
+version: "2"
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - misspell
+    - unconvert
+    - unparam
+
+linters-settings:
+  errcheck:
+    exclude-functions:
+      - (io.Closer).Close
+      - (net/http.ResponseWriter).Write
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+formatters-settings:
+  goimports:
+    local-prefixes:
+      - github.com/aws-samples/aws-mainframe-modernization-carddemo
+
+issues:
+  exclude-rules:
+    - source: "Body\\.Close"
+      linters:
+        - errcheck
+    - path: ".*_test.go"
+      linters:
+        - unparam
+        - errcheck
