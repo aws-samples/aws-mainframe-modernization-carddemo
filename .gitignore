@@ -6,3 +6,11 @@ batch-app/markers/*
 /.idea/
 .DS_Store
 **/.DS_Store
+
+# --- Modernization (React/Java 3-tier) ---
+backend/target/
+backend/data/
+frontend/node_modules/
+frontend/dist/
+*.iml
+*.log
