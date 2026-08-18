@@ -1,0 +1,4 @@
+# ETL profile: run migrations + one-time load, then exit.
+spring:
+  main:
+    web-application-type: none

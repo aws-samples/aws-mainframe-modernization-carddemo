@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: carddemo-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/carddemo
+    username: carddemo
+    password: carddemo
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+  batch:
+    job:
+      enabled: false   # batch jobs (Phase 4+) are triggered explicitly, never on boot
+
+carddemo:
+  files:
+    # batch output files (reports/, statements/) — plan §1 "local dir" replacement
+    # for the legacy SYSOUT/GDG datasets. Override CARDDEMO_FILES_DIR in real envs.
+    dir: ${CARDDEMO_FILES_DIR:./data/files}
+  jwt:
+    # HS256 signing key (>=32 bytes). Demo default — override CARDDEMO_JWT_SECRET in real envs.
+    secret: ${CARDDEMO_JWT_SECRET:carddemo-dev-only-jwt-signing-secret-0123456789}
+    ttl: 15m   # short-lived access token, no refresh rotation (plan §5)
+  ssn:
+    # AES-256-GCM key material for customers.ssn at rest (plan R5). Demo
+    # default — override CARDDEMO_SSN_KEY in real envs (rotating it requires
+    # an ETL re-run; ciphertexts are not re-encrypted in place).
+    key: ${CARDDEMO_SSN_KEY:carddemo-dev-only-ssn-encryption-key-0123456789}
+
+etl:
+  data-dir: ../etl/fixtures/ascii
+  jcl-file: ../etl/fixtures/jcl/DUSRSECJ.jcl
+  seed-transactions: true   # plan §2.3 --seed-transactions flag (OFF for parity fixtures)
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui

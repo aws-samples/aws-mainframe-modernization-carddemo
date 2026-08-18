@@ -1,0 +1,13 @@
+-- Phase 3 (plan R2): transaction ID generation.
+--
+-- Legacy COTRN02C (ADD-TRANSACTION, 444-451) and COBIL00C (212-217) derive a
+-- new TRAN-ID by READPREV from HIGH-VALUES (max key) + 1 — race-prone under
+-- concurrent CICS tasks. Replaced by a PostgreSQL sequence rendered as a
+-- 16-digit zero-padded string; IDs are opaque, parity tests compare rows by
+-- content, not ID (plan R2).
+--
+-- START WITH 1000000000 keeps generated IDs above every seeded transaction:
+-- the ETL seeds transactions from dailytran.txt whose largest 16-char id is
+-- 0000000996722787 (< 1,000,000,000), so sequence-generated ids can never
+-- collide with the seed.
+CREATE SEQUENCE transaction_id_seq START WITH 1000000000;
