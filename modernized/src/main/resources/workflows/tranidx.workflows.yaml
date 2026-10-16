@@ -1,0 +1,17 @@
+# Google Cloud Workflows definition modernized from JCL: TRANIDX
+# Source: app/jcl/TRANIDX.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - step20:
+        raise: "Step STEP20 runs program IDCAMS, which is not part of the modernized application"
+    - step25:
+        raise: "Step STEP25 runs program IDCAMS, which is not part of the modernized application"
+    - step30:
+        raise: "Step STEP30 runs program IDCAMS, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job tranidx completed, execution " + executionId}

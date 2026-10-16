@@ -1,0 +1,2149 @@
+{
+  "run_id": "sess-mvarpa3o-m4ymy",
+  "app_name": "carddemo-account-service",
+  "generation_strategy": "LLM_ASSISTED",
+  "llm_calls": 13,
+  "total_tokens": 230415,
+  "cost_usd_micros": 82217,
+  "total_generated_files": 534,
+  "committed_in_pr": 534,
+  "gcs_archive": "gs://persistent-genai-tf-state/infrastructure/sess-mvarpa3o-m4ymy/terraform-infra-sess-mva.tar.gz",
+  "files": [
+    {
+      "path": "modernized/.dockerignore",
+      "bytes": 76
+    },
+    {
+      "path": "modernized/07-traceability.md",
+      "bytes": 72183
+    },
+    {
+      "path": "modernized/pom.xml",
+      "bytes": 3656
+    },
+    {
+      "path": "modernized/src/main/frontend/package.json",
+      "bytes": 516
+    },
+    {
+      "path": "modernized/src/main/frontend/src/App.tsx",
+      "bytes": 25145
+    },
+    {
+      "path": "modernized/src/main/frontend/src/components/TerminalLayout.tsx",
+      "bytes": 1577
+    },
+    {
+      "path": "modernized/src/main/frontend/src/styles/IBM3270.css",
+      "bytes": 1142
+    },
+    {
+      "path": "modernized/src/main/frontend/vite.config.ts",
+      "bytes": 283
+    },
+    {
+      "path": "modernized/src/main/java/com/client/ModernizedApplication.java",
+      "bytes": 321
+    },
+    {
+      "path": "modernized/src/main/java/com/client/batch/jobs/CreastmtJobConfig.java",
+      "bytes": 2683
+    },
+    {
+      "path": "modernized/src/main/java/com/client/batch/jobs/IntcalcJobConfig.java",
+      "bytes": 3036
+    },
+    {
+      "path": "modernized/src/main/java/com/client/batch/jobs/PosttranJobConfig.java",
+      "bytes": 2616
+    },
+    {
+      "path": "modernized/src/main/java/com/client/batch/runner/BatchJobCommandLineRunner.java",
+      "bytes": 3127
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/controller/Copau00cController.java",
+      "bytes": 2400
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/controller/Copau01cController.java",
+      "bytes": 2400
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/dto/Copau00cRequest.java",
+      "bytes": 6363
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/dto/Copau00cResponse.java",
+      "bytes": 11999
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/dto/Copau01cRequest.java",
+      "bytes": 6363
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/dto/Copau01cResponse.java",
+      "bytes": 11999
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/service/Copau00cService.java",
+      "bytes": 10395
+    },
+    {
+      "path": "modernized/src/main/java/com/client/cics_online/service/Copau01cService.java",
+      "bytes": 10395
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Authfrds.java",
+      "bytes": 5928
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Ccpauery.java",
+      "bytes": 2702
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Ccpaurly.java",
+      "bytes": 1954
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Ccpaurqy.java",
+      "bytes": 4556
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cipaudty.java",
+      "bytes": 6271
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cipausmy.java",
+      "bytes": 4126
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Coactup.java",
+      "bytes": 22807
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Coactvw.java",
+      "bytes": 18096
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Coadm01.java",
+      "bytes": 5847
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Coadm02y.java",
+      "bytes": 7295
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cobil00.java",
+      "bytes": 5176
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cocom01y.java",
+      "bytes": 3867
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cocrdli.java",
+      "bytes": 13310
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cocrdsl.java",
+      "bytes": 6357
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cocrdup.java",
+      "bytes": 6858
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Codatecn.java",
+      "bytes": 5486
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Comen01.java",
+      "bytes": 5847
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Comen02y.java",
+      "bytes": 12277
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Copau00.java",
+      "bytes": 18888
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Copau01.java",
+      "bytes": 10234
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Corpt00.java",
+      "bytes": 8344
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cosgn00.java",
+      "bytes": 7535
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Costm01.java",
+      "bytes": 3166
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cotrn00.java",
+      "bytes": 16179
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cotrn01.java",
+      "bytes": 10542
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cotrn02.java",
+      "bytes": 11402
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cotrtli.java",
+      "bytes": 14879
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cotrtup.java",
+      "bytes": 5347
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cottl01y.java",
+      "bytes": 1218
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cousr00.java",
+      "bytes": 16333
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cousr01.java",
+      "bytes": 5832
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cousr02.java",
+      "bytes": 6006
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cousr03.java",
+      "bytes": 5501
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csdat01y.java",
+      "bytes": 5112
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csdb2rpy.java",
+      "bytes": 9418
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csdb2rwy.java",
+      "bytes": 5122
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cslkpcdy.java",
+      "bytes": 1535
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csmsg01y.java",
+      "bytes": 1074
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csmsg02y.java",
+      "bytes": 1380
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cssetaty.java",
+      "bytes": 1250
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csstrpfy.java",
+      "bytes": 9744
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csusr01y.java",
+      "bytes": 1776
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csutldpy.java",
+      "bytes": 26011
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Csutldwy.java",
+      "bytes": 5650
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Custrec.java",
+      "bytes": 4317
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvact02y.java",
+      "bytes": 1893
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvact03y.java",
+      "bytes": 1208
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvexport.java",
+      "bytes": 13808
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvtra02y.java",
+      "bytes": 2333
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvtra03y.java",
+      "bytes": 1898
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvtra04y.java",
+      "bytes": 1938
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvtra05y.java",
+      "bytes": 3505
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvtra06y.java",
+      "bytes": 4227
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Cvtra07y.java",
+      "bytes": 5138
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Db2creat.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Dbpautx0.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Dcltrcat.java",
+      "bytes": 1536
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Dcltrtyp.java",
+      "bytes": 1310
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Dligsamp.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Imsfuncs.java",
+      "bytes": 2420
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Padfldbd.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Padflpcb.java",
+      "bytes": 2279
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Pasfldbd.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Pasflpcb.java",
+      "bytes": 2279
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Pautbpcb.java",
+      "bytes": 2247
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Pautbunl.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Psbpautb.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Psbpautl.java",
+      "bytes": 4335
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/TransactionType.java",
+      "bytes": 2999
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/TransactionTypeCategory.java",
+      "bytes": 3034
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Trntycat.java",
+      "bytes": 1251
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Trntype.java",
+      "bytes": 866
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Unused1y.java",
+      "bytes": 1752
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Xauthfrd.java",
+      "bytes": 978
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Xtrntycat.java",
+      "bytes": 1138
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/model/Xtrntype.java",
+      "bytes": 1134
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/AuthfrdsRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CcpaueryRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CcpaurlyRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CcpaurqyRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CipaudtyRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CipausmyRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CoactupRepository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CoactvwRepository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Coadm01Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Coadm02yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cobil00Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cocom01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CocrdliRepository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CocrdslRepository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CocrdupRepository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CodatecnRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Comen01Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Comen02yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Copau00Repository.java",
+      "bytes": 468
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Copau01Repository.java",
+      "bytes": 468
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Corpt00Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cosgn00Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Costm01Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cotrn00Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cotrn01Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cotrn02Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CotrtliRepository.java",
+      "bytes": 464
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CotrtupRepository.java",
+      "bytes": 464
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cottl01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cousr00Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cousr01Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cousr02Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cousr03Repository.java",
+      "bytes": 439
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Csdat01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Csdb2rpyRepository.java",
+      "bytes": 469
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Csdb2rwyRepository.java",
+      "bytes": 469
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CslkpcdyRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Csmsg01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Csmsg02yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CssetatyRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CsstrpfyRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Csusr01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CsutldpyRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CsutldwyRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CustrecRepository.java",
+      "bytes": 440
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvact02yRepository.java",
+      "bytes": 442
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvact03yRepository.java",
+      "bytes": 442
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/CvexportRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvtra02yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvtra03yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvtra04yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvtra05yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvtra06yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Cvtra07yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Db2creatRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Dbpautx0Repository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/DcltrcatRepository.java",
+      "bytes": 469
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/DcltrtypRepository.java",
+      "bytes": 469
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/DligsampRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/ImsfuncsRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PadfldbdRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PadflpcbRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PasfldbdRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PasflpcbRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PautbpcbRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PautbunlRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PsbpautbRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/PsbpautlRepository.java",
+      "bytes": 451
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/TransactionTypeCategoryRepository.java",
+      "bytes": 530
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/TransactionTypeRepository.java",
+      "bytes": 488
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/TrntycatRepository.java",
+      "bytes": 469
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/TrntypeRepository.java",
+      "bytes": 464
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/Unused1yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/XauthfrdRepository.java",
+      "bytes": 473
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/XtrntycatRepository.java",
+      "bytes": 474
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core/repository/XtrntypeRepository.java",
+      "bytes": 469
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbact01cController.java",
+      "bytes": 6620
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbact02cController.java",
+      "bytes": 6077
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbact03cController.java",
+      "bytes": 6077
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbact04cController.java",
+      "bytes": 6655
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbcus01cController.java",
+      "bytes": 6097
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbstm03aController.java",
+      "bytes": 6641
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbstm03bController.java",
+      "bytes": 3951
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbtrn02cController.java",
+      "bytes": 6644
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/Cbtrn03cController.java",
+      "bytes": 6637
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/CobswaitController.java",
+      "bytes": 3926
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/controller/CsutldtcController.java",
+      "bytes": 3938
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact01cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact01cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact02cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact02cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact03cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact03cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact04cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbact04cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbcus01cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbcus01cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbstm03aRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbstm03aResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbstm03bRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbstm03bResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbtrn02cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbtrn02cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbtrn03cRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/Cbtrn03cResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/CobswaitRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/CobswaitResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/CsutldtcRequest.java",
+      "bytes": 6377
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/dto/CsutldtcResponse.java",
+      "bytes": 12013
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbact01cService.java",
+      "bytes": 40743
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbact02cService.java",
+      "bytes": 29788
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbact03cService.java",
+      "bytes": 30074
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbact04cService.java",
+      "bytes": 46069
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbcus01cService.java",
+      "bytes": 30505
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbstm03aService.java",
+      "bytes": 42464
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbstm03bService.java",
+      "bytes": 19467
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbtrn02cService.java",
+      "bytes": 55400
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/Cbtrn03cService.java",
+      "bytes": 45495
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/CobswaitService.java",
+      "bytes": 14492
+    },
+    {
+      "path": "modernized/src/main/java/com/client/core_financial_processing/service/CsutldtcService.java",
+      "bytes": 16751
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/model/Cvact01y.java",
+      "bytes": 3398
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/model/Cvcrd01y.java",
+      "bytes": 2923
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/model/Cvcus01y.java",
+      "bytes": 4325
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/model/Cvtra01y.java",
+      "bytes": 2301
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/model/Cvxrf01y.java",
+      "bytes": 2288
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/repository/Cvact01yRepository.java",
+      "bytes": 442
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/repository/Cvcrd01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/repository/Cvcus01yRepository.java",
+      "bytes": 445
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/repository/Cvtra01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/domain/repository/Cvxrf01yRepository.java",
+      "bytes": 444
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/CobolDataException.java",
+      "bytes": 268
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/CobolState.java",
+      "bytes": 22214
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/NotTranslatedException.java",
+      "bytes": 252
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/ProgramExit.java",
+      "bytes": 222
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/ProgramRegistry.java",
+      "bytes": 3952
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/ProgramService.java",
+      "bytes": 517
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/RootPortalController.java",
+      "bytes": 97006
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/RuleCatalogController.java",
+      "bytes": 24025
+    },
+    {
+      "path": "modernized/src/main/java/com/client/runtime/RuleInfo.java",
+      "bytes": 315
+    },
+    {
+      "path": "modernized/src/main/java/com/client/security/AuthController.java",
+      "bytes": 1379
+    },
+    {
+      "path": "modernized/src/main/java/com/client/security/GlobalExceptionHandler.java",
+      "bytes": 3077
+    },
+    {
+      "path": "modernized/src/main/java/com/client/security/JwtAuthenticationFilter.java",
+      "bytes": 1713
+    },
+    {
+      "path": "modernized/src/main/java/com/client/security/JwtTokenProvider.java",
+      "bytes": 2834
+    },
+    {
+      "path": "modernized/src/main/java/com/client/security/PanMask.java",
+      "bytes": 1214
+    },
+    {
+      "path": "modernized/src/main/java/com/client/security/SecurityConfig.java",
+      "bytes": 3376
+    },
+    {
+      "path": "modernized/src/main/resources/application.yml",
+      "bytes": 825
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/carddemo.properties",
+      "bytes": 139
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/coac.properties",
+      "bytes": 131
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/cocr.properties",
+      "bytes": 131
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/coda.properties",
+      "bytes": 131
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/copa.properties",
+      "bytes": 131
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/cotr.properties",
+      "bytes": 131
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/crddemo2.properties",
+      "bytes": 139
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/crddemod.properties",
+      "bytes": 139
+    },
+    {
+      "path": "modernized/src/main/resources/cics/csd/crddemom.properties",
+      "bytes": 139
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBACT01C.fields",
+      "bytes": 4897
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBACT02C.fields",
+      "bytes": 1291
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBACT03C.fields",
+      "bytes": 1154
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBACT04C.fields",
+      "bytes": 5199
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBCUS01C.fields",
+      "bytes": 1919
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBSTM03A.fields",
+      "bytes": 5184
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBSTM03B.fields",
+      "bytes": 1588
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBTRN02C.fields",
+      "bytes": 5751
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CBTRN03C.fields",
+      "bytes": 4702
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/COBSWAIT.fields",
+      "bytes": 387
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/COPAU00C.fields",
+      "bytes": 333
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/COPAU01C.fields",
+      "bytes": 333
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/CSUTLDTC.fields",
+      "bytes": 1531
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/screens/CBACT01C_OP.screen",
+      "bytes": 237
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/screens/CBACT02C_OP.screen",
+      "bytes": 229
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/screens/CBACT03C_OP.screen",
+      "bytes": 243
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/screens/CBACT04C_OP.screen",
+      "bytes": 256
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/screens/CBCUS01C_OP.screen",
+      "bytes": 232
+    },
+    {
+      "path": "modernized/src/main/resources/cobol/screens/screens.idx",
+      "bytes": 60
+    },
+    {
+      "path": "modernized/src/main/resources/db/migration/V1__init_carddemo_schema.sql",
+      "bytes": 3769
+    },
+    {
+      "path": "modernized/src/main/resources/db/migration/V2__seed_carddemo_data.sql",
+      "bytes": 4666
+    },
+    {
+      "path": "modernized/src/main/resources/static/index.html",
+      "bytes": 125913
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/acctfile.workflows.yaml",
+      "bytes": 735
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/acctfile_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/acctfile_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/acctfile_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/batcmp.workflows.yaml",
+      "bytes": 513
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldbat.workflows.yaml",
+      "bytes": 465
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldbat_cblprint.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldbat_compile.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldbat_lked.workflows.yaml",
+      "bytes": 480
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldcidb2.workflows.yaml",
+      "bytes": 1070
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl.workflows.yaml",
+      "bytes": 465
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_bindpk.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_bindpl.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_cob.workflows.yaml",
+      "bytes": 477
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_cobol.workflows.yaml",
+      "bytes": 483
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_copylink.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_displist.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_lked.workflows.yaml",
+      "bytes": 480
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_precmp.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bldonl_trn.workflows.yaml",
+      "bytes": 477
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/bmscmp.workflows.yaml",
+      "bytes": 619
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbat.workflows.yaml",
+      "bytes": 744
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms.workflows.yaml",
+      "bytes": 1071
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms_deltemp.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms_displist.workflows.yaml",
+      "bytes": 498
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms_dsect.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms_lked.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms_map.workflows.yaml",
+      "bytes": 483
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildbms_print.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/buildonl.workflows.yaml",
+      "bytes": 854
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile.workflows.yaml",
+      "bytes": 1295
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_clcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_opcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_step40.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_step50.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cardfile_step60.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbadmcdj.workflows.yaml",
+      "bytes": 511
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbadmcdj_step1.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbexport.workflows.yaml",
+      "bytes": 464
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbexport_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbexport_step02.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbimport.workflows.yaml",
+      "bytes": 464
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbimport_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbldbms.workflows.yaml",
+      "bytes": 468
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbldbms_sdsf1.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbldbms_step1.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbpaup0j.workflows.yaml",
+      "bytes": 542
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cbpaup0j_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/ciccmp.workflows.yaml",
+      "bytes": 627
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/ciccmp_cicscmp.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/ciccmp_newcopy.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cicdbcmp.workflows.yaml",
+      "bytes": 521
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cidbcmp.workflows.yaml",
+      "bytes": 468
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cidbcmp_cicscmp.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/closefil.workflows.yaml",
+      "bytes": 511
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/closefil_clcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cnjbatmp.workflows.yaml",
+      "bytes": 471
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/cnjbatmp_batcmp.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/combtran.workflows.yaml",
+      "bytes": 623
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/combtran_step05r.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/combtran_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/compile_batch_jcl.workflows.yaml",
+      "bytes": 498
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/compilec.workflows.yaml",
+      "bytes": 471
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/compilec_cblprint.workflows.yaml",
+      "bytes": 498
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/compilec_compile.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/compilec_lked.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/compilec_step1.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb2.workflows.yaml",
+      "bytes": 468
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb21.workflows.yaml",
+      "bytes": 1003
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb2_crcrddb.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb2_freepln.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb2_ldtccat.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb2_ldttype.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creadb2_runtep2.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creastmt.workflows.yaml",
+      "bytes": 1193
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creastmt_deldef01.workflows.yaml",
+      "bytes": 498
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creastmt_step010.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creastmt_step020.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creastmt_step030.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/creastmt_step040.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/custfile.workflows.yaml",
+      "bytes": 959
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/custfile_clcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/custfile_opcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/custfile_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/custfile_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/custfile_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dalyrejs.workflows.yaml",
+      "bytes": 511
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dalyrejs_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dbpautp0.workflows.yaml",
+      "bytes": 657
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dbpautp0_stepdel.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dbpautp0_unload.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defcust.workflows.yaml",
+      "bytes": 621
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defcust_step05.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgb.workflows.yaml",
+      "bytes": 508
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgb_step05.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd.workflows.yaml",
+      "bytes": 1074
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd_step10.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd_step20.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd_step30.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd_step40.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd_step50.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/defgdgd_step60.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/discgrp.workflows.yaml",
+      "bytes": 732
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/discgrp_step05.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/discgrp_step10.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/discgrp_step15.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dusrsecj.workflows.yaml",
+      "bytes": 850
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dusrsecj_predel.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dusrsecj_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dusrsecj_step02.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/dusrsecj_step03.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds.workflows.yaml",
+      "bytes": 1074
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds_predel.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds_step02.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds_step03.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds_step04.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/esdsrrds_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/ftpjcl.workflows.yaml",
+      "bytes": 500
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/ftpjcls.workflows.yaml",
+      "bytes": 468
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/ftpjcls_step1.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp.workflows.yaml",
+      "bytes": 1077
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp_cobol.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp_copyims.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp_copylink.workflows.yaml",
+      "bytes": 498
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp_copymq.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp_lked.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/imsmqcmp_trn.workflows.yaml",
+      "bytes": 483
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intcalc.workflows.yaml",
+      "bytes": 729
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intcalc_step15.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intrdrj1.workflows.yaml",
+      "bytes": 625
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intrdrj1_idcams.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intrdrj1_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intrdrj2.workflows.yaml",
+      "bytes": 511
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/intrdrj2_idcams.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/listcat.workflows.yaml",
+      "bytes": 625
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/listfils.workflows.yaml",
+      "bytes": 471
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/listfils_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/listfils_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/loadpadb.workflows.yaml",
+      "bytes": 542
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/loadpadb_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/mnttrdb2.workflows.yaml",
+      "bytes": 536
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/mnttrdb2_step1.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/openfil.workflows.yaml",
+      "bytes": 508
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/openfil_opcifil.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/posttran.workflows.yaml",
+      "bytes": 733
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/posttran_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/prtcatbl.workflows.yaml",
+      "bytes": 740
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/prtcatbl_deldef.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/prtcatbl_step05r.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/prtcatbl_step10r.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/racfcmds.workflows.yaml",
+      "bytes": 517
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/racfcmds_tsobat.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readacct.workflows.yaml",
+      "bytes": 846
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readacct_predel.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readacct_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readcard.workflows.yaml",
+      "bytes": 733
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readcard_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readcust.workflows.yaml",
+      "bytes": 733
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readcust_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readxref.workflows.yaml",
+      "bytes": 733
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/readxref_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reproc.workflows.yaml",
+      "bytes": 506
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reproc_prc001.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reproc_step01r.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reproc_step05r.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reproc_step10r.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reprtest.workflows.yaml",
+      "bytes": 517
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reprtest_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reptfile.workflows.yaml",
+      "bytes": 511
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/reptfile_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/sorttest.workflows.yaml",
+      "bytes": 515
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/sorttest_step05r.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tcatbalf.workflows.yaml",
+      "bytes": 735
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tcatbalf_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tcatbalf_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tcatbalf_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranbkp.workflows.yaml",
+      "bytes": 736
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranbkp_step05.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranbkp_step05r.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranbkp_step10.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trancatg.workflows.yaml",
+      "bytes": 735
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trancatg_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trancatg_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trancatg_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranextr.workflows.yaml",
+      "bytes": 993
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranextr_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranextr_step20.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranextr_step30.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranextr_step40.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranextr_step50.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile.workflows.yaml",
+      "bytes": 1295
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_clcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_opcifil.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_step20.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_step25.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranfile_step30.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranidx.workflows.yaml",
+      "bytes": 732
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranidx_step20.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranidx_step25.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranidx_step30.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranrept.workflows.yaml",
+      "bytes": 965
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranrept_step05r.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/tranrept_step10r.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trantype.workflows.yaml",
+      "bytes": 735
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trantype_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trantype_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/trantype_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/txt2pdf1.workflows.yaml",
+      "bytes": 515
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/txt2pdf1_txt2pdf.workflows.yaml",
+      "bytes": 495
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/unldgsam.workflows.yaml",
+      "bytes": 542
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/unldgsam_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/unldpadb.workflows.yaml",
+      "bytes": 653
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/unldpadb_step0.workflows.yaml",
+      "bytes": 489
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/unldpadb_step01.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/waitstep.workflows.yaml",
+      "bytes": 727
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/waitstep_wait.workflows.yaml",
+      "bytes": 486
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile.workflows.yaml",
+      "bytes": 1071
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile_step05.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile_step10.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile_step15.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile_step20.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile_step25.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/main/resources/workflows/xreffile_step30.workflows.yaml",
+      "bytes": 492
+    },
+    {
+      "path": "modernized/src/test/java/com/client/ArchitectureFitnessTest.java",
+      "bytes": 992
+    },
+    {
+      "path": "modernized/src/test/java/com/client/cics_online/controller/Copau00cControllerTest.java",
+      "bytes": 2013
+    },
+    {
+      "path": "modernized/src/test/java/com/client/cics_online/controller/Copau01cControllerTest.java",
+      "bytes": 2013
+    },
+    {
+      "path": "modernized/src/test/java/com/client/cics_online/service/Copau00cServiceTest.java",
+      "bytes": 4362
+    },
+    {
+      "path": "modernized/src/test/java/com/client/cics_online/service/Copau01cServiceTest.java",
+      "bytes": 4362
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbact01cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbact02cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbact03cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbact04cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbcus01cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbstm03aControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbstm03bControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbtrn02cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/Cbtrn03cControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/CobswaitControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/controller/CsutldtcControllerTest.java",
+      "bytes": 2099
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbact01cServiceTest.java",
+      "bytes": 5212
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbact02cServiceTest.java",
+      "bytes": 5355
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbact03cServiceTest.java",
+      "bytes": 5351
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbact04cServiceTest.java",
+      "bytes": 5285
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbcus01cServiceTest.java",
+      "bytes": 5825
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbstm03aServiceTest.java",
+      "bytes": 4240
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbstm03bServiceTest.java",
+      "bytes": 5927
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbtrn02cServiceTest.java",
+      "bytes": 8312
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/Cbtrn03cServiceTest.java",
+      "bytes": 5067
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/CobswaitServiceTest.java",
+      "bytes": 4409
+    },
+    {
+      "path": "modernized/src/test/java/com/client/core_financial_processing/service/CsutldtcServiceTest.java",
+      "bytes": 4212
+    },
+    {
+      "path": "modernized/traceability.json",
+      "bytes": 156186
+    },
+    {
+      "path": "modernized/transformation_coverage.json",
+      "bytes": 13399
+    },
+    {
+      "path": "modernized/transformation_report.json",
+      "bytes": 2299841
+    }
+  ]
+}
