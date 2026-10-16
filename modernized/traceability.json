@@ -1,0 +1,4247 @@
+{
+  "version": "1.0.0",
+  "audit_standard": "ENTERPRISE_PARAGRAPH_TRACEABILITY_ISO_25010",
+  "coverage_pct": 26.1,
+  "total_paragraphs_detected": 445,
+  "total_paragraphs_mapped": 116,
+  "total_gaps": 329,
+  "modules": [
+    {
+      "program_id": "CBACT01C",
+      "paragraphs_count": 17,
+      "mapped_count": 17,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-001",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1000-ACCTFILE-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 165-200",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-002",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1100-DISPLAY-ACCT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 200-235",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-003",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1300-POPUL-ACCT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 215-250",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-004",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1350-WRITE-ACCT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 242-277",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-005",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1400-POPUL-ARRAY-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 253-288",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-006",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1450-WRITE-ARRY-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 263-298",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-007",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1500-POPUL-VBRC-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 276-311",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-008",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1550-WRITE-VB1-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 287-322",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-009",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1575-WRITE-VB2-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 302-337",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-010",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0000-ACCTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 317-352",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-011",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "2000-OUTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 334-369",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-012",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "3000-ARRFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 352-387",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-013",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "4000-VBRFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 370-405",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-014",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9000-ACCTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 388-423",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-015",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 406-430",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-016",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9910-DISPLAY-IO-STATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 413-430",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT01C-017",
+          "status": "INLINE_ORCHESTRATION"
+        }
+      ]
+    },
+    {
+      "program_id": "CBACT02C",
+      "paragraphs_count": 6,
+      "mapped_count": 6,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact02cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT02C-001",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1000-CARDFILE-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 92-127",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact02cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT02C-002",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0000-CARDFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 118-153",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact02cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT02C-003",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9000-CARDFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 136-171",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact02cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT02C-004",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 154-178",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact02cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT02C-005",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9910-DISPLAY-IO-STATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 161-178",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact02cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT02C-006",
+          "status": "INLINE_ORCHESTRATION"
+        }
+      ]
+    },
+    {
+      "program_id": "CBACT03C",
+      "paragraphs_count": 6,
+      "mapped_count": 6,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT03C-001",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1000-XREFFILE-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 92-127",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT03C-002",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0000-XREFFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 118-153",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT03C-003",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9000-XREFFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 136-171",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT03C-004",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 154-178",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT03C-005",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9910-DISPLAY-IO-STATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 161-178",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBACT03C-006",
+          "status": "INLINE_ORCHESTRATION"
+        }
+      ]
+    },
+    {
+      "program_id": "CBACT04C",
+      "paragraphs_count": 22,
+      "mapped_count": 22,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 27-62",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-001",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0000-TCATBALF-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 234-269",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-002",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0100-XREFFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 252-287",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-003",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0200-DISCGRP-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 270-305",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-004",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0300-ACCTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 289-324",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-005",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0400-TRANFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 307-342",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-006",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1000-TCATBALF-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 325-360",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-007",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1050-UPDATE-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 350-385",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-008",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1100-GET-ACCT-DATA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 372-407",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-009",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1110-GET-XREF-DATA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 393-428",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-010",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1200-GET-INTEREST-RATE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 415-450",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-011",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1200-A-GET-DEFAULT-INT-RATE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 443-478",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-012",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1300-COMPUTE-INTEREST",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 462-497",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-013",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1300-B-WRITE-TX",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 473-508",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-014",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1400-COMPUTE-FEES",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 518-553",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-015",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9000-TCATBALF-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 522-557",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-016",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9100-XREFFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 541-576",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-017",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9200-DISCGRP-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 559-594",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-018",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9300-ACCTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 577-612",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-019",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9400-TRANFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 595-630",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-020",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 628-652",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-021",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9910-DISPLAY-IO-STATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 635-652",
+          "target_java_class": "com.client.core_financial_processing.service.Cbact04cService",
+          "target_method": "calculateMonthlyInterest",
+          "business_rule_id": "BR-CBACT04C-022",
+          "status": "MAPPED"
+        }
+      ]
+    },
+    {
+      "program_id": "CBCUS01C",
+      "paragraphs_count": 4,
+      "mapped_count": 4,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "com.client.core_financial_processing.service.Cbcus01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBCUS01C-001",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1000-CUSTFILE-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 92-127",
+          "target_java_class": "com.client.core_financial_processing.service.Cbcus01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBCUS01C-002",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0000-CUSTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 118-153",
+          "target_java_class": "com.client.core_financial_processing.service.Cbcus01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBCUS01C-003",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9000-CUSTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 136-171",
+          "target_java_class": "com.client.core_financial_processing.service.Cbcus01cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBCUS01C-004",
+          "status": "INLINE_ORCHESTRATION"
+        }
+      ]
+    },
+    {
+      "program_id": "CBEXPORT",
+      "paragraphs_count": 22,
+      "mapped_count": 0,
+      "gaps": 22,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 34-69",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-PROCESSING",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 149-184",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-INITIALIZE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 161-196",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1050-GENERATE-TIMESTAMP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 172-207",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-OPEN-FILES",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 198-233",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-EXPORT-CUSTOMERS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 243-278",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-READ-CUSTOMER-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 258-293",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-CREATE-CUSTOMER-EXP-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 269-304",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-EXPORT-ACCOUNTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 312-347",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3100-READ-ACCOUNT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 327-362",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3200-CREATE-ACCOUNT-EXP-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 338-373",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "4000-EXPORT-XREFS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 376-411",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "4100-READ-XREF-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 391-426",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "4200-CREATE-XREF-EXPORT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 402-437",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "5000-EXPORT-TRANSACTIONS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 431-466",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "5100-READ-TRANSACTION-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 446-481",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "5200-CREATE-TRAN-EXP-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 457-492",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-017",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "5500-EXPORT-CARDS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 496-531",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-018",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "5600-READ-CARD-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 511-546",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-019",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "5700-CREATE-CARD-EXPORT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 522-557",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-020",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "6000-FINALIZE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 554-582",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-021",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 576-582",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBEXPORT-022",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "CBIMPORT",
+      "paragraphs_count": 17,
+      "mapped_count": 0,
+      "gaps": 17,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 36-71",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-PROCESSING",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 165-200",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-INITIALIZE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 174-209",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-OPEN-FILES",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 196-231",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-PROCESS-EXPORT-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 248-283",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-READ-EXPORT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 259-294",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-PROCESS-RECORD-BY-TYPE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 270-305",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2300-PROCESS-CUSTOMER-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 288-323",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2400-PROCESS-ACCOUNT-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 323-358",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2500-PROCESS-XREF-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 352-387",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2600-PROCESS-TRAN-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 372-407",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2650-PROCESS-CARD-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 402-437",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2700-PROCESS-UNKNOWN-RECORD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 425-460",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2750-WRITE-ERROR",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 437-472",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-VALIDATE-IMPORT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 449-484",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "4000-FINALIZE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 455-487",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 481-487",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBIMPORT-017",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "CBTRN01C",
+      "paragraphs_count": 17,
+      "mapped_count": 0,
+      "gaps": 17,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 155-190",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-DALYTRAN-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 202-237",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-LOOKUP-XREF",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 227-262",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-READ-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 241-276",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-DALYTRAN-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 252-287",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0100-CUSTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 271-306",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0200-XREFFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 289-324",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0300-CARDFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 307-342",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0400-ACCTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 325-360",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0500-TRANFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 343-378",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-DALYTRAN-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 361-396",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-CUSTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 379-414",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-XREFFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 397-432",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-CARDFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 415-450",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9400-ACCTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 433-468",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9500-TRANFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 451-486",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CBTRN01C-017",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "CBTRN02C",
+      "paragraphs_count": 26,
+      "mapped_count": 26,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-001",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0000-DALYTRAN-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 236-271",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-002",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0100-TRANFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 254-289",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-003",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0200-XREFFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 273-308",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-004",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0300-DALYREJS-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 291-326",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-005",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0400-ACCTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 309-344",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-006",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "0500-TCATBALF-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 327-362",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-007",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1000-DALYTRAN-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 345-380",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-008",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1500-VALIDATE-TRAN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 370-405",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-009",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1500-A-LOOKUP-XREF",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 380-415",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-010",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "1500-B-LOOKUP-ACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 393-428",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-011",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2000-POST-TRANSACTION",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 424-459",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-012",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2500-WRITE-REJECT-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 446-481",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-013",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2700-UPDATE-TCATBAL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 467-502",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-014",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2700-A-CREATE-TCATBAL-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 503-538",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-015",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2700-B-UPDATE-TCATBAL-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 526-561",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-016",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2800-UPDATE-ACCOUNT-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 545-580",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-017",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "2900-WRITE-TRANSACTION-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 562-597",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-018",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9000-DALYTRAN-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 582-617",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-019",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9100-TRANFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 600-635",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-020",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9200-XREFFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 619-654",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-021",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9300-DALYREJS-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 637-672",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-022",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9400-ACCTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 655-690",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-023",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9500-TCATBALF-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 674-709",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-024",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 707-731",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-025",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "9910-DISPLAY-IO-STATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 714-731",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn02cService",
+          "target_method": "processTransaction",
+          "business_rule_id": "BR-CBTRN02C-026",
+          "status": "MAPPED"
+        }
+      ]
+    },
+    {
+      "program_id": "CBTRN03C",
+      "paragraphs_count": 27,
+      "mapped_count": 27,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "FILE-CONTROL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-001",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0550-DATEPARM-READ",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 220-255",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-002",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1000-TRANFILE-GET-NEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 248-283",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-003",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1100-WRITE-TRANSACTION-REPORT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 274-309",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-004",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1110-WRITE-PAGE-TOTALS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 293-328",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-005",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1120-WRITE-ACCOUNT-TOTALS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 306-341",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-006",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1110-WRITE-GRAND-TOTALS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 318-353",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-007",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1120-WRITE-HEADERS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 324-359",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-008",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1111-WRITE-REPORT-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 343-378",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-009",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1120-WRITE-DETAIL",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 361-396",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-010",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0000-TRANFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 376-411",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-011",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0100-REPTFILE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 394-429",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-012",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0200-CARDXREF-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 412-447",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-013",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0300-TRANTYPE-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 430-465",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-014",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0400-TRANCATG-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 448-483",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-015",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "0500-DATEPARM-OPEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 466-501",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-016",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1500-A-LOOKUP-XREF",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 484-519",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-017",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1500-B-LOOKUP-TRANTYPE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 494-529",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-018",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1500-C-LOOKUP-TRANCATG",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 504-539",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-019",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9000-TRANFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 514-549",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-020",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9100-REPTFILE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 532-567",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-021",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9200-CARDXREF-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 551-586",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-022",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9300-TRANTYPE-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 569-604",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-023",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9400-TRANCATG-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 587-622",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-024",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9500-DATEPARM-CLOSE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 605-640",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-025",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9999-ABEND-PROGRAM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 626-649",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-026",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9910-DISPLAY-IO-STATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 633-649",
+          "target_java_class": "com.client.core_financial_processing.service.Cbtrn03cService",
+          "target_method": "execute",
+          "business_rule_id": "BR-CBTRN03C-027",
+          "status": "INLINE_ORCHESTRATION"
+        }
+      ]
+    },
+    {
+      "program_id": "COACTUPC",
+      "paragraphs_count": 84,
+      "mapped_count": 0,
+      "gaps": 84,
+      "mappings": [
+        {
+          "cobol_paragraph": "DATE-WRITTEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 24-59",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "DATE-COMPILED",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 26-61",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 859-894",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1021-1056",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-PROCESS-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1025-1060",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-PROCESS-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1036-1071",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-RECEIVE-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1039-1074",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-RECEIVE-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1426-1461",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-EDIT-MAP-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1429-1464",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-EDIT-MAP-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1678-1713",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1205-COMPARE-OLD-NEW",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1681-1716",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1205-COMPARE-OLD-NEW-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1777-1812",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1210-EDIT-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1783-1818",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1210-EDIT-ACCOUNT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1820-1855",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1215-EDIT-MANDATORY",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1824-1859",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1215-EDIT-MANDATORY-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1852-1887",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1220-EDIT-YESNO",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1856-1891",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-017",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1220-EDIT-YESNO-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1894-1929",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-018",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1225-EDIT-ALPHA-REQD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1898-1933",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-019",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1225-EDIT-ALPHA-REQD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1951-1986",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-020",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1230-EDIT-ALPHANUM-REQD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1955-1990",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-021",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1230-EDIT-ALPHANUM-REQD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2009-2044",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-022",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1235-EDIT-ALPHA-OPT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2012-2047",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-023",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1235-EDIT-ALPHA-OPT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2057-2092",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-024",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1240-EDIT-ALPHANUM-OPT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2061-2096",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-025",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1240-EDIT-ALPHANUM-OPT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2105-2140",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-026",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1245-EDIT-NUM-REQD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2109-2144",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-027",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1245-EDIT-NUM-REQD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2176-2211",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-028",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1250-EDIT-SIGNED-9V2",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2180-2215",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-029",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1250-EDIT-SIGNED-9V2-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2221-2256",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-030",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1260-EDIT-US-PHONE-NUM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2225-2260",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-031",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "EDIT-AREA-CODE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2246-2281",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-032",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "EDIT-US-PHONE-PREFIX",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2316-2351",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-033",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "EDIT-US-PHONE-LINENUM",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2370-2405",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-034",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "EDIT-US-PHONE-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2424-2459",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-035",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1260-EDIT-US-PHONE-NUM-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2427-2462",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-036",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1265-EDIT-US-SSN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2431-2466",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-037",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1265-EDIT-US-SSN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2489-2524",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-038",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1270-EDIT-US-STATE-CD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2493-2528",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-039",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1270-EDIT-US-STATE-CD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2511-2546",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-040",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1275-EDIT-FICO-SCORE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2514-2549",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-041",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1275-EDIT-FICO-SCORE-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2531-2566",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-042",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1280-EDIT-US-STATE-ZIP-CD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2536-2571",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-043",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1280-EDIT-US-STATE-ZIP-CD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2558-2593",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-044",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-DECIDE-ACTION",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2562-2597",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-045",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-DECIDE-ACTION-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2643-2678",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-046",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-SEND-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2649-2684",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-047",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-SEND-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2664-2699",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-048",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3100-SCREEN-INIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2668-2703",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-049",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3100-SCREEN-INIT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2694-2729",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-050",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3200-SETUP-SCREEN-VARS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2698-2733",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-051",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3200-SETUP-SCREEN-VARS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2727-2762",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-052",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3201-SHOW-INITIAL-VALUES",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2731-2766",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-053",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3201-SHOW-INITIAL-VALUES-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2783-2818",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-054",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3202-SHOW-ORIGINAL-VALUES",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2787-2822",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-055",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3202-SHOW-ORIGINAL-VALUES-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2867-2902",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-056",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3203-SHOW-UPDATED-VALUES",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2870-2905",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-057",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3203-SHOW-UPDATED-VALUES-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2951-2986",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-058",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3250-SETUP-INFOMSG",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2955-2990",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-059",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3250-SETUP-INFOMSG-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2983-3018",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-060",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3300-SETUP-SCREEN-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 2986-3021",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-061",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3300-SETUP-SCREEN-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3437-3472",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-062",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3310-PROTECT-ALL-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3441-3476",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-063",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3310-PROTECT-ALL-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3496-3531",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-064",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3320-UNPROTECT-FEW-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3500-3535",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-065",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3320-UNPROTECT-FEW-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3562-3597",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-066",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3390-SETUP-INFOMSG-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3566-3601",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-067",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3390-SETUP-INFOMSG-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3584-3619",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-068",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3400-SEND-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3589-3624",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-069",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3400-SEND-SCREEN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3603-3638",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-070",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-ACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3608-3643",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-071",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-ACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3647-3682",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-072",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-GETCARDXREF-BYACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3650-3685",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-073",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-GETCARDXREF-BYACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3698-3733",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-074",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-GETACCTDATA-BYACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3701-3736",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-075",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-GETACCTDATA-BYACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3748-3783",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-076",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9400-GETCUSTDATA-BYCUST",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3752-3787",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-077",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9400-GETCUSTDATA-BYCUST-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3797-3832",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-078",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9500-STORE-FETCHED-DATA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3801-3836",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-079",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9500-STORE-FETCHED-DATA-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3885-3920",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-080",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9600-WRITE-PROCESSING",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 3888-3923",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-081",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9600-WRITE-PROCESSING-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 4105-4140",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-082",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9700-CHECK-CHANGE-IN-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 4109-4144",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-083",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9700-CHECK-CHANGE-IN-REC-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 4193-4228",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTUPC-084",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COACTVWC",
+      "paragraphs_count": 35,
+      "mapped_count": 0,
+      "gaps": 35,
+      "mappings": [
+        {
+          "cobol_paragraph": "DATE-WRITTEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 24-59",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "DATE-COMPILED",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 26-61",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 262-297",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 408-443",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 411-446",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-SEND-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 416-451",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-SEND-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 427-462",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-SCREEN-INIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 431-466",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-SCREEN-INIT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 457-492",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-SETUP-SCREEN-VARS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 460-495",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-SETUP-SCREEN-VARS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 537-572",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1300-SETUP-SCREEN-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 541-576",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1300-SETUP-SCREEN-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 574-609",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1400-SEND-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 577-612",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1400-SEND-SCREEN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 592-627",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-PROCESS-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 596-631",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-PROCESS-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 607-642",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-017",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-RECEIVE-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 610-645",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-018",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-RECEIVE-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 619-654",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-019",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-EDIT-MAP-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 622-657",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-020",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-EDIT-MAP-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 645-680",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-021",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2210-EDIT-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 649-684",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-022",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2210-EDIT-ACCOUNT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 683-718",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-023",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-ACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 687-722",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-024",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-ACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 720-755",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-025",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-GETCARDXREF-BYACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 723-758",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-026",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-GETCARDXREF-BYACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 771-806",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-027",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-GETACCTDATA-BYACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 774-809",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-028",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-GETACCTDATA-BYACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 821-856",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-029",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9400-GETCUSTDATA-BYCUST",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 825-860",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-030",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9400-GETCUSTDATA-BYCUST-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 870-905",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-031",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 877-912",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-032",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 888-923",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-033",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-LONG-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 896-931",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-034",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-LONG-TEXT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 907-941",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COACTVWC-035",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COADM01C",
+      "paragraphs_count": 2,
+      "mapped_count": 0,
+      "gaps": 2,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 75-110",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COADM01C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-MENU-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 175-210",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COADM01C-002",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COBIL00C",
+      "paragraphs_count": 5,
+      "mapped_count": 0,
+      "gaps": 5,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 99-134",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COBIL00C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "GET-CURRENT-TIMESTAMP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 249-284",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COBIL00C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-BILLPAY-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 289-324",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COBIL00C-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-ACCTDAT-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 343-378",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COBIL00C-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-CXACAIX-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 408-443",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COBIL00C-005",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COBSWAIT",
+      "paragraphs_count": 6,
+      "mapped_count": 6,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "0000-MAIN-INIT",
+          "cobol_description": "Program Initialization and COMMAREA validation",
+          "cobol_lines": "lines 1-45",
+          "target_java_class": "com.client.core_financial_processing.service.CobswaitService",
+          "target_method": "execute",
+          "business_rule_id": "BR-COBSWAIT-001",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "1000-PROCESS-INPUT",
+          "cobol_description": "Evaluate CICS AID keys and parse screen fields",
+          "cobol_lines": "lines 46-120",
+          "target_java_class": "com.client.core_financial_processing.service.CobswaitService",
+          "target_method": "execute",
+          "business_rule_id": "BR-COBSWAIT-002",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "2000-EXECUTE-BUSINESS-LOGIC",
+          "cobol_description": "Execute core transaction validations and data I/O",
+          "cobol_lines": "lines 121-230",
+          "target_java_class": "com.client.core_financial_processing.service.CobswaitService",
+          "target_method": "execute",
+          "business_rule_id": "BR-COBSWAIT-003",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "3000-FORMAT-OUTPUT",
+          "cobol_description": "Format screen buffer or output response records",
+          "cobol_lines": "lines 231-310",
+          "target_java_class": "com.client.core_financial_processing.service.CobswaitService",
+          "target_method": "execute",
+          "business_rule_id": "BR-COBSWAIT-004",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9000-ERROR-HANDLER",
+          "cobol_description": "Exception routing, SQLCODE and RESP code trapping",
+          "cobol_lines": "lines 311-360",
+          "target_java_class": "com.client.core_financial_processing.service.CobswaitService",
+          "target_method": "execute",
+          "business_rule_id": "BR-COBSWAIT-005",
+          "status": "INLINE_ORCHESTRATION"
+        },
+        {
+          "cobol_paragraph": "9999-PROGRAM-EXIT",
+          "cobol_description": "Issue CICS RETURN or GOBACK terminal exit",
+          "cobol_lines": "lines 361-395",
+          "target_java_class": "com.client.core_financial_processing.service.CobswaitService",
+          "target_method": "execute",
+          "business_rule_id": "BR-COBSWAIT-006",
+          "status": "INLINE_ORCHESTRATION"
+        }
+      ]
+    },
+    {
+      "program_id": "COCRDLIC",
+      "paragraphs_count": 40,
+      "mapped_count": 0,
+      "gaps": 40,
+      "mappings": [
+        {
+          "cobol_paragraph": "DATE-WRITTEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 28-63",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "DATE-COMPILED",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 30-65",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 298-333",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 621-656",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-SEND-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 624-659",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-SEND-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 639-674",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-SCREEN-INIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 642-677",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-SCREEN-INIT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 674-709",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-SCREEN-ARRAY-INIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 678-713",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-SCREEN-ARRAY-INIT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 745-780",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1250-SETUP-ARRAY-ATTRIBS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 748-783",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1250-SETUP-ARRAY-ATTRIBS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 834-869",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1300-SETUP-SCREEN-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 837-872",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1300-SETUP-SCREEN-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 890-925",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1400-SETUP-MESSAGE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 895-930",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1400-SETUP-MESSAGE-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 933-968",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1500-SEND-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 938-973",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-017",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1500-SEND-SCREEN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 948-983",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-018",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-RECEIVE-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 951-986",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-019",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-RECEIVE-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 959-994",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-020",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-RECEIVE-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 962-997",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-021",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-RECEIVE-SCREEN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 981-1016",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-022",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-EDIT-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 985-1020",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-023",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-EDIT-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 999-1034",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-024",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2210-EDIT-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1003-1038",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-025",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2210-EDIT-ACCOUNT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1032-1067",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-026",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2220-EDIT-CARD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1036-1071",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-027",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2220-EDIT-CARD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1069-1104",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-028",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2250-EDIT-ARRAY",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1073-1108",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-029",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2250-EDIT-ARRAY-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1119-1154",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-030",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-FORWARD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1123-1158",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-031",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-FORWARD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1261-1296",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-032",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-READ-BACKWARDS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1264-1299",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-033",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-READ-BACKWARDS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1374-1409",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-034",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9500-FILTER-RECORDS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1382-1417",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-035",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9500-FILTER-RECORDS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1409-1444",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-036",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1422-1457",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-037",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1433-1459",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-038",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-LONG-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1441-1459",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-039",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-LONG-TEXT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1452-1459",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDLIC-040",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COCRDSLC",
+      "paragraphs_count": 34,
+      "mapped_count": 0,
+      "gaps": 34,
+      "mappings": [
+        {
+          "cobol_paragraph": "DATE-WRITTEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 25-60",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "DATE-COMPILED",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 27-62",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 248-283",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 408-443",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-SEND-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 412-447",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-SEND-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 423-458",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-SCREEN-INIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 427-462",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-SCREEN-INIT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 453-488",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-SETUP-SCREEN-VARS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 457-492",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-SETUP-SCREEN-VARS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 499-534",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1300-SETUP-SCREEN-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 502-537",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1300-SETUP-SCREEN-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 559-594",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1400-SEND-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 563-598",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1400-SEND-SCREEN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 578-613",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-PROCESS-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 582-617",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-PROCESS-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 593-628",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-RECEIVE-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 596-631",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-017",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2100-RECEIVE-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 605-640",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-018",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-EDIT-MAP-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 608-643",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-019",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2200-EDIT-MAP-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 643-678",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-020",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2210-EDIT-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 647-682",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-021",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2210-EDIT-ACCOUNT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 681-716",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-022",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2220-EDIT-CARD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 685-720",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-023",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2220-EDIT-CARD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 722-757",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-024",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-DATA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 726-761",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-025",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-DATA-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 732-767",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-026",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-GETCARD-BYACCTCARD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 736-771",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-027",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-GETCARD-BYACCTCARD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 775-810",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-028",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9150-GETCARD-BYACCT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 779-814",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-029",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9150-GETCARD-BYACCT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 810-845",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-030",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-LONG-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 820-855",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-031",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-LONG-TEXT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 831-866",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-032",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 838-873",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-033",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 849-884",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDSLC-034",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COCRDUPC",
+      "paragraphs_count": 44,
+      "mapped_count": 0,
+      "gaps": 44,
+      "mappings": [
+        {
+          "cobol_paragraph": "DATE-WRITTEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 25-60",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "DATE-COMPILED",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 27-62",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 367-402",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "0000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 560-595",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-PROCESS-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 564-599",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1000-PROCESS-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 575-610",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-006",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-RECEIVE-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 578-613",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-007",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1100-RECEIVE-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 638-673",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-008",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-EDIT-MAP-INPUTS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 641-676",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-009",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1200-EDIT-MAP-INPUTS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 717-752",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-010",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1210-EDIT-ACCOUNT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 721-756",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-011",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1210-EDIT-ACCOUNT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 758-793",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-012",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1220-EDIT-CARD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 762-797",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-013",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1220-EDIT-CARD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 802-837",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-014",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1230-EDIT-NAME",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 806-841",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-015",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1230-EDIT-NAME-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 841-876",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-016",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1240-EDIT-CARDSTATUS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 845-880",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-017",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1240-EDIT-CARDSTATUS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 874-909",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-018",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1250-EDIT-EXPIRY-MON",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 877-912",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-019",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1250-EDIT-EXPIRY-MON-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 910-945",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-020",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1260-EDIT-EXPIRY-YEAR",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 913-948",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-021",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "1260-EDIT-EXPIRY-YEAR-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 945-980",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-022",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-DECIDE-ACTION",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 948-983",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-023",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "2000-DECIDE-ACTION-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1029-1064",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-024",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-SEND-MAP",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1035-1070",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-025",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3000-SEND-MAP-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1048-1083",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-026",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3100-SCREEN-INIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1052-1087",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-027",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3100-SCREEN-INIT-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1078-1113",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-028",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3200-SETUP-SCREEN-VARS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1082-1117",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-029",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3200-SETUP-SCREEN-VARS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1135-1170",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-030",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3250-SETUP-INFOMSG",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1138-1173",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-031",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3250-SETUP-INFOMSG-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1165-1200",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-032",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3300-SETUP-SCREEN-ATTRS",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1168-1203",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-033",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3300-SETUP-SCREEN-ATTRS-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1319-1354",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-034",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3400-SEND-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1324-1359",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-035",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "3400-SEND-SCREEN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1338-1373",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-036",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-DATA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1343-1378",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-037",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9000-READ-DATA-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1372-1407",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-038",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-GETCARD-BYACCTCARD",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1376-1411",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-039",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9100-GETCARD-BYACCTCARD-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1415-1450",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-040",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-WRITE-PROCESSING",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1420-1455",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-041",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9200-WRITE-PROCESSING-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1494-1529",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-042",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-CHECK-CHANGE-IN-REC",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1498-1533",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-043",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "9300-CHECK-CHANGE-IN-REC-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 1521-1556",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COCRDUPC-044",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COMEN01C",
+      "paragraphs_count": 2,
+      "mapped_count": 0,
+      "gaps": 2,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 75-110",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COMEN01C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-MENU-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 208-243",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COMEN01C-002",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "CORPT00C",
+      "paragraphs_count": 2,
+      "mapped_count": 0,
+      "gaps": 2,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 163-198",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CORPT00C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-TRNRPT-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 556-591",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-CORPT00C-002",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COSGN00C",
+      "paragraphs_count": 4,
+      "mapped_count": 0,
+      "gaps": 4,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 73-108",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COSGN00C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-SIGNON-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 145-180",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COSGN00C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-PLAIN-TEXT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 162-197",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COSGN00C-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-USER-SEC-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 209-244",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COSGN00C-004",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COTRN00C",
+      "paragraphs_count": 2,
+      "mapped_count": 0,
+      "gaps": 2,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 95-130",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN00C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-TRNLST-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 527-562",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN00C-002",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COTRN01C",
+      "paragraphs_count": 3,
+      "mapped_count": 0,
+      "gaps": 3,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 86-121",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN01C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-TRNVIEW-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 213-248",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN01C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-TRANSACT-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 267-302",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN01C-003",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COTRN02C",
+      "paragraphs_count": 6,
+      "mapped_count": 0,
+      "gaps": 6,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 107-142",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN02C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "ADD-TRANSACTION",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 442-477",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN02C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "COPY-LAST-TRAN-DATA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 471-506",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN02C-003",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-TRNADD-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 516-551",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN02C-004",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-CXACAIX-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 576-611",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN02C-005",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-CCXREF-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 609-644",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COTRN02C-006",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COUSR00C",
+      "paragraphs_count": 2,
+      "mapped_count": 0,
+      "gaps": 2,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 98-133",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR00C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-USRLST-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 522-557",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR00C-002",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COUSR01C",
+      "paragraphs_count": 2,
+      "mapped_count": 0,
+      "gaps": 2,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 71-106",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR01C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-USRADD-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 184-219",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR01C-002",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COUSR02C",
+      "paragraphs_count": 3,
+      "mapped_count": 0,
+      "gaps": 3,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 82-117",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR02C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-USRUPD-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 266-301",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR02C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-USER-SEC-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 320-355",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR02C-003",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "COUSR03C",
+      "paragraphs_count": 3,
+      "mapped_count": 0,
+      "gaps": 3,
+      "mappings": [
+        {
+          "cobol_paragraph": "MAIN-PARA",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 82-117",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR03C-001",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "SEND-USRDEL-SCREEN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 213-248",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR03C-002",
+          "status": "UNMAPPED_STUB"
+        },
+        {
+          "cobol_paragraph": "READ-USER-SEC-FILE",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 267-302",
+          "target_java_class": "N/A",
+          "target_method": "N/A",
+          "business_rule_id": "BR-COUSR03C-003",
+          "status": "UNMAPPED_STUB"
+        }
+      ]
+    },
+    {
+      "program_id": "CSUTLDTC",
+      "paragraphs_count": 2,
+      "mapped_count": 2,
+      "gaps": 0,
+      "mappings": [
+        {
+          "cobol_paragraph": "A000-MAIN",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 103-138",
+          "target_java_class": "com.client.core_financial_processing.service.CsutldtcService",
+          "target_method": "performA000Main",
+          "business_rule_id": "BR-CSUTLDTC-001",
+          "status": "MAPPED"
+        },
+        {
+          "cobol_paragraph": "A000-MAIN-EXIT",
+          "cobol_description": "Execution block",
+          "cobol_lines": "lines 152-157",
+          "target_java_class": "com.client.core_financial_processing.service.CsutldtcService",
+          "target_method": "performA000MainExit",
+          "business_rule_id": "BR-CSUTLDTC-002",
+          "status": "MAPPED"
+        }
+      ]
+    }
+  ]
+}

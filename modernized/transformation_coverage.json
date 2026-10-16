@@ -1,0 +1,526 @@
+{
+  "programs": [
+    {
+      "module_id": "CBACT01C",
+      "program_id": "CBACT01C",
+      "source": "app/cbl/CBACT01C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact01cService.java",
+      "program_translated": false,
+      "paragraphs": 17,
+      "paragraphs_translated": 4,
+      "rules": 8,
+      "rules_translated": 4,
+      "untranslated": [
+        "MAIN-ENTRY: DISPLAY of group item ACCOUNT-RECORD is not translated",
+        "1000-ACCTFILE-GET-NEXT: comparison of group item ACCTFILE-STATUS is not translated",
+        "1350-WRITE-ACCT-RECORD: comparison of group item OUTFILE-STATUS is not translated",
+        "1450-WRITE-ARRY-RECORD: comparison of group item ARRYFILE-STATUS is not translated",
+        "1500-POPUL-VBRC-RECORD: DISPLAY of group item VBRC-REC1 is not translated",
+        "1550-WRITE-VB1-RECORD: comparison of group item VBRCFILE-STATUS is not translated",
+        "1575-WRITE-VB2-RECORD: comparison of group item VBRCFILE-STATUS is not translated",
+        "0000-ACCTFILE-OPEN: comparison of group item ACCTFILE-STATUS is not translated",
+        "2000-OUTFILE-OPEN: comparison of group item OUTFILE-STATUS is not translated",
+        "3000-ARRFILE-OPEN: comparison of group item ARRYFILE-STATUS is not translated",
+        "4000-VBRFILE-OPEN: comparison of group item VBRCFILE-STATUS is not translated",
+        "9000-ACCTFILE-CLOSE: comparison of group item ACCTFILE-STATUS is not translated",
+        "9910-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT01C-0001",
+          "reason": "performs 1000-ACCTFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT01C-0002",
+          "reason": "performs 1000-ACCTFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT01C-0007",
+          "reason": "comparison of group item ARRYFILE-STATUS is not translated"
+        },
+        {
+          "rule": "BR-CBACT01C-0008",
+          "reason": "comparison of group item VBRCFILE-STATUS is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBACT02C",
+      "program_id": "CBACT02C",
+      "source": "app/cbl/CBACT02C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact02cService.java",
+      "program_translated": false,
+      "paragraphs": 6,
+      "paragraphs_translated": 1,
+      "rules": 7,
+      "rules_translated": 4,
+      "untranslated": [
+        "MAIN-ENTRY: DISPLAY of group item CARD-RECORD is not translated",
+        "1000-CARDFILE-GET-NEXT: comparison of group item CARDFILE-STATUS is not translated",
+        "0000-CARDFILE-OPEN: comparison of group item CARDFILE-STATUS is not translated",
+        "9000-CARDFILE-CLOSE: comparison of group item CARDFILE-STATUS is not translated",
+        "9910-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT02C-0009",
+          "reason": "performs 1000-CARDFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT02C-0010",
+          "reason": "performs 1000-CARDFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT02C-0014",
+          "reason": "comparison of group item CARDFILE-STATUS is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBACT03C",
+      "program_id": "CBACT03C",
+      "source": "app/cbl/CBACT03C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact03cService.java",
+      "program_translated": false,
+      "paragraphs": 6,
+      "paragraphs_translated": 1,
+      "rules": 7,
+      "rules_translated": 4,
+      "untranslated": [
+        "MAIN-ENTRY: DISPLAY of group item CARD-XREF-RECORD is not translated",
+        "1000-XREFFILE-GET-NEXT: comparison of group item XREFFILE-STATUS is not translated",
+        "0000-XREFFILE-OPEN: comparison of group item XREFFILE-STATUS is not translated",
+        "9000-XREFFILE-CLOSE: comparison of group item XREFFILE-STATUS is not translated",
+        "9910-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT03C-0016",
+          "reason": "performs 1000-XREFFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT03C-0017",
+          "reason": "performs 1000-XREFFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT03C-0021",
+          "reason": "comparison of group item XREFFILE-STATUS is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBACT04C",
+      "program_id": "CBACT04C",
+      "source": "app/cbl/CBACT04C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact04cService.java",
+      "program_translated": false,
+      "paragraphs": 23,
+      "paragraphs_translated": 3,
+      "rules": 8,
+      "rules_translated": 4,
+      "untranslated": [
+        "MAIN-ENTRY: DISPLAY of group item TRAN-CAT-BAL-RECORD is not translated",
+        "0000-TCATBALF-OPEN: comparison of group item TCATBALF-STATUS is not translated",
+        "0100-XREFFILE-OPEN: comparison of group item XREFFILE-STATUS is not translated",
+        "0200-DISCGRP-OPEN: comparison of group item DISCGRP-STATUS is not translated",
+        "0300-ACCTFILE-OPEN: comparison of group item ACCTFILE-STATUS is not translated",
+        "0400-TRANFILE-OPEN: comparison of group item TRANFILE-STATUS is not translated",
+        "1000-TCATBALF-GET-NEXT: comparison of group item TCATBALF-STATUS is not translated",
+        "1050-UPDATE-ACCOUNT: comparison of group item ACCTFILE-STATUS is not translated",
+        "1100-GET-ACCT-DATA: comparison of group item ACCTFILE-STATUS is not translated",
+        "1110-GET-XREF-DATA: comparison of group item XREFFILE-STATUS is not translated",
+        "1200-GET-INTEREST-RATE: comparison of group item DISCGRP-STATUS is not translated",
+        "1200-A-GET-DEFAULT-INT-RATE: comparison of group item DISCGRP-STATUS is not translated",
+        "1300-B-WRITE-TX: STRING statements are not translated",
+        "9000-TCATBALF-CLOSE: comparison of group item TCATBALF-STATUS is not translated",
+        "9100-XREFFILE-CLOSE: comparison of group item XREFFILE-STATUS is not translated",
+        "9200-DISCGRP-CLOSE: comparison of group item DISCGRP-STATUS is not translated",
+        "9300-ACCTFILE-CLOSE: comparison of group item ACCTFILE-STATUS is not translated",
+        "9400-TRANFILE-CLOSE: comparison of group item TRANFILE-STATUS is not translated",
+        "Z-GET-DB2-FORMAT-TIMESTAMP: expected TO but found 'CURRENT-DATE'",
+        "9910-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT04C-0023",
+          "reason": "performs 1000-TCATBALF-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT04C-0025",
+          "reason": "DISPLAY of group item TRAN-CAT-BAL-RECORD is not translated"
+        },
+        {
+          "rule": "BR-CBACT04C-0026",
+          "reason": "performs 1050-UPDATE-ACCOUNT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT04C-0027",
+          "reason": "performs 1200-GET-INTEREST-RATE, which is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBCUS01C",
+      "program_id": "CBCUS01C",
+      "source": "app/cbl/CBCUS01C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbcus01cService.java",
+      "program_translated": false,
+      "paragraphs": 6,
+      "paragraphs_translated": 1,
+      "rules": 7,
+      "rules_translated": 4,
+      "untranslated": [
+        "MAIN-ENTRY: DISPLAY of group item CUSTOMER-RECORD is not translated",
+        "1000-CUSTFILE-GET-NEXT: comparison of group item CUSTFILE-STATUS is not translated",
+        "0000-CUSTFILE-OPEN: comparison of group item CUSTFILE-STATUS is not translated",
+        "9000-CUSTFILE-CLOSE: comparison of group item CUSTFILE-STATUS is not translated",
+        "Z-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBCUS01C-0031",
+          "reason": "performs 1000-CUSTFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBCUS01C-0032",
+          "reason": "performs 1000-CUSTFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBCUS01C-0036",
+          "reason": "comparison of group item CUSTFILE-STATUS is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBSTM03A",
+      "program_id": "CBSTM03A",
+      "source": "app/cbl/CBSTM03A.CBL",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbstm03aService.java",
+      "program_translated": false,
+      "paragraphs": 26,
+      "paragraphs_translated": 8,
+      "rules": 8,
+      "rules_translated": 2,
+      "untranslated": [
+        "MAIN-ENTRY: SET statements other than SET condition-name TO TRUE are not translated",
+        "0000-START: ALTER statements are not translated",
+        "2000-CUSTFILE-GET: LENGTH expressions are not translated",
+        "3000-ACCTFILE-GET: LENGTH expressions are not translated",
+        "5000-CREATE-STATEMENT: INITIALIZE STATEMENT-LINES: item ST-CURR-BAL is not translated",
+        "5200-WRITE-HTML-NMADBS: STRING statements are not translated",
+        "6000-WRITE-TRANS: STRING statements are not translated",
+        "8100-FILE-OPEN: GO TO changes control flow in ways that are not translated",
+        "8100-TRNXFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8200-XREFFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8300-CUSTFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8400-ACCTFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8500-READTRNX-READ: GO TO changes control flow in ways that are not translated",
+        "8599-EXIT: GO TO changes control flow in ways that are not translated",
+        "9100-TRNXFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "9200-XREFFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "9300-CUSTFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "9400-ACCTFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBSTM03A-0043",
+          "reason": "LENGTH expressions are not translated"
+        },
+        {
+          "rule": "BR-CBSTM03A-0044",
+          "reason": "unexpected 'END-IF' (not a statement)"
+        },
+        {
+          "rule": "BR-CBSTM03A-0045",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        },
+        {
+          "rule": "BR-CBSTM03A-0046",
+          "reason": "performs 2000-CUSTFILE-GET, which is not translated"
+        },
+        {
+          "rule": "BR-CBSTM03A-0049",
+          "reason": "unexpected 'OR' (not a statement)"
+        },
+        {
+          "rule": "BR-CBSTM03A-0050",
+          "reason": "abbreviated combined conditions (for example A = 1 OR 2) are not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBSTM03B",
+      "program_id": "CBSTM03B",
+      "source": "app/cbl/CBSTM03B.CBL",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbstm03bService.java",
+      "program_translated": false,
+      "paragraphs": 14,
+      "paragraphs_translated": 9,
+      "rules": 3,
+      "rules_translated": 0,
+      "untranslated": [
+        "0000-START: PERFORM ... THRU is not translated",
+        "1000-TRNXFILE-PROC: GO TO changes control flow in ways that are not translated",
+        "2000-XREFFILE-PROC: GO TO changes control flow in ways that are not translated",
+        "3000-CUSTFILE-PROC: GO TO changes control flow in ways that are not translated",
+        "4000-ACCTFILE-PROC: GO TO changes control flow in ways that are not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBSTM03B-0163",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-CBSTM03B-0164",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-CBSTM03B-0165",
+          "reason": "unexpected 'SELECT' (not a statement)"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBTRN02C",
+      "program_id": "CBTRN02C",
+      "source": "app/cbl/CBTRN02C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbtrn02cService.java",
+      "program_translated": false,
+      "paragraphs": 27,
+      "paragraphs_translated": 7,
+      "rules": 8,
+      "rules_translated": 7,
+      "untranslated": [
+        "0000-DALYTRAN-OPEN: comparison of group item DALYTRAN-STATUS is not translated",
+        "0100-TRANFILE-OPEN: comparison of group item TRANFILE-STATUS is not translated",
+        "0200-XREFFILE-OPEN: comparison of group item XREFFILE-STATUS is not translated",
+        "0300-DALYREJS-OPEN: comparison of group item DALYREJS-STATUS is not translated",
+        "0400-ACCTFILE-OPEN: comparison of group item ACCTFILE-STATUS is not translated",
+        "0500-TCATBALF-OPEN: comparison of group item TCATBALF-STATUS is not translated",
+        "1000-DALYTRAN-GET-NEXT: comparison of group item DALYTRAN-STATUS is not translated",
+        "2500-WRITE-REJECT-REC: comparison of group item DALYREJS-STATUS is not translated",
+        "2700-UPDATE-TCATBAL: DISPLAY of group item FD-TRAN-CAT-KEY is not translated",
+        "2700-A-CREATE-TCATBAL-REC: comparison of group item TCATBALF-STATUS is not translated",
+        "2700-B-UPDATE-TCATBAL-REC: comparison of group item TCATBALF-STATUS is not translated",
+        "2900-WRITE-TRANSACTION-FILE: comparison of group item TRANFILE-STATUS is not translated",
+        "9000-DALYTRAN-CLOSE: comparison of group item DALYTRAN-STATUS is not translated",
+        "9100-TRANFILE-CLOSE: comparison of group item TRANFILE-STATUS is not translated",
+        "9200-XREFFILE-CLOSE: comparison of group item XREFFILE-STATUS is not translated",
+        "9300-DALYREJS-CLOSE: comparison of group item DALYREJS-STATUS is not translated",
+        "9400-ACCTFILE-CLOSE: comparison of group item ACCTFILE-STATUS is not translated",
+        "9500-TCATBALF-CLOSE: comparison of group item TCATBALF-STATUS is not translated",
+        "Z-GET-DB2-FORMAT-TIMESTAMP: expected TO but found 'CURRENT-DATE'",
+        "9910-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBTRN02C-0051",
+          "reason": "performs 1000-DALYTRAN-GET-NEXT, which is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBTRN03C",
+      "program_id": "CBTRN03C",
+      "source": "app/cbl/CBTRN03C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbtrn03cService.java",
+      "program_translated": false,
+      "paragraphs": 27,
+      "paragraphs_translated": 7,
+      "rules": 8,
+      "rules_translated": 3,
+      "untranslated": [
+        "MAIN-ENTRY: NEXT SENTENCE is not translated",
+        "0550-DATEPARM-READ: comparison of group item DATEPARM-STATUS is not translated",
+        "1000-TRANFILE-GET-NEXT: comparison of group item TRANFILE-STATUS is not translated",
+        "1100-WRITE-TRANSACTION-REPORT: FUNCTION expressions are not translated",
+        "1111-WRITE-REPORT-REC: comparison of group item TRANREPT-STATUS is not translated",
+        "1120-WRITE-DETAIL: INITIALIZE TRANSACTION-DETAIL-REPORT: item TRAN-REPORT-AMT is not translated",
+        "0000-TRANFILE-OPEN: comparison of group item TRANFILE-STATUS is not translated",
+        "0100-REPTFILE-OPEN: comparison of group item TRANREPT-STATUS is not translated",
+        "0200-CARDXREF-OPEN: comparison of group item CARDXREF-STATUS is not translated",
+        "0300-TRANTYPE-OPEN: comparison of group item TRANTYPE-STATUS is not translated",
+        "0400-TRANCATG-OPEN: comparison of group item TRANCATG-STATUS is not translated",
+        "0500-DATEPARM-OPEN: comparison of group item DATEPARM-STATUS is not translated",
+        "1500-C-LOOKUP-TRANCATG: DISPLAY of group item FD-TRAN-CAT-KEY is not translated",
+        "9000-TRANFILE-CLOSE: comparison of group item TRANFILE-STATUS is not translated",
+        "9100-REPTFILE-CLOSE: comparison of group item TRANREPT-STATUS is not translated",
+        "9200-CARDXREF-CLOSE: comparison of group item CARDXREF-STATUS is not translated",
+        "9300-TRANTYPE-CLOSE: comparison of group item TRANTYPE-STATUS is not translated",
+        "9400-TRANCATG-CLOSE: comparison of group item TRANCATG-STATUS is not translated",
+        "9500-DATEPARM-CLOSE: comparison of group item DATEPARM-STATUS is not translated",
+        "9910-DISPLAY-IO-STATUS: DISPLAY of group item IO-STATUS-04 is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBTRN03C-0059",
+          "reason": "performs 1000-TRANFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBTRN03C-0060",
+          "reason": "performs 1000-TRANFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBTRN03C-0061",
+          "reason": "unexpected 'END-IF' (not a statement)"
+        },
+        {
+          "rule": "BR-CBTRN03C-0062",
+          "reason": "DISPLAY of group item TRAN-RECORD is not translated"
+        },
+        {
+          "rule": "BR-CBTRN03C-0065",
+          "reason": "FUNCTION expressions are not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "COBSWAIT",
+      "program_id": "COBSWAIT",
+      "source": "app/cbl/COBSWAIT.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/CobswaitService.java",
+      "program_translated": false,
+      "paragraphs": 1,
+      "paragraphs_translated": 0,
+      "rules": 3,
+      "rules_translated": 0,
+      "untranslated": [
+        "MAIN-ENTRY: ACCEPT statements are not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-COBSWAIT-0067",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-COBSWAIT-0068",
+          "reason": "unexpected 'ENVIRONMENT' (not a statement)"
+        },
+        {
+          "rule": "BR-COBSWAIT-0069",
+          "reason": "unexpected '01'"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CSUTLDTC",
+      "program_id": "CSUTLDTC",
+      "source": "app/cbl/CSUTLDTC.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/CsutldtcService.java",
+      "program_translated": false,
+      "paragraphs": 3,
+      "paragraphs_translated": 1,
+      "rules": 3,
+      "rules_translated": 0,
+      "untranslated": [
+        "MAIN-ENTRY: INITIALIZE WS-MESSAGE: item WS-SEVERITY is not translated",
+        "A000-MAIN: condition-name FC-INVALID-DATE uses THRU ranges or unsupported values"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CSUTLDTC-0283",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-CSUTLDTC-0284",
+          "reason": "unexpected '01'"
+        },
+        {
+          "rule": "BR-CSUTLDTC-0285",
+          "reason": "unexpected 'OF' (not a statement)"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "COPAU00C",
+      "program_id": "",
+      "source": "app/cbl/COPAU00C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/cics_online/service/Copau00cService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "COPAU01C",
+      "program_id": "",
+      "source": "app/cbl/COPAU01C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/cics_online/service/Copau01cService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    }
+  ],
+  "unplanned_modules": [],
+  "totals": {
+    "programs": 13,
+    "programs_translated": 0,
+    "rules": 70,
+    "rules_translated": 32
+  }
+}

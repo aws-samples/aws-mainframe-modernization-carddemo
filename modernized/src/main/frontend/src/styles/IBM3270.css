@@ -1,0 +1,56 @@
+/* IBM 3270 Display Station Terminal Styling */
+:root {
+  --crt-green: #00ff66;
+  --crt-amber: #ffb000;
+  --crt-white: #e0e0e0;
+  --crt-red: #ff3333;
+  --crt-bg: #050d08;
+  --crt-card: #0b1a10;
+  --crt-border: #143820;
+}
+
+.ibm-terminal-screen {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--crt-bg);
+  color: var(--crt-green);
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--crt-green);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.terminal-body {
+  background-color: var(--crt-card);
+  border: 1px solid var(--crt-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.terminal-footer {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pf-key-badge {
+  background-color: var(--crt-border);
+  color: var(--crt-green);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid var(--crt-green);
+}
+.pf-key-badge:hover {
+  background-color: var(--crt-green);
+  color: var(--crt-bg);
+}

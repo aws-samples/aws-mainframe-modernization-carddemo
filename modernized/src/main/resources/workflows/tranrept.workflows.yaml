@@ -1,0 +1,27 @@
+# Google Cloud Workflows definition modernized from JCL: TRANREPT
+# Source: app/jcl/TRANREPT.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - step05r:
+        raise: "Step STEP05R runs procedure REPROC, which is not part of the modernized application"
+    - step05r2:
+        raise: "Step STEP05R runs program SORT, which is not part of the modernized application"
+    - step10r:
+        call: http.post
+        args:
+          url: "__SERVICE_URL__/api/v1/jobs/CBTRN03C/execute"
+          auth:
+            type: OIDC
+          body:
+            jobName: "tranrept"
+            stepName: "STEP10R"
+            program: "CBTRN03C"
+            executionId: ${executionId}
+        result: step10r_result
+    - finalize:
+        return: ${"Job tranrept completed, execution " + executionId}
