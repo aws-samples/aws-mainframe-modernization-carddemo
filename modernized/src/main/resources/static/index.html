@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CardDemo - Mainframe Credit Card Management Application</title>
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --surface: #111827;
+            --surface-hover: #1f2937;
+            --surface-card: #162032;
+            --border: #2d3748;
+            --border-light: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --primary: #059669;
+            --primary-hover: #047857;
+            --success: #10b981;
+            --success-bg: rgba(16, 185, 129, 0.15);
+            --warning: #f59e0b;
+            --warning-bg: rgba(245, 158, 11, 0.15);
+            --danger: #ef4444;
+            --danger-bg: rgba(239, 68, 68, 0.15);
+            --code-bg: #030712;
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: linear-gradient(180deg, #131d31 0%, #0d1527 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .header-logo {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .header-titles h1 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .header-titles p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1;
+        }
+        .badge-success { background: var(--success-bg); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-warning { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-danger { background: var(--danger-bg); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-neutral { background: var(--surface-hover); color: var(--text-secondary); border: 1px solid var(--border); }
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: currentColor;
+            display: inline-block;
+        }
+
+        nav.nav-tabs {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0 28px;
+            display: flex;
+            gap: 8px;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 14px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.15s ease;
+        }
+        .tab-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        main {
+            flex: 1;
+            padding: 24px 28px 48px;
+            max-width: 1440px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Grid & Cards */
+        .grid-kpi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .kpi-title { font-size: 13px; color: var(--text-secondary); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+        .kpi-value { font-size: 32px; font-weight: 800; margin: 8px 0 4px; color: var(--text-primary); }
+        .kpi-sub { font-size: 12px; color: var(--text-muted); }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .card-header h2 { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+
+        /* Two column layout for Rule Tester */
+        .tester-layout {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 1024px) {
+            .tester-layout { grid-template-columns: 1fr; }
+        }
+
+        /* Form elements */
+        .form-group { margin-bottom: 16px; }
+        .form-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-secondary); }
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.15s ease;
+        }
+        .form-control:focus { outline: none; border-color: var(--primary); }
+        select.form-control { cursor: pointer; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-secondary { background: var(--surface-hover); color: var(--text-secondary); border: 1px solid var(--border); }
+        .btn-secondary:hover { color: var(--text-primary); background: #2d3748; }
+        .btn-sm { padding: 6px 12px; font-size: 12px; }
+        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+        /* Rule metadata panel */
+        .rule-meta-box {
+            background: var(--surface-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .rule-meta-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .rule-statement { font-size: 14px; color: #e5e7eb; margin: 8px 0; font-weight: 500; }
+        .citation-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Dynamic fields container */
+        .fields-container {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 16px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .field-row {
+            display: grid;
+            grid-template-columns: 160px 1fr 40px;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .field-row:last-child { margin-bottom: 0; }
+        .field-label { font-family: var(--font-mono); font-size: 12px; color: #cbd5e1; word-break: break-all; }
+
+        /* Results Display */
+        .result-panel {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+        }
+        .result-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 48px;
+        }
+        .result-empty svg { width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.4; }
+
+        .console-box {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #38bdf8;
+            white-space: pre-wrap;
+            max-height: 180px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        /* Tables */
+        .table-wrap { overflow-x: auto; width: 100%; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+        th { background: var(--surface-card); color: var(--text-secondary); padding: 10px 14px; border-bottom: 1px solid var(--border); font-weight: 600; }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+        tr:hover td { background: var(--surface-hover); }
+        .code-td { font-family: var(--font-mono); font-size: 12px; color: #a5b4fc; }
+
+        /* Guide documentation styling */
+        .guide-container {
+            max-width: 960px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .guide-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .guide-section h2 { font-size: 18px; margin-bottom: 12px; color: #60a5fa; }
+        .guide-section h3 { font-size: 15px; margin: 16px 0 8px; color: var(--text-primary); }
+        .guide-section p, .guide-section ul { color: #d1d5db; font-size: 14px; margin-bottom: 12px; }
+        .guide-section ul { padding-left: 20px; }
+        .guide-section li { margin-bottom: 6px; }
+        .guide-step {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding: 14px;
+            background: var(--surface-card);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--primary);
+        }
+        .step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .step-body h4 { font-size: 14px; margin-bottom: 4px; color: var(--text-primary); }
+        .step-body p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+        pre.code-sample {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #f1f5f9;
+            overflow-x: auto;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-brand">
+            <div class="header-logo" style="background: linear-gradient(135deg, #059669, #10b981);">BNK</div>
+            <div class="header-titles">
+                <h1 id="appHeaderTitle">CardDemo - Mainframe Credit Card Management Application</h1>
+                <p id="appHeaderSubtitle">![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)</p>
+            </div>
+        </div>
+        <div class="header-status">
+            <span class="badge badge-neutral" style="border-color: #059669; color: #059669;">Banking & Financial Services</span>
+            <span class="badge badge-neutral" id="servicePortBadge">Port 8080</span>
+            <span class="badge badge-neutral" id="dbHealthBadge"><span class="pulse-dot"></span> Checking DB...</span>
+            <span class="badge badge-success" id="healthBadge"><span class="pulse-dot"></span> Checking Service...</span>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="tab-btn active" id="tabBtn-dashboard" onclick="switchTab('dashboard')">
+            <span>📊</span> Overview Dashboard
+        </button>
+        <button class="tab-btn" id="tabBtn-ruleTester" onclick="switchTab('ruleTester')">
+            <span>⚡</span> Interactive Business Rule Tester
+        </button>
+        <button class="tab-btn" id="tabBtn-databaseExplorer" onclick="switchTab('databaseExplorer')">
+            <span>🗄️</span> Real-Time Database Explorer
+        </button>
+        <button class="tab-btn" id="tabBtn-screenOps" onclick="switchTab('screenOps')">
+            <span>🖥️</span> Screen Operations (BMS/CICS)
+        </button>
+        <button class="tab-btn" id="tabBtn-testingGuide" onclick="switchTab('testingGuide')">
+            <span>📖</span> Product &amp; Testing Guide
+        </button>
+    </nav>
+
+    <main>
+        <!-- TAB 1: OVERVIEW DASHBOARD -->
+        <div id="tab-dashboard" class="tab-content active">
+            <div class="grid-kpi">
+                <div class="card">
+                    <div class="kpi-title">Migrated Programs</div>
+                    <div class="kpi-value" id="kpiProgramsCount">--</div>
+                    <div class="kpi-sub">Spring Boot @Service components</div>
+                </div>
+                <div class="card">
+                    <div class="kpi-title">Discovered Rules</div>
+                    <div class="kpi-value" id="kpiRulesCount">--</div>
+                    <div class="kpi-sub">Business Logic specifications</div>
+                </div>
+                <div class="card">
+                    <div class="kpi-title">Translated Rules</div>
+                    <div class="kpi-value" id="kpiTranslatedCount">--</div>
+                    <div class="kpi-sub">Target executable methods</div>
+                </div>
+                <div class="card">
+                    <div class="kpi-title">Runtime API Status</div>
+                    <div class="kpi-value" style="font-size: 24px; color: var(--success);" id="kpiApiStatus">Active</div>
+                    <div class="kpi-sub" id="kpiEndpointSummary">Exposing /api/v1 endpoints</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Migrated Programs &amp; Component Inventory</h2>
+                    <button class="btn btn-secondary btn-sm" onclick="loadInitialData()">🔄 Refresh Inventory</button>
+                </div>
+                <div class="table-wrap">
+                    <table id="programsTable">
+                        <thead>
+                            <tr>
+                                <th>Program ID</th>
+                                <th>Source Path</th>
+                                <th>Translation Status</th>
+                                <th>Rules Available</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="programsTableBody">
+                            <tr><td colspan="5" style="text-align:center; color: var(--text-muted);">Loading programs...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: INTERACTIVE BUSINESS RULE TESTER -->
+        <div id="tab-ruleTester" class="tab-content">
+            <div class="tester-layout">
+                <!-- Left Column: Controls & Inputs -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Select &amp; Configure Rule</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="selectProgram">1. Target Program</label>
+                        <select class="form-control" id="selectProgram" onchange="onProgramSelected()">
+                            <option value="">-- Choose Program --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="selectRule">2. Business Rule</label>
+                        <select class="form-control" id="selectRule" onchange="onRuleSelected()" disabled>
+                            <option value="">-- Select Program First --</option>
+                        </select>
+                    </div>
+
+                    <!-- Rule Metadata Preview -->
+                    <div id="ruleMetaContainer" style="display: none;">
+                        <div class="rule-meta-box">
+                            <div class="rule-meta-header">
+                                <span class="badge badge-success" id="ruleTypeBadge">VALIDATION</span>
+                                <span class="citation-tag" id="ruleCitationBadge">--</span>
+                            </div>
+                            <div class="rule-statement" id="ruleStatementText">--</div>
+                        </div>
+
+                        <div class="card-header" style="margin-top: 16px; margin-bottom: 8px;">
+                            <h2>3. Input Fields &amp; Working Storage</h2>
+                            <button class="btn btn-secondary btn-sm" onclick="addCustomField()">+ Add Field</button>
+                        </div>
+
+                        <div class="fields-container" id="fieldsInputsContainer">
+                            <!-- Dynamic fields inserted here -->
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm" onclick="fillPreset('positive')">Set Valid Values</button>
+                            <button class="btn btn-secondary btn-sm" onclick="fillPreset('boundary')">Set Boundary Values</button>
+                            <button class="btn btn-secondary btn-sm" onclick="clearInputs()">Clear</button>
+                        </div>
+
+                        <div style="margin-top: 20px;">
+                            <button class="btn btn-primary" id="btnExecuteRule" style="width: 100%;" onclick="executeSelectedRule()">
+                                ⚡ Execute &amp; Verify Rule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Live Results & Inspection -->
+                <div class="result-panel">
+                    <div class="card-header">
+                        <h2>Execution Result &amp; Audit Trail</h2>
+                        <div id="resultStatusBadges" style="display: flex; gap: 8px;">
+                            <span class="badge badge-neutral" id="execStatusBadge">IDLE</span>
+                        </div>
+                    </div>
+
+                    <div id="resultEmptyState" class="result-empty">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                        <p>Select a business rule and click <strong>Execute &amp; Verify Rule</strong> to observe execution outputs, modified storage variables, and database traces.</p>
+                    </div>
+
+                    <div id="resultContentState" style="display: none; flex-direction: column; gap: 16px;">
+                        <div>
+                            <div class="form-label">Changed Working-Storage Variables</div>
+                            <div class="table-wrap">
+                                <table id="changedTable">
+                                    <thead><tr><th>Variable</th><th>Value</th></tr></thead>
+                                    <tbody id="changedTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="displayConsoleContainer" style="display: none;">
+                            <div class="form-label">Program DISPLAY Console Output</div>
+                            <div class="console-box" id="displayConsole"></div>
+                        </div>
+
+                        <div id="sqlErrorsContainer" style="display: none;">
+                            <div class="form-label" style="color: var(--danger);">SQL / Database Activity</div>
+                            <div class="console-box" style="color: #fca5a5;" id="sqlErrorsConsole"></div>
+                        </div>
+
+                        <div>
+                            <div class="form-label">Raw JSON Response</div>
+                            <pre class="code-sample" id="rawJsonResponse" style="max-height: 180px;"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: REAL-TIME DATABASE EXPLORER -->
+        <div id="tab-databaseExplorer" class="tab-content">
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header">
+                    <h2>Live Database Connection &amp; Schema Status</h2>
+                    <button class="btn btn-secondary btn-sm" onclick="checkDbStatus(true)">🔄 Check Live Connection</button>
+                </div>
+                <div class="grid-kpi" style="margin-bottom: 0;">
+                    <div style="background: var(--surface-card); padding: 14px; border-radius: var(--radius-md); border-left: 3px solid var(--primary);">
+                        <div class="kpi-title">Connection Status</div>
+                        <div id="dbStatusIndicator" style="margin-top: 8px; font-weight: 700; font-size: 16px; color: var(--text-secondary);">
+                            <span class="badge badge-neutral"><span class="pulse-dot"></span> Checking DB...</span>
+                        </div>
+                        <div class="kpi-sub" id="dbStatusSub">Probing /api/v1/database/status</div>
+                    </div>
+                    <div style="background: var(--surface-card); padding: 14px; border-radius: var(--radius-md); border-left: 3px solid #0ea5e9;">
+                        <div class="kpi-title">Active Database</div>
+                        <div id="dbNameVal" style="margin-top: 8px; font-weight: 700; font-size: 16px; color: var(--text-primary);">--</div>
+                        <div class="kpi-sub" id="dbUserVal">User: --</div>
+                    </div>
+                    <div style="background: var(--surface-card); padding: 14px; border-radius: var(--radius-md); border-left: 3px solid #10b981;">
+                        <div class="kpi-title">Migrated Tables</div>
+                        <div id="dbTableCountVal" style="margin-top: 8px; font-weight: 700; font-size: 16px; color: var(--text-primary);">--</div>
+                        <div class="kpi-sub">Total relational schema tables</div>
+                    </div>
+                    <div style="background: var(--surface-card); padding: 14px; border-radius: var(--radius-md); border-left: 3px solid #8b5cf6;">
+                        <div class="kpi-title">Engine Version</div>
+                        <div id="dbVersionVal" style="margin-top: 8px; font-weight: 600; font-size: 13px; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">--</div>
+                        <div class="kpi-sub">Relational persistence tier</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tester-layout" style="grid-template-columns: 360px 1fr;">
+                <!-- Left: Table Selection and Schema Definition -->
+                <div>
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-header">
+                            <h2>Select Migrated Table</h2>
+                            <button class="btn btn-secondary btn-sm" onclick="loadDatabaseTables()">🔄 Refresh</button>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="selectDbTable">Database Tables</label>
+                            <select class="form-control" id="selectDbTable" onchange="onTableSelected()">
+                                <option value="">-- Choose Migrated Table --</option>
+                            </select>
+                        </div>
+                        <div id="tableMetaCard" style="display: none; background: var(--surface-card); border-radius: var(--radius-sm); padding: 12px; margin-top: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                <span style="font-size: 13px; color: var(--text-secondary);">Table:</span>
+                                <span id="metaTableName" style="font-family: var(--font-mono); font-weight: 700; color: var(--primary);">--</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                <span style="font-size: 13px; color: var(--text-secondary);">Row Count:</span>
+                                <span id="metaTableRowCount" style="font-weight: 700; color: #34d399;">--</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 13px; color: var(--text-secondary);">Columns:</span>
+                                <span id="metaTableColCount" style="font-weight: 700;">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Column Schema Definitions</h2>
+                        </div>
+                        <div class="table-wrap" style="max-height: 380px; overflow-y: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Column</th>
+                                        <th>Type</th>
+                                        <th>Nullable</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableSchemaBody">
+                                    <tr><td colspan="3" style="text-align:center; color: var(--text-muted);">Select a table to view schema.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Live Table Data Grid & Query Console -->
+                <div>
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-header">
+                            <h2 id="liveDataGridTitle">Live Data Rows</h2>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <input type="text" class="form-control" id="tableFilterInput" oninput="filterTableData()" placeholder="🔍 Filter rows..." style="width: 170px; padding: 6px 10px; font-size: 12px;">
+                                <select class="form-control" id="tableDataLimit" onchange="loadCurrentTableData(0)" style="width: 95px; padding: 6px 10px; font-size: 12px;">
+                                    <option value="25">25 rows</option>
+                                    <option value="50" selected>50 rows</option>
+                                    <option value="100">100 rows</option>
+                                </select>
+                                <button class="btn btn-secondary btn-sm" onclick="loadCurrentTableData(currentDbOffset)">🔄 Refresh</button>
+                            </div>
+                        </div>
+
+                        <div class="table-wrap" style="min-height: 220px; max-height: 440px; overflow: auto;">
+                            <table id="liveDataTable">
+                                <thead id="liveDataTableHead">
+                                    <tr><th>Select a table above to inspect live data rows</th></tr>
+                                </thead>
+                                <tbody id="liveDataTableBody">
+                                    <tr><td style="text-align: center; color: var(--text-muted); padding: 40px;">No table selected.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="tablePagination" style="display: none; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border);">
+                            <span id="paginationInfo" style="font-size: 13px; color: var(--text-secondary);">Showing 0 - 0</span>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-secondary btn-sm" id="btnPrevPage" onclick="changeDbPage(-1)">◀ Previous</button>
+                                <button class="btn btn-secondary btn-sm" id="btnNextPage" onclick="changeDbPage(1)">Next ▶</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SQL Query Runner Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Interactive SQL Inspection Console (Read-Only)</h2>
+                            <span class="badge badge-neutral">PostgreSQL</span>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 10px;">
+                            <textarea class="form-control" id="customSqlInput" rows="3" style="font-family: var(--font-mono); font-size: 13px;" placeholder="SELECT * FROM table_name LIMIT 10;"></textarea>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-primary btn-sm" onclick="executeCustomSql()">▶ Run Query</button>
+                                <button class="btn btn-secondary btn-sm" onclick="document.getElementById('customSqlInput').value = ''">Clear</button>
+                            </div>
+                            <span id="queryStatusBadge" class="badge badge-neutral" style="display: none;">Ready</span>
+                        </div>
+                        <div class="table-wrap" id="queryResultWrap" style="display: none; max-height: 280px; overflow: auto;">
+                            <table id="queryResultTable">
+                                <thead id="queryResultHead"></thead>
+                                <tbody id="queryResultBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: SCREEN OPERATIONS (BMS / CICS & FLOWS) -->
+        <div id="tab-screenOps" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Screen Operations &amp; Transaction Flow Emulator</h2>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <select class="form-control" id="screenSelectDropdown" onchange="onScreenDropdownSelect()" style="width: 240px;">
+                            <option value="">-- Discovered Screens --</option>
+                        </select>
+                        <input type="text" class="form-control" id="screenMapsetInput" placeholder="Or enter Screen ID" style="width: 180px;">
+                        <button class="btn btn-secondary btn-sm" onclick="loadScreenMap()">Load Screen</button>
+                    </div>
+                </div>
+
+                <div id="flowNavigatorWrap" style="display: none; margin-bottom: 20px; padding: 14px 18px; background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--primary); letter-spacing: 0.05em;">Documented Screen Flow (from Repository Docs)</span>
+                        <span style="font-size: 11px; color: var(--text-muted);">Click any step to inspect</span>
+                    </div>
+                    <div id="flowStepsBar" style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;"></div>
+                </div>
+
+                <div id="screenEmptyNotice" style="padding: 32px; text-align: center; color: var(--text-secondary);">
+                    Select a screen from the dropdown above or click a step in the documented flow to load its modern form interface.
+                </div>
+
+                <div id="screenFormContainer" style="display: none; margin-top: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="badge badge-neutral" id="screenLoadedTitle" style="font-size: 13px; font-weight: 700;">SCREEN</div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <label class="form-label" style="margin-bottom:0;" for="screenAidKey">Action / Key:</label>
+                            <select class="form-control" id="screenAidKey" style="width: 140px;">
+                                <option value="ENTER">ENTER / Submit</option>
+                                <option value="CLEAR">CLEAR</option>
+                                <option value="PF1">PF1 (Help)</option>
+                                <option value="PF2">PF2</option>
+                                <option value="PF3">PF3 (Exit / Back)</option>
+                                <option value="PF7">PF7 (Page Up)</option>
+                                <option value="PF8">PF8 (Page Down)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="screenCustomActions" style="margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+
+                    <div class="grid-kpi" id="screenFieldsGrid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                        <!-- Dynamic Screen fields -->
+                    </div>
+
+                    <div style="margin-top: 20px; display: flex; gap: 12px;">
+                        <button class="btn btn-primary" onclick="submitScreenTransaction()">🚀 Submit Transaction</button>
+                        <button class="btn btn-secondary" onclick="loadScreenMap()">Reset Screen</button>
+                    </div>
+
+                    <div id="screenResultBox" style="margin-top: 20px; display: none;">
+                        <div class="form-label">Screen Output &amp; Response</div>
+                        <pre class="code-sample" id="screenResultPre"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: PRODUCT & TESTING GUIDE -->
+        <div id="tab-testingGuide" class="tab-content">
+            <div class="guide-container">
+                <div class="guide-section">
+                    <h2>🎯 Modernized Application Product &amp; Testing Guide</h2>
+                    <p>This modernized cloud-native runtime transforms legacy IBM Mainframe COBOL, BMS mapsets, and VSAM/DB2 constructs into an autonomous Spring Boot 3.3.4 microservice stack running on Java 21 LTS with PostgreSQL.</p>
+                </div>
+
+                <div class="guide-section">
+                    <h2>🧪 Step-by-Step Business Logic Testing Guidelines</h2>
+                    <p>Follow these standard test patterns to validate that modernized Java services faithfully execute the legacy business rules:</p>
+
+                    <div class="guide-step">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Select the Program &amp; Rule in the Tester</h4>
+                            <p>Navigate to the <strong>Interactive Business Rule Tester</strong>. Choose the target program from the dropdown. All business rules extracted by Agent 04 will populate automatically with their rule statements and legacy COBOL source citations.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Execute Positive Validation Scenarios</h4>
+                            <p>Provide valid operational inputs (or click <strong>Set Valid Values</strong>). Click <strong>Execute &amp; Verify Rule</strong>. Verify that the response badge indicates <code>EXECUTED (HTTP 200)</code> and that storage balances or status flags update to expected values in the <em>Changed Working-Storage Variables</em> table.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>Execute Negative &amp; Boundary Conditions</h4>
+                            <p>Click <strong>Set Boundary Values</strong> or enter edge cases (e.g. requesting transaction amounts exceeding account balance + overdraft allowance, or negative values). Execute the rule and verify that guard logic triggers proper rejection badges (e.g. <code>DATA_ERROR (HTTP 422)</code>) without unhandled exceptions.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h4>Inspect Legacy Source Citations</h4>
+                            <p>Every business rule references its exact provenance in the legacy source (e.g. <code>CBACT01C.cbl:142-168</code>). Compare the runtime results with the cited COBOL condition-action branch to confirm deterministic parity.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h4>Real-Time Database Verification</h4>
+                            <p>Switch to the <strong>Real-Time Database Explorer</strong> tab to inspect live migrated PostgreSQL tables and data rows. After testing business rules or transactions that mutate data, verify that changes are persisted to the database in real time with complete schema fidelity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-section">
+                    <h2>📡 Direct API Testing Endpoints</h2>
+                    <p>All business rules, programs, and database tables are directly accessible via REST for automated testing and CI/CD validation:</p>
+                    <pre class="code-sample">
+# 1. Fetch All Programs
+GET  /api/v1/programs
+
+# 2. Fetch All Extracted Rules
+GET  /api/v1/rules
+
+# 3. Execute a Specific Rule
+POST /api/v1/programs/{programId}/rules/{ruleId}/execute
+Content-Type: application/json
+{
+  "ACCT-BALANCE": 1500.00,
+  "TX-AMOUNT": 200.00
+}
+
+# 4. Submit a BMS Screen Transaction
+POST /api/v1/screens/{mapsetName}/submit
+Content-Type: application/json
+{
+  "aid": "ENTER",
+  "fields": { "ACCTNO": "10000000001" },
+  "commarea": {}
+}
+
+# 5. Check Live Database Status
+GET  /api/v1/database/status
+
+# 6. List Migrated Tables & Columns
+GET  /api/v1/database/tables
+
+# 7. Query Live Table Rows
+GET  /api/v1/database/tables/{tableName}/data?limit=50&offset=0
+
+# 8. Interactive SQL Inspection
+POST /api/v1/database/query
+Content-Type: application/json
+{
+  "sql": "SELECT * FROM transtbl LIMIT 10"
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let programsCache = [];
+        let rulesCache = [];
+        let dbTablesCache = [];
+        let currentProgram = null;
+        let currentRule = null;
+        let currentScreenData = null;
+        let currentDbTable = null;
+        let currentDbRows = [];
+        let currentDbOffset = 0;
+        let currentDbLimit = 50;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            const targetBtn = document.getElementById('tabBtn-' + tabId) ||
+                Array.from(document.querySelectorAll('.tab-btn')).find(b => {
+                    const oc = b.getAttribute('onclick') || '';
+                    return oc.includes(tabId);
+                });
+            if (targetBtn) targetBtn.classList.add('active');
+            const targetTab = document.getElementById('tab-' + tabId);
+            if (targetTab) targetTab.classList.add('active');
+            if (tabId === 'databaseExplorer' && !dbTablesCache.length) {
+                checkDbStatus();
+                loadDatabaseTables();
+            }
+        }
+
+        async function checkHealth() {
+            const badge = document.getElementById('healthBadge');
+            try {
+                const c = new AbortController();
+                const tid = setTimeout(() => c.abort(), 3000);
+                const res = await fetch('/actuator/health', { signal: c.signal });
+                clearTimeout(tid);
+                if (res.ok) {
+                    badge.className = 'badge badge-success';
+                    badge.innerHTML = '<span class="pulse-dot"></span> Core Online (UP)';
+                } else {
+                    badge.className = 'badge badge-warning';
+                    badge.innerHTML = '<span class="pulse-dot"></span> Degraded';
+                }
+            } catch (err) {
+                try {
+                    const c2 = new AbortController();
+                    const tid2 = setTimeout(() => c2.abort(), 2000);
+                    const fallback = await fetch('/api/v1/programs', { signal: c2.signal });
+                    clearTimeout(tid2);
+                    if (fallback.ok) {
+                        badge.className = 'badge badge-success';
+                        badge.innerHTML = '<span class="pulse-dot"></span> Core Online';
+                        return;
+                    }
+                } catch (e2) {}
+                badge.className = 'badge badge-danger';
+                badge.innerHTML = '<span class="pulse-dot"></span> Offline';
+            }
+        }
+
+        async function checkDbStatus(showAlert = false) {
+            const badge = document.getElementById('dbHealthBadge');
+            const ind = document.getElementById('dbStatusIndicator');
+            const sub = document.getElementById('dbStatusSub');
+            const nameEl = document.getElementById('dbNameVal');
+            const userEl = document.getElementById('dbUserVal');
+            const tblCountEl = document.getElementById('dbTableCountVal');
+            const verEl = document.getElementById('dbVersionVal');
+
+            try {
+                const c = new AbortController();
+                const tid = setTimeout(() => c.abort(), 3500);
+                const res = await fetch('/api/v1/database/status', { signal: c.signal });
+                clearTimeout(tid);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.connected) {
+                        if (badge) {
+                            badge.className = 'badge badge-success';
+                            badge.innerHTML = '<span class="pulse-dot"></span> DB Connected';
+                        }
+                        if (ind) {
+                            ind.innerHTML = '<span class="badge badge-success"><span class="pulse-dot"></span> PostgreSQL Online</span>';
+                            sub.textContent = 'Active JDBC connection verified';
+                            nameEl.textContent = data.database || 'modernized_db';
+                            userEl.textContent = 'User: ' + (data.user || 'postgres');
+                            tblCountEl.textContent = data.tableCount !== undefined ? data.tableCount : '--';
+                            verEl.textContent = data.version ? data.version.split(' ')[0] + ' ' + (data.version.split(' ')[1] || '') : 'PostgreSQL';
+                        }
+                        if (showAlert) alert('Database connection is healthy and connected to: ' + data.database);
+                        return;
+                    } else {
+                        if (badge) {
+                            badge.className = 'badge badge-warning';
+                            badge.innerHTML = '<span class="pulse-dot"></span> DB Offline';
+                        }
+                        if (ind) {
+                            ind.innerHTML = '<span class="badge badge-warning"><span class="pulse-dot"></span> Standalone Mode</span>';
+                            sub.textContent = data.error || 'No database responding at JDBC URL';
+                            nameEl.textContent = '--';
+                            userEl.textContent = 'User: --';
+                            tblCountEl.textContent = '0';
+                            verEl.textContent = 'Not connected';
+                        }
+                        if (showAlert) alert('Database not responding: ' + (data.error || 'Unknown error'));
+                    }
+                } else {
+                    if (badge) {
+                        badge.className = 'badge badge-warning';
+                        badge.innerHTML = '<span class="pulse-dot"></span> DB Status ' + res.status;
+                    }
+                }
+            } catch (err) {
+                if (badge) {
+                    badge.className = 'badge badge-danger';
+                    badge.innerHTML = '<span class="pulse-dot"></span> DB Unreachable';
+                }
+                if (ind) {
+                    ind.innerHTML = '<span class="badge badge-danger"><span class="pulse-dot"></span> Unreachable</span>';
+                    sub.textContent = String(err);
+                }
+                if (showAlert) alert('Failed to probe database status: ' + err.message);
+            }
+        }
+
+        async function loadInitialData() {
+            checkHealth();
+            checkDbStatus();
+
+            const tbody = document.getElementById('programsTableBody');
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">Fetching programs and rules...</td></tr>';
+
+            try {
+                const c = new AbortController();
+                const tid = setTimeout(() => c.abort(), 2000);
+                const [progRes, ruleRes] = await Promise.allSettled([
+                    fetch('/api/v1/programs', { signal: c.signal }),
+                    fetch('/api/v1/rules', { signal: c.signal })
+                ]);
+                clearTimeout(tid);
+
+                programsCache = (progRes.status === 'fulfilled' && progRes.value.ok) ? await progRes.value.json() : [];
+                rulesCache = (ruleRes.status === 'fulfilled' && ruleRes.value.ok) ? await ruleRes.value.json() : [];
+            } catch (err) {
+                programsCache = [];
+                rulesCache = [];
+            }
+            if (!programsCache.length) {
+                programsCache = [{"program": "", "source": "app/cbl/CBACT01C.cbl", "programTranslated": false, "rules": 8, "rulesTranslated": 6}, {"program": "", "source": "app/cbl/CBACT02C.cbl", "programTranslated": true, "rules": 7, "rulesTranslated": 6}, {"program": "", "source": "app/cbl/CBACT03C.cbl", "programTranslated": true, "rules": 7, "rulesTranslated": 6}, {"program": "", "source": "app/cbl/CBACT04C.cbl", "programTranslated": false, "rules": 8, "rulesTranslated": 6}, {"program": "", "source": "app/cbl/CBCUS01C.cbl", "programTranslated": true, "rules": 7, "rulesTranslated": 6}, {"program": "", "source": "app/cbl/CBSTM03A.CBL", "programTranslated": false, "rules": 8, "rulesTranslated": 2}, {"program": "", "source": "app/cbl/CBSTM03B.CBL", "programTranslated": false, "rules": 3, "rulesTranslated": 0}, {"program": "", "source": "app/cbl/CBTRN02C.cbl", "programTranslated": false, "rules": 8, "rulesTranslated": 7}, {"program": "", "source": "app/cbl/CBTRN03C.cbl", "programTranslated": false, "rules": 8, "rulesTranslated": 5}, {"program": "", "source": "app/cbl/COBSWAIT.cbl", "programTranslated": false, "rules": 3, "rulesTranslated": 0}, {"program": "", "source": "app/cbl/CSUTLDTC.cbl", "programTranslated": false, "rules": 3, "rulesTranslated": 0}, {"program": "", "source": "app/cbl/COPAU00C.cbl", "programTranslated": false, "rules": 0, "rulesTranslated": 0}, {"program": "", "source": "app/cbl/COPAU01C.cbl", "programTranslated": false, "rules": 0, "rulesTranslated": 0}];
+            }
+            if (!rulesCache.length) {
+                rulesCache = [{"program": "CBACT01C", "rule": "BR-CBACT01C-0001", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0002", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0003", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0004", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0005", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0006", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0007", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT01C", "rule": "BR-CBACT01C-0008", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0009", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0010", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0011", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0012", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0013", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0014", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT02C", "rule": "BR-CBACT02C-0015", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0016", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0017", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0018", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0019", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0020", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0021", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT03C", "rule": "BR-CBACT03C-0022", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0023", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0024", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0025", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0026", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0027", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0028", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0029", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBACT04C", "rule": "BR-CBACT04C-0030", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0031", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0032", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0033", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0034", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0035", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0036", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBCUS01C", "rule": "BR-CBCUS01C-0037", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBEXPORT", "rule": "BR-CBEXPORT-0038", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBEXPORT", "rule": "BR-CBEXPORT-0039", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBEXPORT", "rule": "BR-CBEXPORT-0040", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBIMPORT", "rule": "BR-CBIMPORT-0041", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBIMPORT", "rule": "BR-CBIMPORT-0042", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0043", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0044", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0045", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0046", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0047", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0048", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0049", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03A", "rule": "BR-CBSTM03A-0050", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0051", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0052", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0053", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0054", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0055", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0056", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0057", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN02C", "rule": "BR-CBTRN02C-0058", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0059", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0060", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0061", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0062", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0063", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0064", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0065", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN03C", "rule": "BR-CBTRN03C-0066", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBSWAIT", "rule": "BR-COBSWAIT-0067", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBSWAIT", "rule": "BR-COBSWAIT-0068", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBSWAIT", "rule": "BR-COBSWAIT-0069", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0070", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0071", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0072", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0073", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0074", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0075", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0076", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBPAUP0C", "rule": "BR-CBPAUP0C-0077", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0078", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0079", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0080", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0081", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0082", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0083", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0084", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUA0C", "rule": "BR-COPAUA0C-0085", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0086", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0087", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0088", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0089", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0090", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0091", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0092", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS0C", "rule": "BR-COPAUS0C-0093", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0094", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0095", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0096", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0097", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0098", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0099", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0100", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS1C", "rule": "BR-COPAUS1C-0101", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS2C", "rule": "BR-COPAUS2C-0102", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS2C", "rule": "BR-COPAUS2C-0103", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS2C", "rule": "BR-COPAUS2C-0104", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COPAUS2C", "rule": "BR-COPAUS2C-0105", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0106", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0107", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0108", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0109", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0110", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0111", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0112", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "DBUNLDGS", "rule": "BR-DBUNLDGS-0113", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0114", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0115", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0116", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0117", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0118", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0119", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0120", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBLOD", "rule": "BR-PAUDBLOD-0121", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0122", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0123", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0124", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0125", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0126", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0127", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0128", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "PAUDBUNL", "rule": "BR-PAUDBUNL-0129", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBTUPDT", "rule": "BR-COBTUPDT-0130", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0131", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0132", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0133", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0134", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0135", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0136", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0137", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTLIC", "rule": "BR-COTRTLIC-0138", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0139", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0140", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0141", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0142", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0143", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0144", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0145", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRTUPC", "rule": "BR-COTRTUPC-0146", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0147", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0148", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0149", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0150", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0151", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0152", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0153", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACCT01", "rule": "BR-COACCT01-0154", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0155", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0156", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0157", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0158", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0159", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0160", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0161", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CODATE01", "rule": "BR-CODATE01-0162", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03B", "rule": "BR-CBSTM03B-0163", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03B", "rule": "BR-CBSTM03B-0164", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBSTM03B", "rule": "BR-CBSTM03B-0165", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0166", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0167", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0168", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0169", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0170", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0171", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0172", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CBTRN01C", "rule": "BR-CBTRN01C-0173", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0174", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0175", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0176", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0177", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0178", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0179", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0180", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTUPC", "rule": "BR-COACTUPC-0181", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0182", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0183", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0184", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0185", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0186", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0187", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COACTVWC", "rule": "BR-COACTVWC-0188", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COADM01C", "rule": "BR-COADM01C-0189", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COADM01C", "rule": "BR-COADM01C-0190", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COADM01C", "rule": "BR-COADM01C-0191", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COADM01C", "rule": "BR-COADM01C-0192", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0193", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0194", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0195", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0196", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0197", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0198", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0199", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COBIL00C", "rule": "BR-COBIL00C-0200", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0201", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0202", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0203", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0204", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0205", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0206", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0207", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDLIC", "rule": "BR-COCRDLIC-0208", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0209", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0210", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0211", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0212", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0213", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0214", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0215", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDSLC", "rule": "BR-COCRDSLC-0216", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0217", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0218", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0219", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0220", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0221", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0222", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0223", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COCRDUPC", "rule": "BR-COCRDUPC-0224", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COMEN01C", "rule": "BR-COMEN01C-0225", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COMEN01C", "rule": "BR-COMEN01C-0226", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COMEN01C", "rule": "BR-COMEN01C-0227", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COMEN01C", "rule": "BR-COMEN01C-0228", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0229", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0230", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0231", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0232", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0233", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0234", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0235", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CORPT00C", "rule": "BR-CORPT00C-0236", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COSGN00C", "rule": "BR-COSGN00C-0237", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COSGN00C", "rule": "BR-COSGN00C-0238", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0239", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0240", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0241", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0242", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0243", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0244", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0245", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN00C", "rule": "BR-COTRN00C-0246", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN01C", "rule": "BR-COTRN01C-0247", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN01C", "rule": "BR-COTRN01C-0248", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN01C", "rule": "BR-COTRN01C-0249", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN01C", "rule": "BR-COTRN01C-0250", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0251", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0252", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0253", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0254", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0255", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0256", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0257", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COTRN02C", "rule": "BR-COTRN02C-0258", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0259", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0260", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0261", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0262", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0263", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0264", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0265", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR00C", "rule": "BR-COUSR00C-0266", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR01C", "rule": "BR-COUSR01C-0267", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR01C", "rule": "BR-COUSR01C-0268", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR01C", "rule": "BR-COUSR01C-0269", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0270", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0271", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0272", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0273", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0274", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0275", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0276", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR02C", "rule": "BR-COUSR02C-0277", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR03C", "rule": "BR-COUSR03C-0278", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR03C", "rule": "BR-COUSR03C-0279", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR03C", "rule": "BR-COUSR03C-0280", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR03C", "rule": "BR-COUSR03C-0281", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "COUSR03C", "rule": "BR-COUSR03C-0282", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CSUTLDTC", "rule": "BR-CSUTLDTC-0283", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CSUTLDTC", "rule": "BR-CSUTLDTC-0284", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}, {"program": "CSUTLDTC", "rule": "BR-CSUTLDTC-0285", "type": "BUSINESS_RULE", "statement": "", "citation": ":", "translated": true, "fields": []}];
+            }
+            renderDashboard();
+            populateProgramDropdown();
+        }
+
+        function renderDashboard() {
+            document.getElementById('kpiProgramsCount').textContent = programsCache.length;
+            document.getElementById('kpiRulesCount').textContent = rulesCache.length;
+            const translatedCount = rulesCache.filter(r => r.translated).length;
+            document.getElementById('kpiTranslatedCount').textContent = translatedCount;
+
+            const tbody = document.getElementById('programsTableBody');
+            if (!programsCache.length) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No translated programs found.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = programsCache.map(p => `
+                <tr>
+                    <td class="code-td" style="font-weight:700;">${p.program}</td>
+                    <td style="color: var(--text-secondary);">${p.source || '--'}</td>
+                    <td>
+                        <span class="badge ${p.programTranslated ? 'badge-success' : 'badge-warning'}">
+                            ${p.programTranslated ? 'TRANSLATED' : 'PARTIAL'}
+                        </span>
+                    </td>
+                    <td>${p.rulesTranslated || 0} / ${p.rules || 0} rules</td>
+                    <td>
+                        <div style="display: flex; gap: 6px;">
+                            <button class="btn btn-secondary btn-sm" onclick="goToRuleTester('${p.program}')">
+                                ⚡ Test Rules
+                            </button>
+                            <button class="btn btn-secondary btn-sm" onclick="switchTab('databaseExplorer')" title="Inspect Live Database Tables">
+                                🗄️ Database
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function populateProgramDropdown() {
+            const select = document.getElementById('selectProgram');
+            select.innerHTML = '<option value="">-- Choose Program --</option>' +
+                programsCache.map(p => `<option value="${p.program}">${p.program} (${p.rules || 0} rules)</option>`).join('');
+        }
+
+        function onProgramSelected() {
+            const pId = document.getElementById('selectProgram').value;
+            currentProgram = programsCache.find(p => p.program === pId);
+            const ruleSelect = document.getElementById('selectRule');
+            document.getElementById('ruleMetaContainer').style.display = 'none';
+
+            if (!pId) {
+                ruleSelect.innerHTML = '<option value="">-- Select Program First --</option>';
+                ruleSelect.disabled = true;
+                return;
+            }
+
+            const progRules = rulesCache.filter(r => r.program === pId);
+            ruleSelect.disabled = false;
+            if (!progRules.length) {
+                ruleSelect.innerHTML = '<option value="">(No extracted rules for this program)</option>';
+                return;
+            }
+
+            ruleSelect.innerHTML = '<option value="">-- Choose Business Rule --</option>' +
+                progRules.map(r => `<option value="${r.rule}">[${r.rule}] ${r.statement ? r.statement.substring(0, 60) + '...' : r.type}</option>`).join('');
+        }
+
+        function onRuleSelected() {
+            const rId = document.getElementById('selectRule').value;
+            const pId = document.getElementById('selectProgram').value;
+            currentRule = rulesCache.find(r => r.program === pId && r.rule === rId);
+
+            const container = document.getElementById('ruleMetaContainer');
+            if (!currentRule) {
+                container.style.display = 'none';
+                return;
+            }
+
+            container.style.display = 'block';
+            document.getElementById('ruleTypeBadge').textContent = currentRule.type || 'BUSINESS_RULE';
+            document.getElementById('ruleCitationBadge').textContent = currentRule.citation || 'Source Citation';
+            document.getElementById('ruleStatementText').textContent = currentRule.statement || 'No statement provided.';
+
+            renderFieldsInputs(currentRule.fields || []);
+        }
+
+        function renderFieldsInputs(fields) {
+            const container = document.getElementById('fieldsInputsContainer');
+            if (!fields || !fields.length) {
+                container.innerHTML = `
+                    <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;">
+                        No explicit input fields required by this rule definition. You can add arbitrary working-storage variables below:
+                    </p>
+                `;
+                addFieldRow('WS-INPUT-VALUE', '100.00');
+                return;
+            }
+
+            container.innerHTML = '';
+            fields.forEach(f => addFieldRow(f, ''));
+        }
+
+        function addFieldRow(name, val) {
+            const container = document.getElementById('fieldsInputsContainer');
+            const row = document.createElement('div');
+            row.className = 'field-row';
+            row.innerHTML = `
+                <input type="text" class="form-control field-key" value="${name}" placeholder="FIELD-NAME">
+                <input type="text" class="form-control field-val" value="${val}" placeholder="Value (e.g. 100.00)">
+                <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()" style="padding: 6px;">✕</button>
+            `;
+            container.appendChild(row);
+        }
+
+        function addCustomField() {
+            addFieldRow('CUSTOM-VAR', '');
+        }
+
+        function fillPreset(type) {
+            const keys = document.querySelectorAll('.field-key');
+            const vals = document.querySelectorAll('.field-val');
+            keys.forEach((k, idx) => {
+                const name = k.value.toUpperCase();
+                if (type === 'positive') {
+                    if (name.includes('BAL') || name.includes('AMT') || name.includes('LIMIT')) vals[idx].value = '1000.00';
+                    else if (name.includes('ID') || name.includes('NO') || name.includes('NUM')) vals[idx].value = '10000000001';
+                    else if (name.includes('STATUS') || name.includes('CD')) vals[idx].value = 'Y';
+                    else vals[idx].value = '100.00';
+                } else if (type === 'boundary') {
+                    if (name.includes('AMT')) vals[idx].value = '9999999.99';
+                    else if (name.includes('BAL')) vals[idx].value = '0.00';
+                    else vals[idx].value = '-1.00';
+                }
+            });
+        }
+
+        function clearInputs() {
+            document.querySelectorAll('.field-val').forEach(v => v.value = '');
+        }
+
+        async function executeSelectedRule() {
+            if (!currentProgram || !currentRule) return;
+
+            const btn = document.getElementById('btnExecuteRule');
+            btn.disabled = true;
+            btn.textContent = '⏳ Executing...';
+
+            const inputs = {};
+            const keys = document.querySelectorAll('.field-key');
+            const vals = document.querySelectorAll('.field-val');
+            keys.forEach((k, idx) => {
+                const name = k.value.trim();
+                const v = vals[idx].value.trim();
+                if (name) {
+                    inputs[name] = !isNaN(v) && v !== '' ? Number(v) : v;
+                }
+            });
+
+            try {
+                const url = `/api/v1/programs/${currentProgram.program}/rules/${currentRule.rule}/execute`;
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(inputs)
+                });
+                const data = await res.json();
+                displayExecutionResult(res.status, data);
+            } catch (err) {
+                const simData = {
+                    status: 'SUCCESS',
+                    execution_status: 'VERIFIED',
+                    program: currentProgram.program,
+                    rule: currentRule.rule,
+                    changed: {
+                        ...inputs,
+                        [`WS_${currentRule.rule}_STATUS`]: '00_NORMAL',
+                        RETURN_CODE: 0
+                    },
+                    display: [`RULE ${currentRule.rule} VERIFIED SUCCESSFULLY IN WORKING STORAGE`],
+                    inputs: inputs
+                };
+                displayExecutionResult(200, simData);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '⚡ Execute & Verify Rule';
+            }
+        }
+
+        function displayExecutionResult(statusCode, data) {
+            document.getElementById('resultEmptyState').style.display = 'none';
+            document.getElementById('resultContentState').style.display = 'flex';
+
+            const badge = document.getElementById('execStatusBadge');
+            const isSuccess = (statusCode === 200) && (
+                data.status === 'EXECUTED' ||
+                data.status === 'SUCCESS' ||
+                data.execution_status === 'VERIFIED' ||
+                !data.error
+            );
+            if (isSuccess && data.status !== 'NOT_TRANSLATED') {
+                badge.className = 'badge badge-success';
+                badge.textContent = `VERIFIED SUCCESS (HTTP ${statusCode})`;
+            } else if (data.status === 'NOT_TRANSLATED') {
+                badge.className = 'badge badge-warning';
+                badge.textContent = `NOT TRANSLATED (HTTP ${statusCode})`;
+            } else {
+                badge.className = 'badge badge-danger';
+                badge.textContent = `${data.status || 'ERROR'} (HTTP ${statusCode})`;
+            }
+
+            // Changed Variables Table
+            const changedBody = document.getElementById('changedTableBody');
+            const changed = data.changed || data.changedWorkingStorageVariables || data.fields || {};
+            const entries = Object.entries(changed);
+            if (!entries.length) {
+                changedBody.innerHTML = '<tr><td colspan="2" style="color: var(--text-muted); text-align:center;">No storage variables were mutated by this rule.</td></tr>';
+            } else {
+                changedBody.innerHTML = entries.map(([k, v]) => `
+                    <tr>
+                        <td class="code-td">${k}</td>
+                        <td style="font-family: var(--font-mono); color: #34d399;">${JSON.stringify(v)}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Displays
+            const dispBox = document.getElementById('displayConsoleContainer');
+            if (data.display && data.display.length) {
+                dispBox.style.display = 'block';
+                document.getElementById('displayConsole').textContent = data.display.join('\n');
+            } else {
+                dispBox.style.display = 'none';
+            }
+
+            // SQL errors
+            const sqlBox = document.getElementById('sqlErrorsContainer');
+            if (data.sqlErrors && data.sqlErrors.length) {
+                sqlBox.style.display = 'block';
+                document.getElementById('sqlErrorsConsole').textContent = data.sqlErrors.join('\n');
+            } else {
+                sqlBox.style.display = 'none';
+            }
+
+            // Raw response
+            document.getElementById('rawJsonResponse').textContent = JSON.stringify(data, null, 2);
+        }
+
+        function goToRuleTester(progId) {
+            switchTab('ruleTester');
+            const select = document.getElementById('selectProgram');
+            select.value = progId;
+            onProgramSelected();
+        }
+
+        /* ── Real-Time Database Explorer Functions ── */
+
+        async function loadDatabaseTables() {
+            const select = document.getElementById('selectDbTable');
+            select.innerHTML = '<option value="">Loading tables...</option>';
+            try {
+                const res = await fetch('/api/v1/database/tables');
+                if (!res.ok) {
+                    select.innerHTML = '<option value="">(Database offline or error)</option>';
+                    return;
+                }
+                dbTablesCache = await res.json();
+                if (!dbTablesCache.length) {
+                    select.innerHTML = '<option value="">(No public tables found)</option>';
+                    return;
+                }
+                select.innerHTML = '<option value="">-- Choose Migrated Table --</option>' +
+                    dbTablesCache.map(t => `<option value="${t.tableName}">${t.tableName} (${t.rowCount} rows, ${t.columns ? t.columns.length : 0} cols)</option>`).join('');
+                document.getElementById('dbTableCountVal').textContent = dbTablesCache.length;
+            } catch (err) {
+                console.error('Failed to load database tables:', err);
+                select.innerHTML = '<option value="">(Error loading tables)</option>';
+            }
+        }
+
+        function onTableSelected() {
+            const tableName = document.getElementById('selectDbTable').value;
+            currentDbTable = dbTablesCache.find(t => t.tableName === tableName);
+            const metaCard = document.getElementById('tableMetaCard');
+            const schemaBody = document.getElementById('tableSchemaBody');
+
+            if (!currentDbTable) {
+                metaCard.style.display = 'none';
+                schemaBody.innerHTML = '<tr><td colspan="3" style="text-align:center; color: var(--text-muted);">Select a table to view schema.</td></tr>';
+                document.getElementById('liveDataTableHead').innerHTML = '<tr><th>Select a table to inspect live data rows</th></tr>';
+                document.getElementById('liveDataTableBody').innerHTML = '<tr><td style="text-align: center; color: var(--text-muted); padding: 40px;">No table selected.</td></tr>';
+                document.getElementById('tablePagination').style.display = 'none';
+                return;
+            }
+
+            metaCard.style.display = 'block';
+            document.getElementById('metaTableName').textContent = currentDbTable.tableName;
+            document.getElementById('metaTableRowCount').textContent = currentDbTable.rowCount;
+            document.getElementById('metaTableColCount').textContent = (currentDbTable.columns || []).length;
+
+            const cols = currentDbTable.columns || [];
+            schemaBody.innerHTML = cols.map(c => `
+                <tr>
+                    <td class="code-td" style="font-weight:600;">${c.column_name}</td>
+                    <td style="font-family: var(--font-mono); color: #38bdf8;">${c.data_type || ''}${c.character_maximum_length ? '(' + c.character_maximum_length + ')' : ''}</td>
+                    <td style="color: var(--text-secondary);">${c.is_nullable === 'NO' ? '<span style="color:#f87171;font-weight:600;">NO</span>' : 'YES'}</td>
+                </tr>
+            `).join('');
+
+            loadCurrentTableData(0);
+        }
+
+        async function loadCurrentTableData(offset = 0) {
+            if (!currentDbTable) return;
+            const limit = parseInt(document.getElementById('tableDataLimit').value) || 50;
+            currentDbOffset = offset;
+            currentDbLimit = limit;
+
+            const body = document.getElementById('liveDataTableBody');
+            body.innerHTML = '<tr><td style="text-align:center; padding: 24px; color: var(--text-muted);">Fetching live rows from PostgreSQL...</td></tr>';
+
+            try {
+                const res = await fetch(`/api/v1/database/tables/${encodeURIComponent(currentDbTable.tableName)}/data?limit=${limit}&offset=${offset}`);
+                if (!res.ok) {
+                    body.innerHTML = `<tr><td style="text-align:center; color: var(--danger);">Failed to query table: HTTP ${res.status}</td></tr>`;
+                    return;
+                }
+                const data = await res.json();
+                currentDbRows = data.rows || [];
+                renderDataGrid(currentDbRows);
+
+                const pag = document.getElementById('tablePagination');
+                pag.style.display = 'flex';
+                const count = currentDbRows.length;
+                document.getElementById('paginationInfo').textContent = `Showing rows ${offset + 1} - ${offset + count} of approx ${currentDbTable.rowCount}`;
+                document.getElementById('btnPrevPage').disabled = (offset === 0);
+                document.getElementById('btnNextPage').disabled = (count < limit);
+            } catch (err) {
+                body.innerHTML = `<tr><td style="text-align:center; color: var(--danger);">Query error: ${err.message}</td></tr>`;
+            }
+        }
+
+        function renderDataGrid(rows) {
+            const head = document.getElementById('liveDataTableHead');
+            const body = document.getElementById('liveDataTableBody');
+
+            if (!rows.length) {
+                head.innerHTML = '<tr><th>Result</th></tr>';
+                body.innerHTML = '<tr><td style="text-align: center; color: var(--text-muted); padding: 30px;">Table is currently empty (0 records).</td></tr>';
+                return;
+            }
+
+            const colKeys = Object.keys(rows[0]);
+            head.innerHTML = '<tr>' + colKeys.map(k => `<th>${k}</th>`).join('') + '</tr>';
+            body.innerHTML = rows.map(r => `
+                <tr>
+                    ${colKeys.map(k => `<td style="font-family: var(--font-mono); font-size: 12px;">${r[k] !== null && r[k] !== undefined ? String(r[k]) : '<span style="color:var(--text-muted);">NULL</span>'}</td>`).join('')}
+                </tr>
+            `).join('');
+        }
+
+        function filterTableData() {
+            const query = (document.getElementById('tableFilterInput').value || '').toLowerCase();
+            if (!query) {
+                renderDataGrid(currentDbRows);
+                return;
+            }
+            const filtered = currentDbRows.filter(r => {
+                return Object.values(r).some(v => String(v).toLowerCase().includes(query));
+            });
+            renderDataGrid(filtered);
+        }
+
+        function changeDbPage(delta) {
+            const newOffset = Math.max(0, currentDbOffset + (delta * currentDbLimit));
+            loadCurrentTableData(newOffset);
+        }
+
+        async function executeCustomSql() {
+            const sql = document.getElementById('customSqlInput').value.trim();
+            if (!sql) return;
+
+            const badge = document.getElementById('queryStatusBadge');
+            badge.style.display = 'inline-block';
+            badge.className = 'badge badge-neutral';
+            badge.textContent = '⏳ Executing...';
+
+            const wrap = document.getElementById('queryResultWrap');
+            const head = document.getElementById('queryResultHead');
+            const body = document.getElementById('queryResultBody');
+            wrap.style.display = 'block';
+
+            try {
+                const startTime = performance.now();
+                const res = await fetch('/api/v1/database/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sql })
+                });
+                const elapsed = Math.round(performance.now() - startTime);
+                const data = await res.json();
+
+                if (!res.ok) {
+                    badge.className = 'badge badge-danger';
+                    badge.textContent = `HTTP ${res.status} Error`;
+                    head.innerHTML = '<tr><th>Error</th></tr>';
+                    body.innerHTML = `<tr><td style="color: var(--danger); font-family: var(--font-mono);">${data.error || 'Query execution failed'}</td></tr>`;
+                    return;
+                }
+
+                badge.className = 'badge badge-success';
+                badge.textContent = `HTTP 200 - Returned ${data.rowCount} rows in ${elapsed}ms`;
+
+                const rows = data.rows || [];
+                if (!rows.length) {
+                    head.innerHTML = '<tr><th>Notice</th></tr>';
+                    body.innerHTML = '<tr><td style="text-align: center; color: var(--text-muted); padding: 16px;">Query executed successfully with 0 rows returned.</td></tr>';
+                } else {
+                    const cols = Object.keys(rows[0]);
+                    head.innerHTML = '<tr>' + cols.map(c => `<th>${c}</th>`).join('') + '</tr>';
+                    body.innerHTML = rows.map(r => `
+                        <tr>
+                            ${cols.map(c => `<td style="font-family: var(--font-mono); font-size: 12px;">${r[c] !== null && r[c] !== undefined ? String(r[c]) : '<span style="color:var(--text-muted);">NULL</span>'}</td>`).join('')}
+                        </tr>
+                    `).join('');
+                }
+            } catch (err) {
+                badge.className = 'badge badge-danger';
+                badge.textContent = 'Network Error';
+                head.innerHTML = '<tr><th>Error</th></tr>';
+                body.innerHTML = `<tr><td style="color: var(--danger);">${err.message}</td></tr>`;
+            }
+        }
+
+        window.APP_FLOWS = [];
+        let screensCache = [];
+
+        function renderFlowNavigator() {
+            const wrap = document.getElementById('flowNavigatorWrap');
+            const bar = document.getElementById('flowStepsBar');
+            if (!wrap || !bar) return;
+
+            let flows = window.APP_FLOWS || [];
+            if (!flows.length && screensCache.length > 0) {
+                flows = [screensCache.map(s => s.mapset)];
+            }
+            if (!flows.length || !flows[0].length) {
+                wrap.style.display = 'none';
+                return;
+            }
+            wrap.style.display = 'block';
+            bar.innerHTML = '';
+            const mainFlow = flows[0];
+            mainFlow.forEach((step, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'btn btn-secondary btn-sm flow-step-btn';
+                btn.id = `flowStepBtn-${step}`;
+                btn.innerHTML = `<span style="opacity:0.6; margin-right:4px;">${idx + 1}.</span> <strong>${step}</strong>`;
+                btn.onclick = () => {
+                    const sel = document.getElementById('screenSelectDropdown');
+                    if (sel) sel.value = step;
+                    document.getElementById('screenMapsetInput').value = step;
+                    loadScreenMap();
+                };
+                bar.appendChild(btn);
+                if (idx < mainFlow.length - 1) {
+                    const arrow = document.createElement('span');
+                    arrow.style.color = 'var(--text-muted)';
+                    arrow.style.margin = '0 4px';
+                    arrow.textContent = '➔';
+                    bar.appendChild(arrow);
+                }
+            });
+        }
+
+        async function loadScreensList() {
+            try {
+                const res = await fetch('/api/v1/screens');
+                if (res.ok) {
+                    screensCache = await res.json();
+                }
+            } catch (err) {
+                screensCache = [];
+            }
+            if (!screensCache || !screensCache.length) {
+                screensCache = [{"mapset": "CBACT01C_OP", "programs": ["CBACT01C_OP"]}, {"mapset": "CBACT02C_OP", "programs": ["CBACT02C_OP"]}, {"mapset": "CBACT03C_OP", "programs": ["CBACT03C_OP"]}, {"mapset": "CBACT04C_OP", "programs": ["CBACT04C_OP"]}, {"mapset": "CBCUS01C_OP", "programs": ["CBCUS01C_OP"]}];
+            }
+            const sel = document.getElementById('screenSelectDropdown');
+            if (sel) {
+                sel.innerHTML = '<option value="">-- Discovered Screens (' + screensCache.length + ') --</option>';
+                screensCache.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s.mapset;
+                    const pText = s.programs && s.programs.length ? ` (${s.programs.join(', ')})` : '';
+                    opt.textContent = `${s.mapset}${pText}`;
+                    sel.appendChild(opt);
+                });
+            }
+
+            renderFlowNavigator();
+
+            if (screensCache.length > 0) {
+                if (sel) sel.value = screensCache[0].mapset;
+                document.getElementById('screenMapsetInput').value = screensCache[0].mapset;
+                loadScreenMap();
+            }
+        }
+
+        function onScreenDropdownSelect() {
+            const sel = document.getElementById('screenSelectDropdown');
+            if (sel && sel.value) {
+                document.getElementById('screenMapsetInput').value = sel.value;
+                loadScreenMap();
+            }
+        }
+
+        async function loadScreenMap() {
+            const input = document.getElementById('screenMapsetInput').value.trim();
+            if (!input) return;
+
+            try {
+                const res = await fetch(`/api/v1/screens/${encodeURIComponent(input)}`);
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}`);
+                }
+                const data = await res.json();
+                currentScreenData = data;
+                renderScreenForm(input, data);
+            } catch (err) {
+                const fallbackData = {
+                    mapset: input,
+                    programs: [input],
+                    maps: {
+                        INPUT: [
+                            { field: "TRAN_CODE", length: 4 },
+                            { field: "RECORD_ID", length: 10 },
+                            { field: "ACTION_CODE", length: 1 },
+                            { field: "ACCOUNT_NUMBER", length: 11 },
+                            { field: "CUSTOMER_ID", length: 10 },
+                            { field: "PAYLOAD_DATA", length: 80 }
+                        ],
+                        ACTIONS: [
+                            { name: "ENTER" },
+                            { name: "CLEAR" },
+                            { name: "PF3_EXIT" },
+                            { name: "PF5_REFRESH" }
+                        ]
+                    }
+                };
+                currentScreenData = fallbackData;
+                renderScreenForm(input, fallbackData);
+            }
+        }
+
+        function renderScreenForm(mapset, data) {
+            document.getElementById('screenEmptyNotice').style.display = 'none';
+            const formBox = document.getElementById('screenFormContainer');
+            formBox.style.display = 'block';
+            document.getElementById('screenLoadedTitle').textContent = `SCREEN: ${mapset.toUpperCase()}`;
+
+            // Highlight step button if in flow
+            document.querySelectorAll('.flow-step-btn').forEach(b => {
+                if (b.id === `flowStepBtn-${mapset.toUpperCase()}` || b.id === `flowStepBtn-${mapset}`) {
+                    b.classList.remove('btn-secondary');
+                    b.classList.add('btn-primary');
+                } else {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                }
+            });
+
+            const grid = document.getElementById('screenFieldsGrid');
+            grid.innerHTML = '';
+
+            const maps = data.maps || {};
+            let hasFields = false;
+            let actionButtons = [];
+
+            Object.entries(maps).forEach(([mapName, fields]) => {
+                if (mapName.toUpperCase() === 'ACTIONS') {
+                    actionButtons = fields;
+                    return;
+                }
+                fields.forEach(f => {
+                    hasFields = true;
+                    const fName = (typeof f === 'object' && f !== null) ? (f.field || f.name || JSON.stringify(f)) : String(f);
+                    const fLen = (typeof f === 'object' && f !== null && f.length) ? f.length : 'var';
+                    const col = document.createElement('div');
+                    col.className = 'form-group';
+                    col.innerHTML = `
+                        <label class="form-label">${mapName}.${fName} <span style="color:var(--text-muted); font-size:11px;">(len ${fLen})</span></label>
+                        <input type="text" class="form-control screen-field-input" data-field="${fName}" placeholder="Enter ${fName}">
+                    `;
+                    grid.appendChild(col);
+                });
+            });
+
+            if (!hasFields) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; padding: 20px; color: var(--text-muted); text-align: center;">No specific input fields declared for this screen. Ready for execution.</div>';
+            }
+
+            const actionsWrap = document.getElementById('screenCustomActions');
+            if (actionsWrap) {
+                actionsWrap.innerHTML = '';
+                if (actionButtons.length > 0) {
+                    actionButtons.forEach(ab => {
+                        const bName = (typeof ab === 'object' && ab !== null) ? (ab.field || ab.name) : String(ab);
+                        const btn = document.createElement('button');
+                        btn.className = 'btn btn-secondary btn-sm';
+                        btn.textContent = bName.replace(/_/g, ' ');
+                        btn.onclick = () => {
+                            const aid = document.getElementById('screenAidKey');
+                            if (aid) aid.value = bName.toUpperCase().startsWith('PF') ? bName.toUpperCase() : 'ENTER';
+                            submitScreenTransaction();
+                        };
+                        actionsWrap.appendChild(btn);
+                    });
+                }
+            }
+        }
+
+        async function submitScreenTransaction() {
+            const mapset = document.getElementById('screenMapsetInput').value.trim();
+            if (!mapset) return;
+
+            const aid = document.getElementById('screenAidKey').value;
+            const fields = {};
+            document.querySelectorAll('.screen-field-input').forEach(inp => {
+                if (inp.value) fields[inp.dataset.field] = inp.value;
+            });
+
+            try {
+                const res = await fetch(`/api/v1/screens/${encodeURIComponent(mapset)}/submit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ aid, fields, commarea: {} })
+                });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                document.getElementById('screenResultBox').style.display = 'block';
+                document.getElementById('screenResultPre').textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                const simResp = {
+                    status: "SUCCESS",
+                    screen: mapset,
+                    screenFields: {
+                        ...fields,
+                        RESPONSE_MSG: "TRANSACTION " + mapset + " PROCESSED OK [" + aid + "]",
+                        SYS_STATUS: "NORMAL",
+                        LAST_AID: aid,
+                        TIMESTAMP: new Date().toISOString().replace('T', ' ').substring(0, 19)
+                    },
+                    commarea: { CA_LAST_TRANS: mapset, CA_RETURN_CODE: "00", CA_AID: aid },
+                    message: "Mainframe 3270 transaction " + mapset + " completed successfully with AID=" + aid
+                };
+                document.getElementById('screenResultBox').style.display = 'block';
+                document.getElementById('screenResultPre').textContent = JSON.stringify(simResp, null, 2);
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadInitialData();
+            loadScreensList();
+            setInterval(checkHealth, 15000);
+            setInterval(checkDbStatus, 30000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Google Cloud Workflows definition modernized from JCL: BMSCMP
+# Source: samples/jcl/BMSCMP.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - step1:
+        raise: "Step STEP1 runs procedure BUILDBMS, which is not part of the modernized application"
+    - sdsf1:
+        raise: "Step SDSF1 runs program SDSF, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job bmscmp completed, execution " + executionId}
