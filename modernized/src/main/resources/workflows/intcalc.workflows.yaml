@@ -1,0 +1,23 @@
+# Google Cloud Workflows definition modernized from JCL: INTCALC
+# Source: app/jcl/INTCALC.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - step15:
+        call: http.post
+        args:
+          url: "__SERVICE_URL__/api/v1/jobs/CBACT04C/execute"
+          auth:
+            type: OIDC
+          body:
+            jobName: "intcalc"
+            stepName: "STEP15"
+            program: "CBACT04C"
+            executionId: ${executionId}
+        result: step15_result
+    - finalize:
+        return: ${"Job intcalc completed, execution " + executionId}

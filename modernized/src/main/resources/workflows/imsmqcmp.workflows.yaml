@@ -1,0 +1,23 @@
+# Google Cloud Workflows definition modernized from JCL: IMSMQCMP
+# Source: samples/jcl/IMSMQCMP.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - trn:
+        raise: "Step TRN runs program DFHECP1$, which is not part of the modernized application"
+    - cobol:
+        raise: "Step COBOL runs program IGYCRCTL, which is not part of the modernized application"
+    - copyims:
+        raise: "Step COPYIMS runs program IEBGENER, which is not part of the modernized application"
+    - copylink:
+        raise: "Step COPYLINK runs program IEBGENER, which is not part of the modernized application"
+    - copymq:
+        raise: "Step COPYMQ runs program IEBGENER, which is not part of the modernized application"
+    - lked:
+        raise: "Step LKED runs program IEWL, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job imsmqcmp completed, execution " + executionId}
