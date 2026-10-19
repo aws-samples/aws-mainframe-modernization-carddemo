@@ -1,0 +1,21 @@
+# Google Cloud Workflows definition modernized from JCL: TRANEXTR
+# Source: app/app-transaction-type-db2/jcl/TRANEXTR.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - step10:
+        raise: "Step STEP10 runs program IEBGENER, which is not part of the modernized application"
+    - step20:
+        raise: "Step STEP20 runs program IEBGENER, which is not part of the modernized application"
+    - step30:
+        raise: "Step STEP30 runs program IEFBR14, which is not part of the modernized application"
+    - step40:
+        raise: "Step STEP40 runs program IKJEFT01, which is not part of the modernized application"
+    - step50:
+        raise: "Step STEP50 runs program IKJEFT01, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job tranextr completed, execution " + executionId}
