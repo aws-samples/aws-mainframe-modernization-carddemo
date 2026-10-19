@@ -1,0 +1,31 @@
+# Google Cloud Workflows definition modernized from JCL: CREASTMT
+# Source: app/jcl/CREASTMT.JCL
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - deldef01:
+        raise: "Step DELDEF01 runs program IDCAMS, which is not part of the modernized application"
+    - step010:
+        raise: "Step STEP010 runs program SORT, which is not part of the modernized application"
+    - step020:
+        raise: "Step STEP020 runs program IDCAMS, which is not part of the modernized application"
+    - step030:
+        raise: "Step STEP030 runs program IEFBR14, which is not part of the modernized application"
+    - step040:
+        call: http.post
+        args:
+          url: "__SERVICE_URL__/api/v1/jobs/CBSTM03A/execute"
+          auth:
+            type: OIDC
+          body:
+            jobName: "creastmt"
+            stepName: "STEP040"
+            program: "CBSTM03A"
+            executionId: ${executionId}
+        result: step040_result
+    - finalize:
+        return: ${"Job creastmt completed, execution " + executionId}
