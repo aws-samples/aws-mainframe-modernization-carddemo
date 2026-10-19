@@ -1,0 +1,13 @@
+# Google Cloud Workflows definition modernized from JCL: CLOSEFIL
+# Source: app/jcl/CLOSEFIL.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - clcifil:
+        raise: "Step CLCIFIL runs program SDSF, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job closefil completed, execution " + executionId}
