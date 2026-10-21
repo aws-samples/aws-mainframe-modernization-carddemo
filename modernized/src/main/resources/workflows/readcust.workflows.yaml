@@ -1,0 +1,23 @@
+# Google Cloud Workflows definition modernized from JCL: READCUST
+# Source: app/jcl/READCUST.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - step05:
+        call: http.post
+        args:
+          url: "__SERVICE_URL__/api/v1/jobs/CBCUS01C/execute"
+          auth:
+            type: OIDC
+          body:
+            jobName: "readcust"
+            stepName: "STEP05"
+            program: "CBCUS01C"
+            executionId: ${executionId}
+        result: step05_result
+    - finalize:
+        return: ${"Job readcust completed, execution " + executionId}
