@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: carddemo-backend
+  datasource:
+    url: jdbc:h2:file:${carddemo.h2-path:./data/carddemo}
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: ${PORT:8080}
+
+carddemo:
+  # Directory containing the ASCII seed files (acctdata.txt, carddata.txt,
+  # cardxref.txt, custdata.txt, dailytran.txt, discgrp.txt, tcatbal.txt,
+  # trancatg.txt, trantype.txt, usrsec.txt). Defaults to the copies bundled
+  # in classpath:/seed (byte-identical to app/data/ASCII plus usrsec.txt
+  # extracted from app/jcl/DUSRSECJ.jcl).
+  seed-dir: ${CARDDEMO_SEED_DIR:classpath:/seed}
+  auth:
+    # HMAC secret for session tokens. Override in production.
+    secret: ${CARDDEMO_AUTH_SECRET:carddemo-dev-secret-change-me}
+    token-ttl-minutes: ${CARDDEMO_TOKEN_TTL:480}

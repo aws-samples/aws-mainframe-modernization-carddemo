@@ -1,0 +1,18 @@
+010001Regular Sales Draft                               0000
+010002Regular Cash Advance                              0000
+010003Convenience Check Debit                           0000
+010004ATM Cash Advance                                  0000
+010005Interest Amount                                   0000
+020001Cash payment                                      0000
+020002Electronic payment                                0000
+020003Check payment                                     0000
+030001Credit to Account                                 0000
+030002Credit to Purchase balance                        0000
+030003Credit to Cash balance                            0000
+040001Zero dollar authorization                         0000
+040002Online purchase authorization                     0000
+040003Travel booking authorization                      0000
+050001Refund credit                                     0000
+060001Fraud reversal                                    0000
+060002Non-fraud reversal                                0000
+070001Sales draft credit adjustment                     0000
