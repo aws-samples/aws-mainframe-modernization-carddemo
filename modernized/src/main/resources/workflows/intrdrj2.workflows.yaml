@@ -1,0 +1,13 @@
+# Google Cloud Workflows definition modernized from JCL: INTRDRJ2
+# Source: app/jcl/INTRDRJ2.JCL
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - idcams:
+        raise: "Step IDCAMS runs program IDCAMS, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job intrdrj2 completed, execution " + executionId}

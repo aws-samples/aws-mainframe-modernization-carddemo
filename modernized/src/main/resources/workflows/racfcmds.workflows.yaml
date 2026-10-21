@@ -1,0 +1,13 @@
+# Google Cloud Workflows definition modernized from JCL: RACFCMDS
+# Source: samples/jcl/RACFCMDS.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - tsobat:
+        raise: "Step TSOBAT runs program IKJEFT01, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job racfcmds completed, execution " + executionId}

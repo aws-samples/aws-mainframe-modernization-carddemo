@@ -1,0 +1,3376 @@
+{
+  "programs": [
+    {
+      "module_id": "CBACT01C",
+      "program_id": "CBACT01C",
+      "source": "app/cbl/CBACT01C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact01cService.java",
+      "program_translated": false,
+      "paragraphs": 17,
+      "paragraphs_translated": 16,
+      "rules": 8,
+      "rules_translated": 6,
+      "untranslated": [
+        "1000-ACCTFILE-GET-NEXT: INITIALIZE ARR-ARRAY-REC: item ARR-ACCT-CURR-BAL is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT01C-0001",
+          "reason": "performs 1000-ACCTFILE-GET-NEXT, which is not translated"
+        },
+        {
+          "rule": "BR-CBACT01C-0002",
+          "reason": "performs 1000-ACCTFILE-GET-NEXT, which is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBACT02C",
+      "program_id": "CBACT02C",
+      "source": "app/cbl/CBACT02C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact02cService.java",
+      "program_translated": true,
+      "paragraphs": 6,
+      "paragraphs_translated": 6,
+      "rules": 7,
+      "rules_translated": 6,
+      "untranslated": [],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT02C-0009",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBACT03C",
+      "program_id": "CBACT03C",
+      "source": "app/cbl/CBACT03C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact03cService.java",
+      "program_translated": true,
+      "paragraphs": 6,
+      "paragraphs_translated": 6,
+      "rules": 7,
+      "rules_translated": 6,
+      "untranslated": [],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT03C-0016",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBACT04C",
+      "program_id": "CBACT04C",
+      "source": "app/cbl/CBACT04C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbact04cService.java",
+      "program_translated": false,
+      "paragraphs": 23,
+      "paragraphs_translated": 20,
+      "rules": 8,
+      "rules_translated": 6,
+      "untranslated": [
+        "1200-GET-INTEREST-RATE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "1300-B-WRITE-TX: STRING statements are not translated",
+        "Z-GET-DB2-FORMAT-TIMESTAMP: expected TO but found 'CURRENT-DATE'"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBACT04C-0023",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        },
+        {
+          "rule": "BR-CBACT04C-0027",
+          "reason": "performs 1200-GET-INTEREST-RATE, which is not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBCUS01C",
+      "program_id": "CBCUS01C",
+      "source": "app/cbl/CBCUS01C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbcus01cService.java",
+      "program_translated": true,
+      "paragraphs": 6,
+      "paragraphs_translated": 6,
+      "rules": 7,
+      "rules_translated": 6,
+      "untranslated": [],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBCUS01C-0031",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBSTM03A",
+      "program_id": "CBSTM03A",
+      "source": "app/cbl/CBSTM03A.CBL",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbstm03aService.java",
+      "program_translated": false,
+      "paragraphs": 26,
+      "paragraphs_translated": 8,
+      "rules": 8,
+      "rules_translated": 2,
+      "untranslated": [
+        "MAIN-ENTRY: SET statements other than SET condition-name TO TRUE are not translated",
+        "0000-START: ALTER statements are not translated",
+        "2000-CUSTFILE-GET: LENGTH expressions are not translated",
+        "3000-ACCTFILE-GET: LENGTH expressions are not translated",
+        "5000-CREATE-STATEMENT: INITIALIZE STATEMENT-LINES: item ST-CURR-BAL is not translated",
+        "5200-WRITE-HTML-NMADBS: STRING statements are not translated",
+        "6000-WRITE-TRANS: STRING statements are not translated",
+        "8100-FILE-OPEN: GO TO changes control flow in ways that are not translated",
+        "8100-TRNXFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8200-XREFFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8300-CUSTFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8400-ACCTFILE-OPEN: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "8500-READTRNX-READ: GO TO changes control flow in ways that are not translated",
+        "8599-EXIT: GO TO changes control flow in ways that are not translated",
+        "9100-TRNXFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "9200-XREFFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "9300-CUSTFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "9400-ACCTFILE-CLOSE: abbreviated combined conditions (for example A = 1 OR 2) are not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBSTM03A-0043",
+          "reason": "LENGTH expressions are not translated"
+        },
+        {
+          "rule": "BR-CBSTM03A-0044",
+          "reason": "unexpected 'END-IF' (not a statement)"
+        },
+        {
+          "rule": "BR-CBSTM03A-0045",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        },
+        {
+          "rule": "BR-CBSTM03A-0046",
+          "reason": "performs 2000-CUSTFILE-GET, which is not translated"
+        },
+        {
+          "rule": "BR-CBSTM03A-0049",
+          "reason": "unexpected 'OR' (not a statement)"
+        },
+        {
+          "rule": "BR-CBSTM03A-0050",
+          "reason": "abbreviated combined conditions (for example A = 1 OR 2) are not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBSTM03B",
+      "program_id": "CBSTM03B",
+      "source": "app/cbl/CBSTM03B.CBL",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbstm03bService.java",
+      "program_translated": false,
+      "paragraphs": 14,
+      "paragraphs_translated": 9,
+      "rules": 3,
+      "rules_translated": 0,
+      "untranslated": [
+        "0000-START: PERFORM ... THRU is not translated",
+        "1000-TRNXFILE-PROC: GO TO changes control flow in ways that are not translated",
+        "2000-XREFFILE-PROC: GO TO changes control flow in ways that are not translated",
+        "3000-CUSTFILE-PROC: GO TO changes control flow in ways that are not translated",
+        "4000-ACCTFILE-PROC: GO TO changes control flow in ways that are not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBSTM03B-0163",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-CBSTM03B-0164",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-CBSTM03B-0165",
+          "reason": "unexpected 'SELECT' (not a statement)"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBTRN02C",
+      "program_id": "CBTRN02C",
+      "source": "app/cbl/CBTRN02C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbtrn02cService.java",
+      "program_translated": false,
+      "paragraphs": 27,
+      "paragraphs_translated": 25,
+      "rules": 8,
+      "rules_translated": 7,
+      "untranslated": [
+        "2700-UPDATE-TCATBAL: abbreviated combined conditions (for example A = 1 OR 2) are not translated",
+        "Z-GET-DB2-FORMAT-TIMESTAMP: expected TO but found 'CURRENT-DATE'"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBTRN02C-0051",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CBTRN03C",
+      "program_id": "CBTRN03C",
+      "source": "app/cbl/CBTRN03C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/Cbtrn03cService.java",
+      "program_translated": false,
+      "paragraphs": 27,
+      "paragraphs_translated": 24,
+      "rules": 8,
+      "rules_translated": 5,
+      "untranslated": [
+        "MAIN-ENTRY: NEXT SENTENCE is not translated",
+        "1100-WRITE-TRANSACTION-REPORT: FUNCTION expressions are not translated",
+        "1120-WRITE-DETAIL: INITIALIZE TRANSACTION-DETAIL-REPORT: item TRAN-REPORT-AMT is not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CBTRN03C-0059",
+          "reason": "expected END-PERFORM but found the end of the cited lines"
+        },
+        {
+          "rule": "BR-CBTRN03C-0061",
+          "reason": "unexpected 'END-IF' (not a statement)"
+        },
+        {
+          "rule": "BR-CBTRN03C-0065",
+          "reason": "FUNCTION expressions are not translated"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "COBSWAIT",
+      "program_id": "COBSWAIT",
+      "source": "app/cbl/COBSWAIT.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/CobswaitService.java",
+      "program_translated": false,
+      "paragraphs": 1,
+      "paragraphs_translated": 0,
+      "rules": 3,
+      "rules_translated": 0,
+      "untranslated": [
+        "MAIN-ENTRY: ACCEPT statements are not translated"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-COBSWAIT-0067",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-COBSWAIT-0068",
+          "reason": "unexpected 'ENVIRONMENT' (not a statement)"
+        },
+        {
+          "rule": "BR-COBSWAIT-0069",
+          "reason": "unexpected '01'"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "CSUTLDTC",
+      "program_id": "CSUTLDTC",
+      "source": "app/cbl/CSUTLDTC.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/core_financial_processing/service/CsutldtcService.java",
+      "program_translated": false,
+      "paragraphs": 3,
+      "paragraphs_translated": 1,
+      "rules": 3,
+      "rules_translated": 0,
+      "untranslated": [
+        "MAIN-ENTRY: INITIALIZE WS-MESSAGE: item WS-SEVERITY is not translated",
+        "A000-MAIN: condition-name FC-INVALID-DATE uses THRU ranges or unsupported values"
+      ],
+      "untranslated_rules": [
+        {
+          "rule": "BR-CSUTLDTC-0283",
+          "reason": "no source lines or snippet were cited"
+        },
+        {
+          "rule": "BR-CSUTLDTC-0284",
+          "reason": "unexpected '01'"
+        },
+        {
+          "rule": "BR-CSUTLDTC-0285",
+          "reason": "unexpected 'OF' (not a statement)"
+        }
+      ],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "MQ_DEFAULT",
+      "program_id": "",
+      "source": "MQ_DEFAULT (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/MqDefaultService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:AUTHFRDS",
+      "program_id": "",
+      "source": "database:AUTHFRDS (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseAuthfrdsService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:CARDDEMO.AUTHFRDS",
+      "program_id": "",
+      "source": "database:CARDDEMO.AUTHFRDS (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseCarddemoAuthfrdsService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:IMS_DLI_SEGMENT",
+      "program_id": "",
+      "source": "database:IMS_DLI_SEGMENT (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseImsDliSegmentService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:PAUTDTL1",
+      "program_id": "",
+      "source": "database:PAUTDTL1 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabasePautdtl1Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:PAUTINDX",
+      "program_id": "",
+      "source": "database:PAUTINDX (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabasePautindxService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:PAUTSUM0",
+      "program_id": "",
+      "source": "database:PAUTSUM0 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabasePautsum0Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:TRANSACTION_TYPE",
+      "program_id": "",
+      "source": "database:TRANSACTION_TYPE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseTransactionTypeService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:TRANSACTION_TYPE_CATEGORY",
+      "program_id": "",
+      "source": "database:TRANSACTION_TYPE_CATEGORY (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseTransactionTypeCategoryService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:XAUTHFRD",
+      "program_id": "",
+      "source": "database:XAUTHFRD (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseXauthfrdService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:XTRNTYCAT",
+      "program_id": "",
+      "source": "database:XTRNTYCAT (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseXtrntycatService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "database:XTRNTYPE",
+      "program_id": "",
+      "source": "database:XTRNTYPE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/DatabaseXtrntypeService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:ACCOUNT-SERVICE",
+      "program_id": "",
+      "source": "generated_service:ACCOUNT-SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceAccountServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:AUTH-ADMIN-SERVICE",
+      "program_id": "",
+      "source": "generated_service:AUTH-ADMIN-SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceAuthAdminServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:BATCH-ORCHESTRATION-SERVICE",
+      "program_id": "",
+      "source": "generated_service:BATCH-ORCHESTRATION-SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceBatchOrchestrationServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:CARD-SERVICE",
+      "program_id": "",
+      "source": "generated_service:CARD-SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceCardServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:CUSTOMER-SERVICE",
+      "program_id": "",
+      "source": "generated_service:CUSTOMER-SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceCustomerServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBACT01CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBACT01CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbact01cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBACT02CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBACT02CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbact02cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBACT03CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBACT03CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbact03cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBACT04CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBACT04CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbact04cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBCUS01CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBCUS01CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbcus01cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBEXPORTBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBEXPORTBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbexportbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBIMPORTBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBIMPORTBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbimportbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBPAUP0CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBPAUP0CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbpaup0cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBSTM03ABATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBSTM03ABATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbstm03abatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBSTM03BBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBSTM03BBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbstm03bbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBTRN01CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBTRN01CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbtrn01cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBTRN02CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBTRN02CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbtrn02cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CBTRN03CBATCHJOBCONFIG",
+      "program_id": "",
+      "source": "generated_service:TARGET_CBTRN03CBATCHJOBCONFIG (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCbtrn03cbatchjobconfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COACCT01SERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COACCT01SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCoacct01serviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COACTUPCSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COACTUPCSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCoactupcserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COACTVWCSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COACTVWCSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCoactvwcserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COADM01CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COADM01CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCoadm01cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COBIL00CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COBIL00CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCobil00cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COBSWAITSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COBSWAITSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCobswaitserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COBTUPDTSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COBTUPDTSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCobtupdtserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COCRDLICSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COCRDLICSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCocrdlicserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COCRDSLCSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COCRDSLCSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCocrdslcserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COCRDUPCSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COCRDUPCSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCocrdupcserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CODATE01SERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_CODATE01SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCodate01serviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COMEN01CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COMEN01CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetComen01cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COPAUA0CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COPAUA0CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCopaua0cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COPAUS0CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COPAUS0CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCopaus0cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COPAUS1CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COPAUS1CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCopaus1cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COPAUS2CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COPAUS2CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCopaus2cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CORPT00CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_CORPT00CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCorpt00cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COSGN00CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COSGN00CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCosgn00cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COTRN00CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COTRN00CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCotrn00cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COTRN01CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COTRN01CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCotrn01cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COTRN02CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COTRN02CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCotrn02cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COTRTLICSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COTRTLICSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCotrtlicserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COTRTUPCSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COTRTUPCSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCotrtupcserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COUSR00CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COUSR00CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCousr00cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COUSR01CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COUSR01CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCousr01cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COUSR02CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COUSR02CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCousr02cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_COUSR03CSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_COUSR03CSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCousr03cserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_CSUTLDTCSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_CSUTLDTCSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetCsutldtcserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_DBUNLDGSSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_DBUNLDGSSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetDbunldgsserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_PAUDBLODSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_PAUDBLODSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetPaudblodserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TARGET_PAUDBUNLSERVICE",
+      "program_id": "",
+      "source": "generated_service:TARGET_PAUDBUNLSERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTargetPaudbunlserviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "generated_service:TRANSACTION-SERVICE",
+      "program_id": "",
+      "source": "generated_service:TRANSACTION-SERVICE (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/GeneratedServiceTransactionServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_cloud_run_v2_job_batch_orchestration_service",
+      "program_id": "",
+      "source": "iac_google_cloud_run_v2_job_batch_orchestration_service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleCloudRunV2JobBatchOrchestrationServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_cloud_run_v2_service_account_service",
+      "program_id": "",
+      "source": "iac_google_cloud_run_v2_service_account_service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleCloudRunV2ServiceAccountServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_cloud_run_v2_service_auth_admin_service",
+      "program_id": "",
+      "source": "iac_google_cloud_run_v2_service_auth_admin_service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleCloudRunV2ServiceAuthAdminServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_cloud_run_v2_service_card_service",
+      "program_id": "",
+      "source": "iac_google_cloud_run_v2_service_card_service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleCloudRunV2ServiceCardServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_cloud_run_v2_service_customer_service",
+      "program_id": "",
+      "source": "iac_google_cloud_run_v2_service_customer_service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleCloudRunV2ServiceCustomerServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_cloud_run_v2_service_transaction_service",
+      "program_id": "",
+      "source": "iac_google_cloud_run_v2_service_transaction_service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleCloudRunV2ServiceTransactionServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "iac_google_sql_database_instance_carddemo_postgres_primary",
+      "program_id": "",
+      "source": "iac_google_sql_database_instance_carddemo_postgres_primary (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/IacGoogleSqlDatabaseInstanceCarddemoPostgresPrimaryService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CBACT01C_01",
+      "program_id": "",
+      "source": "rule_BR_CBACT01C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCbact01c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CBACT01C_02",
+      "program_id": "",
+      "source": "rule_BR_CBACT01C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCbact01c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CBACT02C_01",
+      "program_id": "",
+      "source": "rule_BR_CBACT02C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCbact02c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CBACT02C_02",
+      "program_id": "",
+      "source": "rule_BR_CBACT02C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCbact02c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CBPAUP0C_01",
+      "program_id": "",
+      "source": "rule_BR_CBPAUP0C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCbpaup0c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CBPAUP0C_02",
+      "program_id": "",
+      "source": "rule_BR_CBPAUP0C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCbpaup0c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COACCT01_01",
+      "program_id": "",
+      "source": "rule_BR_COACCT01_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCoacct0101Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COACCT01_02",
+      "program_id": "",
+      "source": "rule_BR_COACCT01_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCoacct0102Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COBTUPDT_01",
+      "program_id": "",
+      "source": "rule_BR_COBTUPDT_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCobtupdt01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COBTUPDT_02",
+      "program_id": "",
+      "source": "rule_BR_COBTUPDT_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCobtupdt02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CODATE01_01",
+      "program_id": "",
+      "source": "rule_BR_CODATE01_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCodate0101Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_CODATE01_02",
+      "program_id": "",
+      "source": "rule_BR_CODATE01_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCodate0102Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUA0C_01",
+      "program_id": "",
+      "source": "rule_BR_COPAUA0C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaua0c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUA0C_02",
+      "program_id": "",
+      "source": "rule_BR_COPAUA0C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaua0c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUS0C_01",
+      "program_id": "",
+      "source": "rule_BR_COPAUS0C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaus0c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUS0C_02",
+      "program_id": "",
+      "source": "rule_BR_COPAUS0C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaus0c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUS1C_01",
+      "program_id": "",
+      "source": "rule_BR_COPAUS1C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaus1c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUS1C_02",
+      "program_id": "",
+      "source": "rule_BR_COPAUS1C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaus1c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUS2C_01",
+      "program_id": "",
+      "source": "rule_BR_COPAUS2C_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaus2c01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COPAUS2C_02",
+      "program_id": "",
+      "source": "rule_BR_COPAUS2C_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCopaus2c02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COTRTLIC_01",
+      "program_id": "",
+      "source": "rule_BR_COTRTLIC_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCotrtlic01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COTRTLIC_02",
+      "program_id": "",
+      "source": "rule_BR_COTRTLIC_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCotrtlic02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COTRTUPC_01",
+      "program_id": "",
+      "source": "rule_BR_COTRTUPC_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCotrtupc01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_COTRTUPC_02",
+      "program_id": "",
+      "source": "rule_BR_COTRTUPC_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrCotrtupc02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_DBUNLDGS_01",
+      "program_id": "",
+      "source": "rule_BR_DBUNLDGS_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrDbunldgs01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_DBUNLDGS_02",
+      "program_id": "",
+      "source": "rule_BR_DBUNLDGS_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrDbunldgs02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_PAUDBLOD_01",
+      "program_id": "",
+      "source": "rule_BR_PAUDBLOD_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrPaudblod01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_PAUDBLOD_02",
+      "program_id": "",
+      "source": "rule_BR_PAUDBLOD_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrPaudblod02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_PAUDBUNL_01",
+      "program_id": "",
+      "source": "rule_BR_PAUDBUNL_01 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrPaudbunl01Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "rule_BR_PAUDBUNL_02",
+      "program_id": "",
+      "source": "rule_BR_PAUDBUNL_02 (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/RuleBrPaudbunl02Service.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "service_account-service",
+      "program_id": "",
+      "source": "service_account-service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/ServiceAccountServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "service_auth-admin-service",
+      "program_id": "",
+      "source": "service_auth-admin-service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/ServiceAuthAdminServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "service_batch-orchestration-service",
+      "program_id": "",
+      "source": "service_batch-orchestration-service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/ServiceBatchOrchestrationServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "service_card-service",
+      "program_id": "",
+      "source": "service_card-service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/ServiceCardServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "service_customer-service",
+      "program_id": "",
+      "source": "service_customer-service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/ServiceCustomerServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "service_transaction-service",
+      "program_id": "",
+      "source": "service_transaction-service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/ServiceTransactionServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbact01cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbact01cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbact01cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbact02cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbact02cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbact02cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbact03cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbact03cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbact03cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbact04cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbact04cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbact04cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbcus01cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbcus01cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbcus01cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CbexportBatchJobConfig",
+      "program_id": "",
+      "source": "target_CbexportBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbexportBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CbimportBatchJobConfig",
+      "program_id": "",
+      "source": "target_CbimportBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbimportBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbpaup0cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbpaup0cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbpaup0cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbstm03aBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbstm03aBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbstm03aBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbstm03bBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbstm03bBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbstm03bBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbtrn01cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbtrn01cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbtrn01cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbtrn02cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbtrn02cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbtrn02cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cbtrn03cBatchJobConfig",
+      "program_id": "",
+      "source": "target_Cbtrn03cBatchJobConfig (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCbtrn03cBatchJobConfigService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Coacct01Service",
+      "program_id": "",
+      "source": "target_Coacct01Service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCoacct01serviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CoactupcService",
+      "program_id": "",
+      "source": "target_CoactupcService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCoactupcServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CoactvwcService",
+      "program_id": "",
+      "source": "target_CoactvwcService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCoactvwcServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Coadm01cService",
+      "program_id": "",
+      "source": "target_Coadm01cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCoadm01cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cobil00cService",
+      "program_id": "",
+      "source": "target_Cobil00cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCobil00cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CobswaitService",
+      "program_id": "",
+      "source": "target_CobswaitService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCobswaitServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CobtupdtService",
+      "program_id": "",
+      "source": "target_CobtupdtService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCobtupdtServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CocrdlicService",
+      "program_id": "",
+      "source": "target_CocrdlicService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCocrdlicServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CocrdslcService",
+      "program_id": "",
+      "source": "target_CocrdslcService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCocrdslcServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CocrdupcService",
+      "program_id": "",
+      "source": "target_CocrdupcService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCocrdupcServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Codate01Service",
+      "program_id": "",
+      "source": "target_Codate01Service (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCodate01serviceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Comen01cService",
+      "program_id": "",
+      "source": "target_Comen01cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetComen01cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Copaua0cService",
+      "program_id": "",
+      "source": "target_Copaua0cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCopaua0cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Copaus0cService",
+      "program_id": "",
+      "source": "target_Copaus0cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCopaus0cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Copaus1cService",
+      "program_id": "",
+      "source": "target_Copaus1cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCopaus1cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Copaus2cService",
+      "program_id": "",
+      "source": "target_Copaus2cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCopaus2cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Corpt00cService",
+      "program_id": "",
+      "source": "target_Corpt00cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCorpt00cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cosgn00cService",
+      "program_id": "",
+      "source": "target_Cosgn00cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCosgn00cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cotrn00cService",
+      "program_id": "",
+      "source": "target_Cotrn00cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCotrn00cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cotrn01cService",
+      "program_id": "",
+      "source": "target_Cotrn01cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCotrn01cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cotrn02cService",
+      "program_id": "",
+      "source": "target_Cotrn02cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCotrn02cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CotrtlicService",
+      "program_id": "",
+      "source": "target_CotrtlicService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCotrtlicServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CotrtupcService",
+      "program_id": "",
+      "source": "target_CotrtupcService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCotrtupcServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cousr00cService",
+      "program_id": "",
+      "source": "target_Cousr00cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCousr00cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cousr01cService",
+      "program_id": "",
+      "source": "target_Cousr01cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCousr01cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cousr02cService",
+      "program_id": "",
+      "source": "target_Cousr02cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCousr02cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_Cousr03cService",
+      "program_id": "",
+      "source": "target_Cousr03cService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCousr03cServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_CsutldtcService",
+      "program_id": "",
+      "source": "target_CsutldtcService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetCsutldtcServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_DbunldgsService",
+      "program_id": "",
+      "source": "target_DbunldgsService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetDbunldgsServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_PaudblodService",
+      "program_id": "",
+      "source": "target_PaudblodService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetPaudblodServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "target_PaudbunlService",
+      "program_id": "",
+      "source": "target_PaudbunlService (source not found)",
+      "warnings": [],
+      "service": "src/main/java/com/client/core/service/TargetPaudbunlServiceService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "COPAU00C",
+      "program_id": "",
+      "source": "app/cbl/COPAU00C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/cics_online/service/Copau00cService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    },
+    {
+      "module_id": "COPAU01C",
+      "program_id": "",
+      "source": "app/cbl/COPAU01C.cbl",
+      "warnings": [],
+      "service": "src/main/java/com/client/cics_online/service/Copau01cService.java",
+      "program_translated": false,
+      "paragraphs": 0,
+      "paragraphs_translated": 0,
+      "rules": 0,
+      "rules_translated": 0,
+      "untranslated": [
+        "the program source was not found in the repository",
+        "no PROCEDURE DIVISION was found"
+      ],
+      "untranslated_rules": [],
+      "sql_tables": [],
+      "screens": [],
+      "unplanned": false
+    }
+  ],
+  "unplanned_modules": [],
+  "totals": {
+    "programs": 162,
+    "programs_translated": 3,
+    "rules": 70,
+    "rules_translated": 44
+  }
+}
