@@ -1,0 +1,7 @@
+01Purchase                                          00000000
+02Payment                                           00000000
+03Credit                                            00000000
+04Authorization                                     00000000
+05Refund                                            00000000
+06Reversal                                          00000000
+07Adjustment                                        00000000

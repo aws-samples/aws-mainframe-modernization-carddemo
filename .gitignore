@@ -6,3 +6,9 @@ batch-app/markers/*
 /.idea/
 .DS_Store
 **/.DS_Store
+
+# Migrated two-tier app build artifacts
+backend/target/
+backend/data/
+frontend/node_modules/
+frontend/dist/

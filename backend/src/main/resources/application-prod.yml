@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:carddemo}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER:carddemo}
+    password: ${DB_PASSWORD:carddemo}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: false
