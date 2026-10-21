@@ -1,0 +1,13 @@
+# Google Cloud Workflows definition modernized from JCL: BATCMP
+# Source: samples/jcl/BATCMP.jcl
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - batcmp:
+        raise: "Step BATCMP runs procedure BUILDBAT, which is not part of the modernized application"
+    - finalize:
+        return: ${"Job batcmp completed, execution " + executionId}

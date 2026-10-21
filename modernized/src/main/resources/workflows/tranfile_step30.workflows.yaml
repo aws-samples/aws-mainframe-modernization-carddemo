@@ -1,0 +1,12 @@
+# Google Cloud Workflows definition modernized from JCL: TRANFILE_STEP30
+# Source: TRANFILE_STEP30 (source not found)
+# __SERVICE_URL__ is replaced with the Cloud Run URL by Agent 09's Terraform.
+# No EXEC steps were found in the JCL source; none are invented.
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - executionId: ${sys.get_env("GOOGLE_CLOUD_WORKFLOW_EXECUTION_ID")}
+    - finalize:
+        return: ${"Job tranfile_step30 completed, execution " + executionId}
