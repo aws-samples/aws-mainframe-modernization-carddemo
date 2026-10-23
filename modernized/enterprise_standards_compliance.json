@@ -1,0 +1,103 @@
+{
+  "total_standards_applied": 8,
+  "compliant_count": 8,
+  "non_compliant_count": 0,
+  "compliance_score": "100.0%",
+  "custom_documents_ingested": [],
+  "standards": [
+    {
+      "category": "Coding Standards",
+      "rule_id": "STD-CODE-001",
+      "title": "Google Java Style & Clean Architecture",
+      "description": "Use 2-space indentation, explicit typing, immutable records/DTOs, and separation of Controller, Service, and Repository layers.",
+      "applied_in_stages": [
+        5,
+        6
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Enforced in Spring Boot 3.3 Java 17 generated classes."
+    },
+    {
+      "category": "Coding Standards",
+      "rule_id": "STD-CODE-002",
+      "title": "Standardized REST API Error Envelope & HTTP Semantics",
+      "description": "All REST APIs must return RFC 7807 problem details or standardized response envelopes with trace IDs.",
+      "applied_in_stages": [
+        6
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Injected GlobalExceptionHandler and ApiResponse wrapper."
+    },
+    {
+      "category": "Architectural Standards",
+      "rule_id": "STD-ARCH-001",
+      "title": "Cloud-Native 12-Factor App & Statelessness",
+      "description": "Services must externalize configuration via environment variables / Secret Manager and remain stateless for autoscaling.",
+      "applied_in_stages": [
+        5,
+        9
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Cloud Run serverless containers with Cloud SQL private VPC access."
+    },
+    {
+      "category": "Architectural Standards",
+      "rule_id": "STD-ARCH-002",
+      "title": "Zero-Trust IAM & Decoupled State Storage",
+      "description": "Service accounts must follow least-privilege RBAC. Infrastructure state must reside in versioned, customer-managed GCS buckets.",
+      "applied_in_stages": [
+        5,
+        9
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Terraform state decoupled to GCS bucket; dedicated per-service IAM roles."
+    },
+    {
+      "category": "Development Practices & SOPs",
+      "rule_id": "STD-SOP-001",
+      "title": "Database Schema Migration via Flyway",
+      "description": "No direct schema mutations. All DDL and DML must be versioned Flyway migration scripts (V1__..., V2__...).",
+      "applied_in_stages": [
+        6,
+        7,
+        9
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Flyway migration scripts generated in src/main/resources/db/migration."
+    },
+    {
+      "category": "Development Practices & SOPs",
+      "rule_id": "STD-SOP-002",
+      "title": "CI/CD Pipeline Strict Exclusivity",
+      "description": "All deployments must flow through versioned Jenkins CI/CD pipelines with zero direct host execution.",
+      "applied_in_stages": [
+        9
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Dual Jenkinsfiles (db and app) staged in Jenkins folder."
+    },
+    {
+      "category": "Service Patterns",
+      "rule_id": "STD-PAT-001",
+      "title": "Hexagonal / Ports-and-Adapters Service Pattern",
+      "description": "Domain logic must be decoupled from persistence and presentation frameworks to allow independent unit testing.",
+      "applied_in_stages": [
+        6,
+        8
+      ],
+      "status": "COMPLIANT",
+      "evidence": "Domain service interfaces implemented independently of JPA repository details."
+    },
+    {
+      "category": "Enterprise Templates",
+      "rule_id": "STD-TMPL-001",
+      "title": "Enterprise Spring Boot 3.3 Maven POM Template",
+      "description": "Standard dependency management BOMs, Spring Boot Actuator health checks, and Micrometer Prometheus metrics.",
+      "applied_in_stages": [
+        6
+      ],
+      "status": "COMPLIANT",
+      "evidence": "pom.xml generated with standard enterprise dependencies and actuator endpoints."
+    }
+  ]
+}
