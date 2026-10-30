@@ -1,0 +1,8 @@
+target/
+.git/
+.gitignore
+*.md
+.mvn/
+**/*.iml
+.idea/
+test_suite/__pycache__/
