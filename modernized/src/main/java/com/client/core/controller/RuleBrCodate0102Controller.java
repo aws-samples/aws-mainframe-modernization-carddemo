@@ -1,0 +1,59 @@
+package com.client.core.controller;
+
+
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.client.core.dto.RuleBrCodate0102Request;
+import com.client.core.dto.RuleBrCodate0102Response;
+import com.client.core.service.RuleBrCodate0102Service;
+import com.client.core.service.RuleBrCodate0102Service.ModernizedOperationResult;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
+/**
+ * Modernized Spring Boot REST Controller: RuleBrCodate0102Controller
+ *
+ * RESTful HTTP boundary for modernized COBOL module: rule_BR_CODATE01_02
+ * Generation Strategy: Enterprise Modernization
+ */
+@Slf4j
+@RestController
+@RequestMapping("/api/v1/core/rule_br_codate01_02")
+@Tag(name = "RuleBrCodate0102Controller", description = "REST API Controller for rule_BR_CODATE01_02")
+public class RuleBrCodate0102Controller {
+
+    private final RuleBrCodate0102Service service;
+
+    public RuleBrCodate0102Controller(RuleBrCodate0102Service service) {
+        this.service = service;
+    }
+
+    @GetMapping("/health")
+    @Operation(summary = "Health check and module status", description = "Verifies RuleBrCodate0102Service status and legacy metadata")
+    public ResponseEntity<Map<String, Object>> getHealth() {
+        return ResponseEntity.ok(Map.of(
+            "moduleId", service.getModuleId(),
+            "sourcePath", service.getSourcePath(),
+            "status", "ACTIVE",
+            "framework", "Spring Boot 3.3.0"
+        ));
+    }
+
+    @PostMapping("/rulebrcodate0102001")
+    @Operation(summary = "Execute rule_BR_CODATE01_02 Transaction Processing", description = "Endpoint invoking RuleBrCodate0102Service#executeRuleBrCodate0102001 (Rule BR-RULE_BR_CODATE01_02-001)")
+    public ResponseEntity<RuleBrCodate0102Response> handleRuleBrCodate0102001(@Valid @RequestBody(required = false) RuleBrCodate0102Request request) {
+        log.info("REST POST /api/v1/core/rule_br_codate01_02/rulebrcodate0102001 invoked");
+        RuleBrCodate0102Response result = service.executeRuleBrCodate0102001(request);
+        return ResponseEntity.ok(result);
+    }
+}
