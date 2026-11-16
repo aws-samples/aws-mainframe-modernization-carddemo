@@ -76,7 +76,7 @@
        FD  EXPORT-INPUT
            RECORDING MODE IS F
            RECORD CONTAINS 500 CHARACTERS.
-       01  EXPORT-INPUT-RECORD                        PIC X(500).
+       COPY CVEXPORT.
 
        FD  CUSTOMER-OUTPUT
            RECORDING MODE IS F
@@ -109,8 +109,6 @@
        01  ERROR-OUTPUT-RECORD                        PIC X(132).
 
        WORKING-STORAGE SECTION.
-
-       COPY CVEXPORT.
 
       * File Status Variables
        01  WS-FILE-STATUS-AREA.
@@ -258,7 +256,7 @@
       *****************************************************************
        2100-READ-EXPORT-RECORD.
       *****************************************************************
-           READ EXPORT-INPUT INTO EXPORT-RECORD
+           READ EXPORT-INPUT
            
            IF NOT WS-EXPORT-OK AND NOT WS-EXPORT-EOF
                DISPLAY 'ERROR: Reading EXPORT-INPUT, Status: '
