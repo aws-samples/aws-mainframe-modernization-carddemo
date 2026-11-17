@@ -89,11 +89,9 @@
        FD  EXPORT-OUTPUT
            RECORDING MODE IS F
            RECORD CONTAINS 500 CHARACTERS.
-       01  EXPORT-OUTPUT-RECORD                        PIC X(500).
+       COPY CVEXPORT.
 
        WORKING-STORAGE SECTION.
-
-       COPY CVEXPORT.
 
       * File Status Variables
        01  WS-FILE-STATUS-AREA.
@@ -298,7 +296,7 @@
            MOVE CUST-PRI-CARD-HOLDER-IND TO EXP-CUST-PRI-CARD-HOLDER-IND
            MOVE CUST-FICO-CREDIT-SCORE TO EXP-CUST-FICO-CREDIT-SCORE
            
-           WRITE EXPORT-OUTPUT-RECORD FROM EXPORT-RECORD
+           WRITE EXPORT-RECORD
            
            IF NOT WS-EXPORT-OK
                DISPLAY 'ERROR: Writing export record, Status: '
@@ -361,7 +359,7 @@
            MOVE ACCT-ADDR-ZIP TO EXP-ACCT-ADDR-ZIP
            MOVE ACCT-GROUP-ID TO EXP-ACCT-GROUP-ID
            
-           WRITE EXPORT-OUTPUT-RECORD FROM EXPORT-RECORD
+           WRITE EXPORT-RECORD
            
            IF NOT WS-EXPORT-OK
                DISPLAY 'ERROR: Writing export record, Status: '
@@ -416,7 +414,7 @@
            MOVE XREF-CUST-ID TO EXP-XREF-CUST-ID
            MOVE XREF-ACCT-ID TO EXP-XREF-ACCT-ID
            
-           WRITE EXPORT-OUTPUT-RECORD FROM EXPORT-RECORD
+           WRITE EXPORT-RECORD
            
            IF NOT WS-EXPORT-OK
                DISPLAY 'ERROR: Writing export record, Status: '
@@ -481,7 +479,7 @@
            MOVE TRAN-ORIG-TS TO EXP-TRAN-ORIG-TS
            MOVE TRAN-PROC-TS TO EXP-TRAN-PROC-TS
            
-           WRITE EXPORT-OUTPUT-RECORD FROM EXPORT-RECORD
+           WRITE EXPORT-RECORD
            
            IF NOT WS-EXPORT-OK
                DISPLAY 'ERROR: Writing export record, Status: '
@@ -539,7 +537,7 @@
            MOVE CARD-EXPIRAION-DATE TO EXP-CARD-EXPIRAION-DATE
            MOVE CARD-ACTIVE-STATUS TO EXP-CARD-ACTIVE-STATUS
            
-           WRITE EXPORT-OUTPUT-RECORD FROM EXPORT-RECORD
+           WRITE EXPORT-RECORD
            
            IF NOT WS-EXPORT-OK
                DISPLAY 'ERROR: Writing export record, Status: '
