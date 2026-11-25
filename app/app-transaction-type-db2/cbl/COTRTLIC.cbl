@@ -371,7 +371,7 @@
 037100******************************************************************
 037200*  Commarea manipulations
 037300******************************************************************
-037400*Application Commmarea Copybook
+037400*Application Commarea  Copybook
 037500 COPY COCOM01Y.
 037600
 037700 01 WS-THIS-PROGCOMMAREA.

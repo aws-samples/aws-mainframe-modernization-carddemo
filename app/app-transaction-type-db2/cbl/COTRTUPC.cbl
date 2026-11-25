@@ -288,7 +288,7 @@
 028800      EXEC SQL INCLUDE DCLTRCAT END-EXEC                          02880000
 028900                                                                  02890000
 029000******************************************************************02900000
-029100*Application Commmarea Copybook                                   02910000
+029100*Application Commarea  Copybook                                   02910000
 029200 COPY COCOM01Y.                                                   02920000
 029300                                                                  02930000
 029400 01 WS-THIS-PROGCOMMAREA.                                         02940000
