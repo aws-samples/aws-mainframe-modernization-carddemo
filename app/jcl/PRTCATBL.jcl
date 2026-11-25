@@ -1,4 +1,4 @@
-//PRTCATBL JOB 'Print Trasaction Category Balance File',                        
+//PRTCATBL JOB 'Print Transaction Category Balance File',                       
 // CLASS=A,MSGCLASS=0,NOTIFY=&SYSUID           
 //******************************************************************
 //* Copyright Amazon.com, Inc. or its affiliates.                   
