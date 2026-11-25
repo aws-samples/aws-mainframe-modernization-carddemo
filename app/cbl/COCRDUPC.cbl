@@ -268,7 +268,7 @@
        COPY CVCRD01Y.                                                           
                                                                                 
       ******************************************************************        
-      *Application Commmarea Copybook                                           
+      *Application Commarea  Copybook                                           
        COPY COCOM01Y.                                                           
                                                                                 
        01 WS-THIS-PROGCOMMAREA.                                                 
